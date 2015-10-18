@@ -74,11 +74,4 @@ class ProposalsController < ApplicationController
       params.require(:proposal).permit(:text)
     end
 
-    def check_authenticated_local
-      check_authenticated session[:user_id], nil
-    end
-
-    def check_user_level_local
-      check_user_level session[:user_id]
-    end
 end

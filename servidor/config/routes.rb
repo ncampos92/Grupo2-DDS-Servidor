@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   resources :comments
   resources :proposals
   resources :users
+
+  get 'login' => 'login#new'
+  post 'login' => 'login#create'
+  delete 'logout' => 'login#delete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
