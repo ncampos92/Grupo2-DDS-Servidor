@@ -1,5 +1,7 @@
 class ProposalsController < ApplicationController
   before_action :set_proposal, only: [:show, :edit, :update, :destroy]
+  before_action :check_authenticated_local, only: :create
+  before_action :check_user_level_local, only: :create
 
   # GET /proposals
   # GET /proposals.json
@@ -70,5 +72,13 @@ class ProposalsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def proposal_params
       params.require(:proposal).permit(:text)
+    end
+
+    def check_authenticated_local
+      check_authenticated session[:user_id], nil
+    end
+
+    def check_user_level_local
+      check_user_level session[:user_id]
     end
 end

@@ -7,9 +7,14 @@ class ApplicationController < ActionController::Base
 
   #Verifica la autenticación de los usuarios.
   def check_authenticated(user_id, user_token)
+  	if not logged_in? and current_user.id != user_id
+  		redirect_to login_url
   end
 
   #Verifica el nivel del usuario para determinar los permisos que tiene.
   def check_user_level(user_id)
+  	user = User.find_by(user_id)
+  	if user.type != 'admin' || user.type != 'politic'
+  		redirect_to login_url
   end
 end
