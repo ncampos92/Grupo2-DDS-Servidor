@@ -14,7 +14,12 @@ class SessionController < ApplicationController
       		log_in user
       		respond_to do |format|
       			format.html {redirect_to user}
-      			format.json {render 'token'}
+      			format.json {
+      				tok = User.new_token
+      				tok = User.digest tok
+      				user.update_attribute(:user_token,tok)
+      				render 'token'
+      			}
       		end
     	else
       		# Create an error message.
