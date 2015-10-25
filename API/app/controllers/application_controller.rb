@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  #protect_from_forgery with: :null_session
   include SessionHelper
   
   #Verifica la autenticación de los usuarios.
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   #Verifica el nivel del usuario para determinar los permisos que tiene.
   def check_user_level(user_id)
   	user = User.find_by(user_id)
-  	if user.type != 'admin' || user.type != 'politic'
+  	if user.nivel_acceso != 'admin' || user.nivel_acceso != 'politic'
   		redirect_to login_url
   	end
   end

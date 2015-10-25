@@ -6,11 +6,16 @@ class SessionController < ApplicationController
 	end
 
 	def create
-		user = User.find_by(email: params[:email].downcase)
+		print params
+		fkey = params[:email].downcase
+		user = User.find_by(email: fkey)
     	if user && user.authenticate(params[:password])
       		# Log the user in and redirect to the user's show page.
       		log_in user
-      		redirect_to user
+      		respond_to do |format|
+      			format.html {redirect_to user}
+      			format.json {render 'token'}
+      		end
     	else
       		# Create an error message.
       		render 'new'
@@ -23,6 +28,8 @@ class SessionController < ApplicationController
 	end
 
 	def translate_standard
-		params[:email] = params[:username]
+		if params[:username] 
+			params[:email] = params[:username]
+		end
 	end
 end
