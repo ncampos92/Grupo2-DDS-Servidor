@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  texto: MyText
+  appproved: false
+  User_id: 
+  Proposal_id: 
+
+two:
+  texto: MyText
+  appproved: false
+  User_id: 
+  Proposal_id: 
