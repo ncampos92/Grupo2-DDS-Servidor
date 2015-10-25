@@ -14,13 +14,24 @@ class ApplicationController < ActionController::Base
   #Verifica el nivel del usuario para determinar los permisos que tiene.
   def check_user_level(user_id)
   	user = User.find_by(user_id)
-  	if user.nivel_acceso != 'admin' || user.nivel_acceso != 'politic'
-  		redirect_to login_url
+    print user.nivel_acceso
+    print ''
+    puede = false
+  	if user.nivel_acceso == 'admin'
+      print 'is admin'
+      puede = true
+    end
+    if user.nivel_acceso == 'politic'
+  		print 'is politic'
+      puede = true
   	end
+    if !puede
+      redirect_to login_url
+    end
   end
 
   def check_authenticated_local
-      check_authenticated session[:user_id], nil
+      check_authenticated session[:user_id], session[:user_token]
   end
 
     def check_user_level_local
