@@ -1,10 +1,5 @@
-class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
-  include SessionHelper
-  
-  #Verifica la autenticación de los usuarios.
+module SessionHelper
+	#Verifica la autenticación de los usuarios.
   def check_authenticated(user_id, user_token)
   	if not logged_in? and current_user.id != user_id
   		redirect_to login_url

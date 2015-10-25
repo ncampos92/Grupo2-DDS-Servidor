@@ -1,5 +1,7 @@
 class ProposalsController < ApplicationController
   before_action :set_proposal, only: [:show, :edit, :update, :destroy]
+  before_action :check_authenticated_local, only: :create
+  before_action :check_user_level_local, only: :create
 
   # GET /proposals
   # GET /proposals.json
