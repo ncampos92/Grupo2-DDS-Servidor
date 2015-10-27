@@ -12,12 +12,12 @@ class SessionController < ApplicationController
     	if user && user.authenticate(params[:password])
       		# Log the user in and redirect to the user's show page.
       		log_in user
+      		tok = User.new_token
+      		tok = User.digest tok
+      		user.update_attribute(:user_token,tok)
       		respond_to do |format|
       			format.html {redirect_to user}
       			format.json {
-      				tok = User.new_token
-      				tok = User.digest tok
-      				user.update_attribute(:user_token,tok)
       				render 'token'
       			}
       		end
