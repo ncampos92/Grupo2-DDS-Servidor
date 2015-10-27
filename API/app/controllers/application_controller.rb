@@ -6,8 +6,11 @@ class ApplicationController < ActionController::Base
   
   #Verifica la autenticación de los usuarios.
   def check_authenticated(user_id, user_token)
-  	if not logged_in? and current_user.id != user_id
-  		redirect_to login_url
+  	if not logged_in? or current_user.id != user_id
+  		respond_to do |format|
+        format.html {redirect_to login_url}
+        #format.json {render json: {"status":"error","login_url" : "/login"}, status: :forbidden}
+      end
   	end
   end
 
@@ -26,7 +29,10 @@ class ApplicationController < ActionController::Base
       puede = true
   	end
     if !puede
-      redirect_to login_url
+      respond_to do |format|
+        format.html {redirect_to login_url}
+        #format.json {render json: {"status":"error","login_url" : "/login"}, status: :forbidden}
+      end
     end
   end
 
