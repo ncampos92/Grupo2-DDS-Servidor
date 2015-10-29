@@ -2,6 +2,7 @@ class ProposalsController < ApplicationController
   before_action :set_proposal, only: [:show, :edit, :update, :destroy]
   before_action :check_authenticated_local, only: [:create, :update, :destroy]
   before_action :check_user_level_local, only: [:create, :update, :destroy]
+  before_action :set_owner, only: :show
 
   # GET /proposals
   # GET /proposals.json
@@ -67,6 +68,11 @@ class ProposalsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_proposal
       @proposal = Proposal.find(params[:id])
+    end
+
+    def set_owner
+      dueno = User.find_by(id: @proposal.user_id)
+      @dueno = dueno.first_name + " " + dueno.last_name
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
