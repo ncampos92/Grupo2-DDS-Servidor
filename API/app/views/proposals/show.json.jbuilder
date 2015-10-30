@@ -8,6 +8,7 @@ json.comments do
 			json.created comment.created_at
 			json.author_first comment.user.first_name
 			json.author_last commment.user.last_name
+			json.comment_id comment.id
 		end
 	end
 end
