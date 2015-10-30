@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_params_shenanigans)
     respond_to do |format|
       if @user.save
 	tok = User.new_token
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.update(user_params_shenanigans)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -74,5 +74,23 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.permit(:password, :password_confirmation, :recover_digest, :email, :gender, :birth_date, :region, :city, :nivel_acceso, :user_token, :first_name, :last_name)
+    end
+    
+    def user_params_shenanigans
+        {
+        :first_name             => params[:user][:first_name],
+        :last_name              => params[:user][:last_name],
+        :password               => params[:user][:password],
+        :password_confirmation  => params[:user][:password_confirmation],
+        :recover_digest         => params[:user][:recover_digest],
+        :email                  => params[:user][:email],
+        :gender                 => params[:user][:gender],
+        :birth_date             => params[:user][:birth_date],
+        :region                 => params[:user][:region],
+        :city                   => params[:user][:city],
+        :nivel_acceso           => params[:user][:nivel_acceso],
+        :user_token             => params[:user][:user_token]
+        }
+      
     end
 end

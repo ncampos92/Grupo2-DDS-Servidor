@@ -11,55 +11,72 @@
     </div>
   <% end %>
 
+  <h3>Identificacion</h3>
   <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="field">
-    <%= f.label :recover %><br>
-    <%= f.text_field :recover_digest %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
-  </div>
-  <div class="field">
-    <%= f.label :birth_date %><br>
-    <%= f.date_select :birth_date %>
-  </div>
-  <div class="field">
-    <%= f.label :region %><br>
-    <%= f.text_field :region %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :nivel_acceso %><br>
-    <%= f.text_field :nivel_acceso %>
-  </div>
-  <div class="field">
-    <%= f.label :user_token %><br>
-    <%= f.text_field :user_token %>
-  </div>
-  <div class="field">
-    <%= f.label :first_name %><br>
+    <%= f.label :Nombre %><br>
     <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br>
+    <%= f.label :Apellido %><br>
     <%= f.text_field :last_name %>
   </div>
+  
+  
+  <div class="field">
+    <%= f.label :Contraseña %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :Confirmacion_de_Contraseña %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Email %><br>
+    <%= f.text_field :email %>
+  </div>
+  
+  
+  
+  <h3>Datos personales</h3>
+  
+  <div class="field">
+    <%= f.label :Genero %><br>
+    <%= f.select :gender, options_for_select([["Hombre", "male"], ["Mujer", "female"]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :Fecha_de_nacimiento %><br>
+    <%= f.date_select :birth_date, start_year: 1900, end_year: Date.today.year, order: [:day, :month, :year], 
+        use_month_names: [:enero, :febrero, :marzo, :abril, :mayo, :junio, :julio, :agosto, :septiembre, :octubre, :noviembre, :diciembre] %>
+  </div>
+  <div class="field">
+    <%= f.label :Region %><br>
+    <%= f.text_field :region %>
+  </div>
+  <div class="field">
+    <%= f.label :Ciudad %><br>
+    <%= f.text_field :city %>
+  </div>
+  
+  <% if true%>
+    <%# Datos que probablemente se generan automaticamente %>
+    <div class="field">
+      <%= f.label :recover %><br>
+      <%= f.text_field :recover_digest %>
+    </div>
+    <div class="field">
+      <%= f.label :nivel_acceso %><br>
+      <%= f.text_field :nivel_acceso %>
+    </div>
+    <div class="field">
+      <%= f.label :user_token %><br>
+      <%= f.text_field :user_token %>
+    </div>
+    <%# Fin de comentario %>
+  <% end %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
+  
 <% end %>
