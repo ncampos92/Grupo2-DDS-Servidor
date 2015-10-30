@@ -2,8 +2,7 @@
 json.texto @proposal.texto
 json.id @proposal.id
 json.autor @dueno
-json.comments do
-	@proposal.comments.each do |comment|
+json.comments @proposal.comments.each do |comment|
 		json.comment do
 			json.text comment.texto
 			json.created comment.created_at
@@ -11,5 +10,4 @@ json.comments do
 			json.author_last User.find_by(id: @proposal.user_id).last_name
 			json.comment_id comment.id
 		end
-	end
 end
