@@ -1,5 +1,6 @@
 #json.extract! @proposal, :id, :texto, :user_id, :created_at, :updated_at
 json.texto @proposal.texto
+json.id @proposal.id
 json.autor @dueno
 json.comments do
 	@proposal.comments.each do |comment|
