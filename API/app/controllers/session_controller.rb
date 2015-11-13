@@ -1,20 +1,18 @@
 class SessionController < ApplicationController
-	before_action :translate_standard, only: :create
 
 	def new
-
+		if current_user
+			redirect_to current_user
+		end
 	end
 
 	def create
-		print params
-		fkey = params[:email].downcase
-		user = User.find_by(email: fkey)
-    	if user && user.authenticate(params[:password])
+		user = User.find_by(email: params[:session][:username])
+    	if user && user.authenticate(params[:session][:password])
       		# Log the user in and redirect to the user's show page.
-      		log_in user
       		tok = User.new_token
-      		tok = User.digest tok
       		user.update_attribute(:user_token,tok)
+      		log_in user
       		respond_to do |format|
       			format.html {redirect_to user}
       			format.json {
@@ -29,15 +27,11 @@ class SessionController < ApplicationController
 
 	def destroy
 		log_out
-    	redirect_to root_url
+    redirect_to root_url
 	end
 
-	def translate_standard
-		if params[:username]
-			params[:email] = params[:username]
-		end
-	end
 	private
 		def session_params
-		  params.require(:session).permit(:user_id, :user_token)
+		  params.require(:session).permit(:username, :password)
+		end
 end

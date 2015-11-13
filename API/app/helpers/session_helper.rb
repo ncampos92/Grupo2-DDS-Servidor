@@ -1,13 +1,12 @@
 module SessionHelper
 
     def log_in(user)
-    	session[:user_id] = user.id
       session[:user_token] = user.user_token
 	end
 
 	# Returns the current logged-in user (if any).
   	def current_user
-    	@current_user ||= User.find_by(id: session[:user_id])
+    	@current_user ||= User.find_by(user_token: session[:user_token])
   	end
 
   	# Returns true if the user is logged in, false otherwise.
@@ -17,7 +16,7 @@ module SessionHelper
 
   	# Logs out the current user.
   	def log_out
-    	session.delete(:user_id)
-    	@current_user = nil
+      current_user.user_token = nil
+      reset_session
   	end
 end

@@ -14,6 +14,19 @@ class ApplicationController < ActionController::Base
   	end
   end
 
+  def restrict_access
+    @user = User.find_by_user_token(session[:user_token])
+    head :unauthorized unless @user && session[:user_token]
+  end
+
+  def is_admin?
+    return current_user.nivel_acceso == 'admin'
+  end
+
+  def is_editor?
+    return current_user.nivel_acceso == 'editor'
+  end
+
   #Verifica el nivel del usuario para determinar los permisos que tiene.
   def check_user_level(user_id)
   	user = User.find_by(user_id)

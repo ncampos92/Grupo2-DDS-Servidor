@@ -1,13 +1,22 @@
 class ProposalsController < ApplicationController
   before_action :set_proposal, only: [:show, :edit, :update, :destroy]
-  before_action :check_authenticated_local, only: [:create, :update, :destroy]
-  before_action :check_user_level_local, only: [:create, :update, :destroy]
+  #before_action :check_authenticated_local, only: [:create, :update, :destroy]
+  #before_action :check_user_level_local, only: [:create, :update, :destroy]
+  before_action :restrict_access
   before_action :set_owner, only: :show
+  before_action :authorize, only: [:edit, :update, :destroy]
 
   # GET /proposals
   # GET /proposals.json
   def index
     @proposals = Proposal.all
+  end
+
+  def authorize
+    if current_user && (@proposal.user.id == current_user.id || is_admin?)
+    else
+      head :unauthorized
+    end
   end
 
   # GET /proposals/1
@@ -28,7 +37,7 @@ class ProposalsController < ApplicationController
   # POST /proposals.json
   def create
     @proposal = Proposal.new(proposal_params)
-
+    @proposal.user = current_user
     respond_to do |format|
       if @proposal.save
         format.html { redirect_to @proposal, notice: 'Proposal was successfully created.' }
