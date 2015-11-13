@@ -15,8 +15,8 @@ class ApplicationController < ActionController::Base
   end
 
   def restrict_access
-    @user = User.find_by_user_token(session[:user_token])
-    head :unauthorized unless @user && session[:user_token]
+    flash[:notice] = "Acceso Restringido - inicia sesión para acceder al contenido."
+    redirect_to root_url unless logged_in?
   end
 
   def is_admin?

@@ -11,9 +11,9 @@
   <header>
     <% if current_user %>
       <%= link_to 'logout', logout_path %>
-    <% end %> 
+    <% end %>
   </header>
-
+<p id="notice"><%= notice %></p>
 <%= yield %>
 
 </body>

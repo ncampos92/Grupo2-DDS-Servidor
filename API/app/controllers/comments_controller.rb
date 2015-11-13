@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :restrict_access
   #before_action :check_authenticated_local, only: [:create,:update,:destroy]
 
   # GET /comments
