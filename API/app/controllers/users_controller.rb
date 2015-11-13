@@ -25,13 +25,12 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params_shenanigans)
+    @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-	tok = User.new_token
-    	tok = User.digest tok
-      	@user.update_attribute(:user_token,tok)
-	log_in @user
+        tok = User.new_token
+        @user.update_attribute(:user_token,tok)
+	      log_in @user
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -73,16 +72,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.permit(:password, :password_confirmation, :recover_digest, :email, :gender, :birth_date, :region, :city, :nivel_acceso, :user_token, :first_name, :last_name)
+      params.require(:user).permit(:password, :password_confirmation, :recover_digest, :email, :gender, :birth_date, :region, :city, :nivel_acceso, :user_token, :first_name, :last_name)
     end
-    
-    def user_params_shenanigans
-      if params[:user]
-        params.require(:user).permit(:password, :password_confirmation, :recover_digest, :email, :gender, :birth_date, :region, :city, :nivel_acceso, :user_token, :first_name, :last_name)
-      else
-        params.permit(:password, :password_confirmation, :recover_digest, :email, :gender, :birth_date, :region, :city, :nivel_acceso, :user_token, :first_name, :last_name)
-      end
-    end
-    
-    
 end

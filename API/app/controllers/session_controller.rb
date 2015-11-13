@@ -2,7 +2,7 @@ class SessionController < ApplicationController
 	before_action :translate_standard, only: :create
 
 	def new
-		
+
 	end
 
 	def create
@@ -33,8 +33,11 @@ class SessionController < ApplicationController
 	end
 
 	def translate_standard
-		if params[:username] 
+		if params[:username]
 			params[:email] = params[:username]
 		end
 	end
+	private
+		def session_params
+		  params.require(:session).permit(:user_id, :user_token)
 end

@@ -71,12 +71,14 @@ class ProposalsController < ApplicationController
     end
 
     def set_owner
-      dueno = User.find_by(id: @proposal.user_id)
-      @dueno = dueno.first_name + " " + dueno.last_name
+      @user = User.find_by(id: @proposal.user_id)
+      if @user
+        @dueno = @user.first_name + " " + @user.last_name
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def proposal_params
-      params.permit(:texto, :user_id)
+      params.require(:proposal).permit(:texto, :user_id)
     end
 end
