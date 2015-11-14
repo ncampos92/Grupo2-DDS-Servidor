@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Proplikes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Proposal</th>
+      <th>Score</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @proplikes.each do |proplike| %>
+      <tr>
+        <td><%= proplike.user %></td>
+        <td><%= proplike.proposal %></td>
+        <td><%= proplike.score %></td>
+        <td><%= link_to 'Show', proplike %></td>
+        <td><%= link_to 'Edit', edit_proplike_path(proplike) %></td>
+        <td><%= link_to 'Destroy', proplike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Proplike', new_proplike_path %>

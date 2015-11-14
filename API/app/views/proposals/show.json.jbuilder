@@ -2,6 +2,8 @@
 json.texto @proposal.texto
 json.id @proposal.id
 json.autor @dueno
+json.aprueba @proposal.proplikes.where(score: 1).count
+json.desaprueba @proposal.proplikes.where(score: -1).count
 json.comments @proposal.comments.each do |comment|
 		json.comment do
 			json.text comment.texto

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @proplike.user %>
+</p>
+
+<p>
+  <strong>Proposal:</strong>
+  <%= @proplike.proposal %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @proplike.score %>
+</p>
+
+<%= link_to 'Edit', edit_proplike_path(@proplike) %> |
+<%= link_to 'Back', proplikes_path %>
