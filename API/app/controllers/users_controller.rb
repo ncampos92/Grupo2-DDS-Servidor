@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :check_authenticated_local, only: [:update, :destroy]
-  before_action :restrict_access
+  #before_action :check_authenticated_local, only: [:update, :destroy]
+  before_action :restrict_access, except: [:new, :create]
 
   # GET /users
   # GET /users.json

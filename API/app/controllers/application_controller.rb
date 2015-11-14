@@ -15,12 +15,30 @@ class ApplicationController < ActionController::Base
   end
 
   def restrict_access
-    flash[:notice] = "Acceso Restringido - inicia sesión para acceder al contenido."
-    redirect_to root_url unless logged_in?
+    respond_to do |format|
+      format.html {
+        if !logged_in?
+          flash[:notice] = "Unauthorized access - please log in"
+          redirect_to root_url
+        end
+      }
+      format.json {
+        if !logged_in_api?
+          render json: {"error":{"description":"Not logged in - unauthorized access", "login_url":"/login"}}, status: :forbidden
+        end
+      }
+    end
   end
 
   def is_admin?
-    return current_user.nivel_acceso == 'admin'
+    respond_to do |format|
+      format.html{
+        return current_user.nivel_acceso == 'admin'
+      }
+      format.json{
+        return current_user_api.nivel_acceso == 'admin'
+      }
+    end
   end
 
   def is_editor?
@@ -47,13 +65,5 @@ class ApplicationController < ActionController::Base
         #format.json {render json: {"status":"error","login_url" : "/login"}, status: :forbidden}
       end
     end
-  end
-
-  def check_authenticated_local
-      check_authenticated session[:user_id], session[:user_token]
-  end
-
-  def check_user_level_local
-    check_user_level session[:user_id]
   end
 end

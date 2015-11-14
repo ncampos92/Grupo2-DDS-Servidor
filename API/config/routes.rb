@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'login' => 'session#new'
   post 'login' => 'session#create'
   get 'logout' => 'session#destroy'
+  get 'home' => 'proposals#index'
 
   root 'session#new'
 

@@ -1,35 +1,64 @@
 class SessionController < ApplicationController
 
 	def new
-		if current_user
-			redirect_to current_user
+		respond_to do |format|
+			format.html{
+		    if logged_in?
+			    redirect_to current_user
+		    end
+	    }
+			format.json {
+				if logged_in_api?
+					render 'token'
+				end
+			}
 		end
 	end
 
 	def create
 		user = User.find_by(email: params[:session][:username])
-    	if user && user.authenticate(params[:session][:password])
-      		# Log the user in and redirect to the user's show page.
-      		tok = User.new_token
-      		user.update_attribute(:user_token,tok)
-      		log_in user
-      		respond_to do |format|
-      			format.html {redirect_to user}
-      			format.json {
-      				render 'token'
-      			}
-      		end
-    	else
-      		# Create an error message.
-      		render 'new'
-    	end
+    if user && user.authenticate(params[:session][:password])
+      # Log the user in and redirect to the user's show page.
+      respond_to do |format|
+        format.html {
+		      log_in user
+			  	redirect_to home_path
+			  }
+        format.json {
+	        tok = User.new_token
+				  user.update_attribute(:user_token, tok)
+      	  render json: {user_id: user.id, user_token: user.user_token, profile: users_path(user), status: :ok}
+        }
+      end
+    else
+      # Create an error message.
+			respond_to do |format|
+				format.html {
+				  flash[:notice] = "Incorrect username or password"
+					redirect_to root_url
+				}
+	      format.json { render 'new' }
+			end
+    end
 	end
 
 	def destroy
-		if current_user
-		  log_out
+		respond_to do |format|
+			format.html{
+				if logged_in?
+				  log_out
+				end
+				redirect_to root_url
+			}
+			format.json{
+				if logged_in_api?
+					log_out_api
+					render json:{"result":"successfully logged out", status: :ok}
+				else
+					render json:{"result":"No active session", status: :invalid_request}
+				end
+			}
 		end
-		redirect_to root_url
 	end
 
 	private

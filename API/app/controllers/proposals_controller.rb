@@ -15,7 +15,10 @@ class ProposalsController < ApplicationController
   def authorize
     if current_user && (@proposal.user.id == current_user.id || is_admin?)
     else
-      head :unauthorized
+      respond_to do |format|
+        format.html {redirect_to proposals_path}
+        format.json {render json: {"error":{"description":"Unauthorized access.", redirect: proposals_path}}, status: :forbidden}
+      end
     end
   end
 
