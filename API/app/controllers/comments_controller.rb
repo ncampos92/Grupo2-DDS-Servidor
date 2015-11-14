@@ -1,7 +1,28 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-  #before_action :check_authenticated_local, only: [:create,:update,:destroy]
+  before_action :restrict_access
+  before_action :authorize, only: [:edit, :update, :destroy]
 
+  def authorize
+    respond_to do |format|
+      format.html{
+        if current_user && (@comment.user.id == current_user.id || is_admin?)
+        else
+          flash[:notice] = "Access Denied."
+          redirect_to comments_path
+        end
+      }
+      format.json{
+        if current_user_api && (@comment.user.id == current_user_api.id || is_admin?)
+        else
+          render json: {
+            error: "Denied Acces",
+            status: :forbidden
+          }
+        end
+      }
+    end
+  end
   # GET /comments
   # GET /comments.json
   def index
@@ -70,6 +91,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.permit(:texto, :appproved, :User_id, :Proposal_id)
+      params.require(:comment).permit(:texto, :appproved, :User_id, :Proposal_id)
     end
 end

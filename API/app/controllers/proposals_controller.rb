@@ -1,14 +1,34 @@
 class ProposalsController < ApplicationController
   before_action :set_proposal, only: [:show, :edit, :update, :destroy]
-  before_action :check_authenticated_local, only: [:create, :update, :destroy]
-  before_action :check_user_level_local, only: [:create, :update, :destroy]
+  before_action :restrict_access
   before_action :set_owner, only: :show
+  before_action :authorize_create, only: [:new, :create]
+  before_action :authorize, only: [:edit, :update, :destroy]
 
   # GET /proposals
   # GET /proposals.json
   def index
     @proposals = Proposal.all
   end
+
+  #Autoriza la edición y eliminación según el nivel de usuario y creador
+  def authorize
+    if current_user && (@proposal.user.id == current_user.id || is_admin?)
+    else
+      flash[:notice] = "Access Denied."
+      redirect_to proposals_path
+    end
+  end
+
+  #Autoriza la creación de propuestas según nivel de usuario
+  def authorize_create
+    if current_user && (is_editor? || is_admin?)
+    else
+      flash[:notice] = "Access Denied."
+      redirect_to home_path
+    end
+  end
+
 
   # GET /proposals/1
   # GET /proposals/1.json
@@ -28,7 +48,7 @@ class ProposalsController < ApplicationController
   # POST /proposals.json
   def create
     @proposal = Proposal.new(proposal_params)
-
+    @proposal.user = current_user
     respond_to do |format|
       if @proposal.save
         format.html { redirect_to @proposal, notice: 'Proposal was successfully created.' }
@@ -71,12 +91,14 @@ class ProposalsController < ApplicationController
     end
 
     def set_owner
-      dueno = User.find_by(id: @proposal.user_id)
-      @dueno = dueno.first_name + " " + dueno.last_name
+      @user = User.find_by(id: @proposal.user_id)
+      if @user
+        @dueno = @user.first_name + " " + @user.last_name
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def proposal_params
-      params.permit(:texto, :user_id)
+      params.require(:proposal).permit(:texto, :user_id)
     end
 end
