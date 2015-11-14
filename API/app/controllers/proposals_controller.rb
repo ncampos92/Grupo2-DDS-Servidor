@@ -4,6 +4,7 @@ class ProposalsController < ApplicationController
   #before_action :check_user_level_local, only: [:create, :update, :destroy]
   before_action :restrict_access
   before_action :set_owner, only: :show
+  before_action :authorize_create, only: [:new, :create]
   before_action :authorize, only: [:edit, :update, :destroy]
 
   # GET /proposals
@@ -15,12 +16,19 @@ class ProposalsController < ApplicationController
   def authorize
     if current_user && (@proposal.user.id == current_user.id || is_admin?)
     else
-      respond_to do |format|
-        format.html {redirect_to proposals_path}
-        format.json {render json: {"error":{"description":"Unauthorized access.", redirect: proposals_path}}, status: :forbidden}
-      end
+      flash[:notice] = "Access Denied."
+      redirect_to home_path
     end
   end
+
+  def authorize_create
+    if current_user && (is_editor? || is_admin?)
+    else
+      flash[:notice] = "Access Denied."
+      redirect_to home_path
+    end
+  end
+
 
   # GET /proposals/1
   # GET /proposals/1.json
