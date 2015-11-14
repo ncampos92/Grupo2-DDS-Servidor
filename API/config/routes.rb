@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :likes
+  resources :approves
   resources :comments
   resources :proposals
   resources :users
