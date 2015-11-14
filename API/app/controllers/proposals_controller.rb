@@ -1,7 +1,5 @@
 class ProposalsController < ApplicationController
   before_action :set_proposal, only: [:show, :edit, :update, :destroy]
-  #before_action :check_authenticated_local, only: [:create, :update, :destroy]
-  #before_action :check_user_level_local, only: [:create, :update, :destroy]
   before_action :restrict_access
   before_action :set_owner, only: :show
   before_action :authorize_create, only: [:new, :create]
@@ -13,14 +11,16 @@ class ProposalsController < ApplicationController
     @proposals = Proposal.all
   end
 
+  #Autoriza la edición y eliminación según el nivel de usuario y creador
   def authorize
     if current_user && (@proposal.user.id == current_user.id || is_admin?)
     else
       flash[:notice] = "Access Denied."
-      redirect_to home_path
+      redirect_to proposals_path
     end
   end
 
+  #Autoriza la creación de propuestas según nivel de usuario
   def authorize_create
     if current_user && (is_editor? || is_admin?)
     else
