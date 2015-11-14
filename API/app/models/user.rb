@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :comments
   has_many :proposals
+  has_many :likes
+  has_many :approves
 
   before_save { self.email = email.downcase }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
