@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @like %> |
-<%= link_to 'Back', likes_path %>
+<%= link_to 'Show', [@proposal, @comment, @like] %> |
+<%= link_to 'Back', proposal_commment_likes_path(@proposal, @comment) %>

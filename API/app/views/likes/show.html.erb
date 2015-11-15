@@ -1,13 +1,13 @@
 
 <p>
   <strong>User:</strong>
-  <%= @like.user %>
+  <%= @like.user.id %>
 </p>
 
 <p>
-  <strong>Comment:</strong>
-  <%= @like.comment %>
+  <strong>Score:</strong>
+  <%= @like.score %>
 </p>
 
-<%= link_to 'Edit', edit_like_path(@like) %> |
-<%= link_to 'Back', likes_path %>
+<%= link_to 'Edit', edit_proposal_comment_like_path(@proposal, @like.comment, @like) %> |
+<%= link_to 'Back', proposal_comment_likes_path(@proposal, @comment) %>
