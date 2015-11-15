@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   #protect_from_forgery with: :null_session
   include SessionHelper
+  helper_method :is_admin?, :is_editor?
 
   #Verifica que el usuario sea válido.
   def restrict_access
