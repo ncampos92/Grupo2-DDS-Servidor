@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151025140328) do
+ActiveRecord::Schema.define(version: 20151114214426) do
+
+  create_table "approves", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "proposal_id"
+    t.integer  "score"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "approves", ["proposal_id"], name: "index_approves_on_proposal_id"
+  add_index "approves", ["user_id"], name: "index_approves_on_user_id"
 
   create_table "comments", force: :cascade do |t|
     t.text     "texto"
@@ -24,6 +35,28 @@ ActiveRecord::Schema.define(version: 20151025140328) do
 
   add_index "comments", ["proposal_id"], name: "index_comments_on_proposal_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "comment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "score"
+  end
+
+  add_index "likes", ["comment_id"], name: "index_likes_on_comment_id"
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id"
+
+  create_table "proplikes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "proposal_id"
+    t.integer  "score"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "proplikes", ["proposal_id"], name: "index_proplikes_on_proposal_id"
+  add_index "proplikes", ["user_id"], name: "index_proplikes_on_user_id"
 
   create_table "proposals", force: :cascade do |t|
     t.text     "texto"
