@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'logout' => 'session#destroy'
   get 'home' => 'proposals#index'
   get 'signup' => 'users#new'
+  post 'signup' => 'users#create'
 
   root 'session#new'
 
