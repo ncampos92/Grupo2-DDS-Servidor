@@ -13,7 +13,7 @@ class LikesController < ApplicationController
   # GET /proposals/:proposal_id/comments/:comment_id/likes/1
   # GET /proposals/:proposal_id/comments/:comment_id/likes/1.json
   def show
-    @like = @comment.likes.find([:id])
+    @like = @comment.likes.find(params[:id])
   end
 
   # GET /proposals/:proposal_id/comments/:comment_id/likes/new
@@ -23,7 +23,7 @@ class LikesController < ApplicationController
 
   # GET /proposals/:proposal_id/comments/:comment_id/likes/1/edit
   def edit
-    @like = @comment.likes.find([:id])
+    @like = @comment.likes.find(params[:id])
   end
 
   # POST /proposals/:proposal_id/comments/:comment_id/likes
@@ -47,6 +47,7 @@ class LikesController < ApplicationController
   # PATCH/PUT /proposals/:proposal_id/comments/:comment_id/likes/1
   # PATCH/PUT /proposals/:proposal_id/comments/:comment_id/likes/1.json
   def update
+    @like = @comment.likes.find(params[:id])
     respond_to do |format|
       if @like.update(like_params)
         format.html { redirect_to [@proposal, @like.comment], notice: 'Like was successfully updated.' }
@@ -61,6 +62,7 @@ class LikesController < ApplicationController
   # DELETE /proposals/:proposal_id/comments/:comment_id/likes/1
   # DELETE /proposals/:proposal_id/comments/:comment_id/likes/1.json
   def destroy
+    @like = @comment.likes.find(params[:id])
     @like.destroy
     respond_to do |format|
       format.html { redirect_to proposal_comment_likes_path(@proposal, @comment), notice: 'Like was successfully destroyed.' }
@@ -69,6 +71,26 @@ class LikesController < ApplicationController
   end
 
   private
+    def authorize
+      respond_to do |format|
+        format.html{
+          if current_user && (@like.user.id == current_user.id || is_admin?)
+          else
+            flash[:notice] = "Access Denied."
+            redirect_to proposal_comment_likes_path(@comment)
+          end
+        }
+        format.json{
+          if current_user_api && (@like.user.id == current_user_api.id || is_admin?)
+          else
+            render json: {
+              error: "Denied Acces",
+              status: :forbidden
+            }
+          end
+        }
+      end
+    end
 
     def find_owner
       @proposal = Proposal.find(params[:proposal_id])
