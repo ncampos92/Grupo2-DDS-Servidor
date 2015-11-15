@@ -6,13 +6,15 @@ class User < ActiveRecord::Base
   has_many :proplikes
 
 
+
   before_save { self.email = email.downcase }
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }, confirmation: true
   validates :user_token, absence: true, on: :create
   validates :nivel_acceso, presence: true
 
+  
   #def authenticated?(remember_token)
   #  return false if remember_digest.nil?
   #  BCrypt::Password.new(remember_digest).is_password?(remember_token)
