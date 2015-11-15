@@ -37,7 +37,7 @@ class SessionController < ApplicationController
 				  flash[:notice] = "Incorrect username or password"
 					redirect_to root_url
 				}
-	      format.json { render 'new' }
+	      format.json { render json: {"error": "Usuario o contraseña incorrecta"}}
 			end
     end
 	end
