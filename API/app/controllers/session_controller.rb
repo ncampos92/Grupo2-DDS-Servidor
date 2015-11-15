@@ -1,4 +1,5 @@
 class SessionController < ApplicationController
+	before_action :restrict_access, only: :destroy
 
 	def new
 		respond_to do |format|

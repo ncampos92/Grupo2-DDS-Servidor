@@ -1,29 +1,9 @@
 class CommentsController < ApplicationController
+  before_action :restrict_access
   before_action :find_owner
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-  before_action :restrict_access
   before_action :authorize, only: [:edit, :update, :destroy]
 
-  def authorize
-    respond_to do |format|
-      format.html{
-        if current_user && (@comment.user.id == current_user.id || is_admin?)
-        else
-          flash[:notice] = "Access Denied."
-          redirect_to proposal_comments_path(@proposal)
-        end
-      }
-      format.json{
-        if current_user_api && (@comment.user.id == current_user_api.id || is_admin?)
-        else
-          render json: {
-            error: "Denied Acces",
-            status: :forbidden
-          }
-        end
-      }
-    end
-  end
   # GET /proposals/:proposal_id/comments
   # GET /proposals/:proposal_id/comments.json
   def index
@@ -91,6 +71,27 @@ class CommentsController < ApplicationController
   end
 
   private
+    def authorize
+      respond_to do |format|
+        format.html{
+          if current_user && (@comment.user.id == current_user.id || is_admin?)
+          else
+            flash[:notice] = "Access Denied."
+            redirect_to proposal_comments_path(@proposal)
+          end
+        }
+        format.json{
+          if current_user_api && (@comment.user.id == current_user_api.id || is_admin?)
+          else
+            render json: {
+              error: "Denied Acces",
+              status: :forbidden
+            }
+          end
+        }
+      end
+    end
+
     def find_owner
       @proposal = Proposal.find(params[:proposal_id])
     end

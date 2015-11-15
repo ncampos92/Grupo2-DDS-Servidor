@@ -1,6 +1,6 @@
 class ProposalsController < ApplicationController
-  before_action :set_proposal, only: [:show, :edit, :update, :destroy]
   before_action :restrict_access
+  before_action :set_proposal, only: [:show, :edit, :update, :destroy]
   before_action :set_owner, only: :show
   before_action :authorize_create, only: [:new, :create]
   before_action :authorize, only: [:edit, :update, :destroy]
@@ -10,25 +10,6 @@ class ProposalsController < ApplicationController
   def index
     @proposals = Proposal.all
   end
-
-  #Autoriza la edición y eliminación según el nivel de usuario y creador
-  def authorize
-    if current_user && (@proposal.user.id == current_user.id || is_admin?)
-    else
-      flash[:notice] = "Access Denied."
-      redirect_to proposals_path
-    end
-  end
-
-  #Autoriza la creación de propuestas según nivel de usuario
-  def authorize_create
-    if current_user && (is_editor? || is_admin?)
-    else
-      flash[:notice] = "Access Denied."
-      redirect_to proposals_path
-    end
-  end
-
 
   # GET /proposals/1
   # GET /proposals/1.json
@@ -86,6 +67,25 @@ class ProposalsController < ApplicationController
   end
 
   private
+
+    #Autoriza la edición y eliminación según el nivel de usuario y creador
+    def authorize
+      if current_user && (@proposal.user.id == current_user.id || is_admin?)
+      else
+        flash[:notice] = "Access Denied."
+        redirect_to proposals_path
+      end
+    end
+
+    #Autoriza la creación de propuestas según nivel de usuario
+    def authorize_create
+      if current_user && (is_editor? || is_admin?)
+      else
+        flash[:notice] = "Access Denied."
+        redirect_to proposals_path
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_proposal
       @proposal = Proposal.find(params[:id])

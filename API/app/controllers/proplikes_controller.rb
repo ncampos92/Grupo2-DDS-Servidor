@@ -1,6 +1,8 @@
 class ProplikesController < ApplicationController
+  before_action :restrict_access
   before_action :find_owner
   before_action :set_proplike, only: [:show, :edit, :update, :destroy]
+  before_action :authorize
 
   # GET /proposals/:proposal_id/proplikes
   # GET /proposals/:proposal_id/proplikes.json

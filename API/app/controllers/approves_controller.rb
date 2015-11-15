@@ -1,4 +1,5 @@
 class ApprovesController < ApplicationController
+  before_action :restrict_access
   before_action :set_approfe, only: [:show, :edit, :update, :destroy]
 
   # GET /approves
