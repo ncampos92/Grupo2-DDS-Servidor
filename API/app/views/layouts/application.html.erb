@@ -10,7 +10,16 @@
 
   <header>
     <% if current_user %>
-      <%= link_to 'logout', logout_path %>
+      <ul>
+        <li><%= link_to 'proposals', proposals_path %></li>
+        <li><%= link_to 'users', users_path %></li>
+      </ul>
+      <p>Logged in as <%= link_to current_user.email, current_user %>, <%= link_to 'logout', logout_path %></p>
+    <% else %>
+      <ul>
+        <li><%= link_to 'register', signup_path %></li>
+        <li><%= link_to 'login', login_path %></li>
+      </ul>
     <% end %>
   </header>
 <p id="notice"><%= notice %></p>
