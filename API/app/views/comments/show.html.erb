@@ -14,10 +14,5 @@
   <%= @comment.user %>
 </p>
 
-<p>
-  <strong>Proposal:</strong>
-  <%= @comment.proposal %>
-</p>
-
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<%= link_to 'Edit', edit_proposal_comment_path(@comment.proposal, @comment) %> |
+<%= link_to 'Back', proposal_comments_path(@comment.proposal) %>

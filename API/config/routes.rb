@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :comments
-  resources :proposals
+  resources :proposals do
+    resources :comments
+  end
   resources :users
 
   get 'login' => 'session#new'
