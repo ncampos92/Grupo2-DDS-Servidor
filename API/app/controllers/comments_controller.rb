@@ -102,6 +102,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def proposal_comment_params
-      params.require(:comment).permit(:texto, :appproved)
+      params.require(:comment).permit(:texto, :approved)
     end
 end

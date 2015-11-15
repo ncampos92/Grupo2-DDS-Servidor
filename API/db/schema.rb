@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151115212648) do
+ActiveRecord::Schema.define(version: 20151115234909) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "texto"
-    t.boolean  "appproved"
+    t.boolean  "approved"
     t.integer  "user_id"
     t.integer  "proposal_id"
     t.datetime "created_at",  null: false

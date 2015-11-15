@@ -2,12 +2,12 @@
 
 one:
   texto: MyText
-  appproved: false
-  User_id: 
-  Proposal_id: 
+  approved: false
+  User_id:
+  Proposal_id:
 
 two:
   texto: MyText
-  appproved: false
-  User_id: 
-  Proposal_id: 
+  approved: false
+  User_id:
+  Proposal_id:

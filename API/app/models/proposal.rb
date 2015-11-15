@@ -5,4 +5,12 @@ class Proposal < ActiveRecord::Base
 
   validates :user, :titulo, :texto, presence: true
   validates :user_id, :uniqueness => { :scope => :titulo }
+
+  def upvotes
+    self.proplikes.where(score: 1).count
+  end
+
+  def downvotes
+    self.proplikes.where(score: -1).count
+  end
 end
