@@ -17,8 +17,8 @@
       <tr>
         <td><%= comment.texto %></td>
         <td><%= comment.appproved %></td>
-        <td><%= comment.User %></td>
-        <td><%= comment.Proposal %></td>
+        <td><%= comment.user %></td>
+        <td><%= comment.proposal %></td>
         <td><%= link_to 'Show', comment %></td>
         <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
         <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
