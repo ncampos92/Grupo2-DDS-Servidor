@@ -3,5 +3,6 @@ class Proposal < ActiveRecord::Base
   has_many :comments
   has_many :proplikes
 
-  validates :user, presence: true
+  validates :user, :titulo, :texto, presence: true
+  validates :user_id, :uniqueness => { :scope => :titulo }
 end

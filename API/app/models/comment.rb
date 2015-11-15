@@ -4,5 +4,5 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :proposal
 
-  validates :user, :proposal, presence: true
+  validates :user, :proposal, :texto, :approved, presence: true
 end

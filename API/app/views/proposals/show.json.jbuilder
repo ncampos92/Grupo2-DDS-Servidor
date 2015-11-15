@@ -1,6 +1,7 @@
 #json.extract! @proposal, :id, :texto, :user_id, :created_at, :updated_at
 json.texto @proposal.texto
 json.id @proposal.id
+json.titulo @proposal.titulo
 json.autor @dueno
 json.aprueba @proposal.proplikes.where(score: 1).count
 json.desaprueba @proposal.proplikes.where(score: -1).count
