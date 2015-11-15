@@ -20,8 +20,8 @@
     <%= f.label :Apellido %><br>
     <%= f.text_field :last_name %>
   </div>
-  
-  
+
+
   <div class="field">
     <%= f.label :Contraseña %><br>
     <%= f.password_field :password %>
@@ -30,23 +30,23 @@
     <%= f.label :Confirmacion_de_Contraseña %><br>
     <%= f.password_field :password_confirmation %>
   </div>
-  
+
   <div class="field">
     <%= f.label :Email %><br>
     <%= f.text_field :email %>
   </div>
-  
-  
-  
+
+
+
   <h3>Datos personales</h3>
-  
+
   <div class="field">
     <%= f.label :Genero %><br>
     <%= f.select :gender, options_for_select([["Hombre", "male"], ["Mujer", "female"]]) %>
   </div>
   <div class="field">
     <%= f.label :Fecha_de_nacimiento %><br>
-    <%= f.date_select :birth_date, start_year: 1900, end_year: Date.today.year, order: [:day, :month, :year], 
+    <%= f.date_select :birth_date, start_year: 1900, end_year: Date.today.year, order: [:day, :month, :year],
         use_month_names: [:enero, :febrero, :marzo, :abril, :mayo, :junio, :julio, :agosto, :septiembre, :octubre, :noviembre, :diciembre] %>
   </div>
   <div class="field">
@@ -57,26 +57,19 @@
     <%= f.label :Ciudad %><br>
     <%= f.text_field :city %>
   </div>
-  
-  <% if true%>
-    <%# Datos que probablemente se generan automaticamente %>
-    <div class="field">
-      <%= f.label :recover %><br>
-      <%= f.text_field :recover_digest %>
-    </div>
-    <div class="field">
-      <%= f.label :nivel_acceso %><br>
-      <%= f.text_field :nivel_acceso %>
-    </div>
-    <div class="field">
-      <%= f.label :user_token %><br>
-      <%= f.text_field :user_token %>
-    </div>
-    <%# Fin de comentario %>
-  <% end %>
+  <%# Datos que probablemente se generan automaticamente %>
+  <div class="field">
+    <%= f.label :recover %><br>
+    <%= f.text_field :recover_digest %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nivel_acceso %><br>
+    <%= f.select :nivel_acceso, options_for_select([["Administrador", "admin"], ["Editor", "editor"], ["Usuario", "usuario"]]) %>
+  </div>
   
   <div class="actions">
     <%= f.submit %>
   </div>
-  
+
 <% end %>

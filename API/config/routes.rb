@@ -2,13 +2,20 @@ Rails.application.routes.draw do
   resources :proplikes
   resources :likes
   resources :approves
-  resources :comments
-  resources :proposals
+  resources :proposals do
+    resources :comments
+  end
   resources :users
 
   get 'login' => 'session#new'
   post 'login' => 'session#create'
-  delete 'logout' => 'session#destroy'
+  get 'logout' => 'session#destroy'
+  get 'home' => 'proposals#index'
+  get 'signup' => 'users#new'
+  post 'signup' => 'users#create'
+
+  root 'session#new'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
