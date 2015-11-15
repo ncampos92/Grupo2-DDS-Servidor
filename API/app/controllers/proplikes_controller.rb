@@ -2,7 +2,7 @@ class ProplikesController < ApplicationController
   before_action :restrict_access
   before_action :find_owner
   before_action :set_proplike, only: [:show, :edit, :update, :destroy]
-  before_action :authorize
+  before_action :authorize, only: [:edit, :update, :destroy]
 
   # GET /proposals/:proposal_id/proplikes
   # GET /proposals/:proposal_id/proplikes.json
@@ -71,14 +71,35 @@ class ProplikesController < ApplicationController
   end
 
   private
+    def authorize
+      respond_to do |format|
+        format.html{
+          if current_user && (@proplike.user.id == current_user.id || is_admin?)
+          else
+            flash[:notice] = "Access Denied."
+            redirect_to proposal_proplikes_path(@proposal)
+          end
+        }
+        format.json{
+          if current_user_api && (@proplike.user.id == current_user_api.id || is_admin?)
+          else
+            render json: {
+              error: "Denied Acces",
+              status: :forbidden
+            }
+          end
+        }
+      end
+    end
+
     def find_owner
       @proposal = Proposal.find(params[:proposal_id])
     end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_proplike
       @proplike = Proplike.find(params[:id])
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def proplike_params
       params.require(:proplike).permit(:score)
