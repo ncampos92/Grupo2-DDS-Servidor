@@ -26,9 +26,9 @@ module ScrappingLaLupa
     if (user == nil)
       return
     end
-    proposal = Proposal.find_by(user_id: user.id, titulo: title)
+    proposal = Proposal.find_by(texto: content)
     if (proposal == nil)
-      Proposal.create(user_id: user.id, titulo: title, texto: content)
+      Proposal.create(user_id: user.id, texto: content)
     end
   end
 end
