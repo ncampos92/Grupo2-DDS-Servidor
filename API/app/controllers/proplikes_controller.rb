@@ -1,34 +1,39 @@
 class ProplikesController < ApplicationController
+  before_action :find_owner
   before_action :set_proplike, only: [:show, :edit, :update, :destroy]
 
-  # GET /proplikes
-  # GET /proplikes.json
+  # GET /proposals/:proposal_id/proplikes
+  # GET /proposals/:proposal_id/proplikes.json
   def index
-    @proplikes = Proplike.all
+    @proplikes = @proposal.proplikes
   end
 
-  # GET /proplikes/1
-  # GET /proplikes/1.json
+  # GET /proposals/:proposal_id/proplikes/1
+  # GET /proposals/:proposal_id/proplikes/1.json
   def show
+    @proplike = @proposal.proplikes.find(params[:id])
   end
 
-  # GET /proplikes/new
+  # GET /proposals/:proposal_id/proplikes/new
   def new
-    @proplike = Proplike.new
+    @proplike = @proposal.proplikes.build
   end
 
-  # GET /proplikes/1/edit
+  # GET /proposals/:proposal_id/proplikes/1/edit
   def edit
+    @proplike = @proposal.proplikes.find(params[:id])
   end
 
-  # POST /proplikes
-  # POST /proplikes.json
+  # POST /proposals/:proposal_id/proplikes
+  # POST /proposals/:proposal_id/proplikes.json
   def create
-    @proplike = Proplike.new(proplike_params)
+    @proplike = @proposal.proplikes.create(proplike_params)
+    @proplike.user ||= current_user
+    @proplike.user ||= current_user_api
 
     respond_to do |format|
       if @proplike.save
-        format.html { redirect_to @proplike, notice: 'Proplike was successfully created.' }
+        format.html { redirect_to @proplike.proposal, notice: 'Proplike was successfully created.' }
         format.json { render :show, status: :created, location: @proplike }
       else
         format.html { render :new }
@@ -37,12 +42,13 @@ class ProplikesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /proplikes/1
-  # PATCH/PUT /proplikes/1.json
+  # PATCH/PUT /proposals/:proposal_id/proplikes/1
+  # PATCH/PUT /proposals/:proposal_id/proplikes/1.json
   def update
+    @proplike = @proposal.proplikes.find(params[:id])
     respond_to do |format|
       if @proplike.update(proplike_params)
-        format.html { redirect_to @proplike, notice: 'Proplike was successfully updated.' }
+        format.html { redirect_to @proplike.proposal, notice: 'Proplike was successfully updated.' }
         format.json { render :show, status: :ok, location: @proplike }
       else
         format.html { render :edit }
@@ -51,17 +57,21 @@ class ProplikesController < ApplicationController
     end
   end
 
-  # DELETE /proplikes/1
-  # DELETE /proplikes/1.json
+  # DELETE /proposals/:proposal_id/proplikes/1
+  # DELETE /proposals/:proposal_id/proplikes/1.json
   def destroy
+    @proplike = @proposal.proplikes.find(params[:id])
     @proplike.destroy
     respond_to do |format|
-      format.html { redirect_to proplikes_url, notice: 'Proplike was successfully destroyed.' }
+      format.html { redirect_to proposal_proplikes_url(@proposal), notice: 'Proplike was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+    def find_owner
+      @proposal = Proposal.find(params[:proposal_id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_proplike
       @proplike = Proplike.find(params[:id])
@@ -69,6 +79,6 @@ class ProplikesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def proplike_params
-      params.require(:proplike).permit(:user_id, :proposal_id, :score)
+      params.require(:proplike).permit(:score)
     end
 end

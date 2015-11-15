@@ -2,12 +2,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @proplike.user %>
-</p>
-
-<p>
-  <strong>Proposal:</strong>
-  <%= @proplike.proposal %>
+  <%= @proplike.user.id %>
 </p>
 
 <p>
@@ -15,5 +10,5 @@
   <%= @proplike.score %>
 </p>
 
-<%= link_to 'Edit', edit_proplike_path(@proplike) %> |
-<%= link_to 'Back', proplikes_path %>
+<%= link_to 'Edit', edit_proposal_proplike_path(@proplike.proposal, @proplike) %> |
+<%= link_to 'Back', proposal_proplikes_path(@proposal) %>

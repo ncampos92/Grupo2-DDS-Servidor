@@ -1,4 +1,4 @@
-<%= form_for(@proplike) do |f| %>
+<%= form_for([@proplike.proposal, @proplike]) do |f| %>
   <% if @proplike.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@proplike.errors.count, "error") %> prohibited this proplike from being saved:</h2>
@@ -10,15 +10,7 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :proposal_id %><br>
-    <%= f.text_field :proposal_id %>
-  </div>
+  
   <div class="field">
     <%= f.label :score %><br>
     <%= f.number_field :score %>

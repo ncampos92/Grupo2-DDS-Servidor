@@ -9,6 +9,7 @@
   <%= @proposal.user.email %>
 </p>
 
+<%= link_to 'Likes', proposal_proplikes_path(@proposal) %>
 <%= link_to 'Comments', proposal_comments_path(@proposal) %>
 <%= link_to 'Edit', edit_proposal_path(@proposal) %> |
 <%= link_to 'Back', proposals_path %>
