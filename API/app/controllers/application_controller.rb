@@ -23,25 +23,29 @@ class ApplicationController < ActionController::Base
 
   #Indica si el usuario tiene nivel de acceso 'admin'
   def is_admin?
-    respond_to do |format|
-      format.html{
-        return current_user.nivel_acceso == 'admin'
-      }
-      format.json{
-        return current_user_api.nivel_acceso == 'admin'
-      }
+    if current_user || current_user_api
+      respond_to do |format|
+        format.html{
+          return current_user.nivel_acceso == 'admin'
+        }
+        format.json{
+          return current_user_api.nivel_acceso == 'admin'
+        }
+      end
     end
   end
 
   #Indica si el usuario tiene nivel de acceso 'editor'
   def is_editor?
-    respond_to do |format|
-      format.html{
-        return current_user.nivel_acceso == 'editor'
-      }
-      format.json{
-        return current_user_api.nivel_acceso == 'editor'
-      }
+    if current_user || current_user_api
+      respond_to do |format|
+        format.html{
+          return current_user.nivel_acceso == 'editor'
+        }
+        format.json{
+          return current_user_api.nivel_acceso == 'editor'
+        }
+      end
     end
   end
 

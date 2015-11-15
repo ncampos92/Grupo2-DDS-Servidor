@@ -2,27 +2,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :restrict_access, except: [:new, :create]
   before_action :authorize, only: [:edit, :update, :destroy]
-
-  def authorize
-    respond_to do |format|
-      format.html{
-        if current_user && (@user.id == current_user.id || is_admin?)
-        else
-          flash[:notice] = "Access Denied."
-          redirect_to users_path
-        end
-      }
-      format.json{
-        if current_user_api && (@user.id == current_user_api.id || is_admin?)
-        else
-          render json: {
-            error: "Denied Acces",
-            status: :forbidden
-          }
-        end
-      }
-    end
-  end
+  before_action :user_level_authorization, only: [:create, :update]
+  before_action :restrict_register, only: [:new, :create]
 
   # GET /users
   # GET /users.json
@@ -87,6 +68,39 @@ class UsersController < ApplicationController
   end
 
   private
+    def restrict_register
+      if (!is_admin? && (current_user || current_user_api))
+        redirect_to @user
+      end
+    end
+
+
+    def authorize
+      respond_to do |format|
+        format.html{
+          if current_user && (@user.id == current_user.id || is_admin?)
+          else
+            flash[:notice] = "Access Denied."
+            redirect_to users_path
+          end
+        }
+        format.json{
+          if current_user_api && (@user.id == current_user_api.id || is_admin?)
+          else
+            render json: {
+              error: "Denied Acces",
+              status: :forbidden
+            }
+          end
+        }
+      end
+    end
+
+    def user_level_authorization
+      if !is_admin?
+        params[:user][:nivel_acceso] = 'usuario'
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
