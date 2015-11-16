@@ -1,3 +1,56 @@
 // Place all the styles related to the Session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.content-box {
+	max-width: 650px;
+	padding: 15px;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border-radius: 5px;
+	border: 1px solid #eeeeee;
+}
+
+.login-ol {
+	list-style: none;
+	padding: 3px;
+	margin: 0 auto;
+}
+
+.login-li {
+	padding: 5px;
+	margin: 0 auto;
+}
+
+.login-label {
+	padding: 5px;
+	margin: 0 auto;
+	width: 175px;
+	text-align: right;
+}
+
+.input-field {
+	border-radius: 5px;
+	border: 1px solid #aaaaaa;
+	padding: 7px;
+  	-webkit-box-shadow: inset 2px 2px 2px 0px #dddddd;
+  	-o-box-shadow: inset 2px 2px 2px 0px #dddddd;
+  	-moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
+  	box-shadow: inset 2px 2px 2px 0px #dddddd;
+}
+
+.login-form-actions {
+	margin-left: 182px;
+	padding: 5px;
+}
+
+.input-select {
+    border-radius: 5px;
+    border: 1px solid #aaaaaa;
+    padding: 7px;
+    -webkit-box-shadow: inset 2px 2px 2px 0px #dddddd;
+    -o-box-shadow: inset 2px 2px 2px 0px #dddddd;
+    -moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
+    box-shadow: inset 2px 2px 2px 0px #dddddd;
+}

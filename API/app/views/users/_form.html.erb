@@ -11,65 +11,67 @@
     </div>
   <% end %>
 
-  <h3>Identificacion</h3>
-  <div class="field">
-    <%= f.label :Nombre %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :Apellido %><br>
-    <%= f.text_field :last_name %>
-  </div>
+  <div class="content-box">
+    <h3>Identificacion</h3>
+    <div class="field">
+      <%= f.label :Nombre, :class => 'login-label' %>
+      <%= f.text_field :first_name, :class => 'input-field' %>
+    </div>
+    <div class="field">
+      <%= f.label :Apellido, :class => 'login-label' %>
+      <%= f.text_field :last_name, :class => 'input-field' %>
+    </div>
 
 
-  <div class="field">
-    <%= f.label :Contraseña %><br>
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :Confirmacion_de_Contraseña %><br>
-    <%= f.password_field :password_confirmation %>
-  </div>
+    <div class="field">
+      <%= f.label :Contraseña, :class => 'login-label' %>
+      <%= f.password_field :password, :class => 'input-field' %>
+    </div>
+    <div class="field">
+      <%= f.label :Confirmacion_de_Contraseña, :class => 'login-label' %>
+      <%= f.password_field :password_confirmation, :class => 'input-field' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :Email %><br>
-    <%= f.text_field :email %>
-  </div>
+    <div class="field">
+      <%= f.label :Email, :class => 'login-label' %>
+      <%= f.text_field :email, :class => 'input-field' %>
+    </div>
 
+    <br>
 
+    <h3>Datos personales</h3>
 
-  <h3>Datos personales</h3>
+    <div class="field">
+      <%= f.label :Genero, :class => 'login-label' %>
+      <%= f.select :gender, options_for_select([["Hombre", "male"], ["Mujer", "female"]]), :class => 'input-select' %>
+    </div>
+    <div class="field">
+      <%= f.label :Fecha_de_nacimiento, :class => 'login-label' %>
+      <%= f.date_select :birth_date, start_year: 1900, end_year: Date.today.year, order: [:day, :month, :year],
+      use_month_names: [:enero, :febrero, :marzo, :abril, :mayo, :junio, :julio, :agosto, :septiembre, :octubre, :noviembre, :diciembre], :class => 'input-select' %>
+    </div>
+    <div class="field">
+      <%= f.label :Region, :class => 'login-label' %>
+      <%= f.text_field :region, :class => 'input-field' %>
+    </div>
+    <div class="field">
+      <%= f.label :Ciudad, :class => 'login-label' %>
+      <%= f.text_field :city, :class => 'input-field' %>
+    </div>
+    <%# Datos que probablemente se generan automaticamente %>
+    <div class="field">
+      <%= f.label :recover, :class => 'login-label' %>
+      <%= f.text_field :recover_digest, :class => 'input-field' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :Genero %><br>
-    <%= f.select :gender, options_for_select([["Hombre", "male"], ["Mujer", "female"]]) %>
-  </div>
-  <div class="field">
-    <%= f.label :Fecha_de_nacimiento %><br>
-    <%= f.date_select :birth_date, start_year: 1900, end_year: Date.today.year, order: [:day, :month, :year],
-        use_month_names: [:enero, :febrero, :marzo, :abril, :mayo, :junio, :julio, :agosto, :septiembre, :octubre, :noviembre, :diciembre] %>
-  </div>
-  <div class="field">
-    <%= f.label :Region %><br>
-    <%= f.text_field :region %>
-  </div>
-  <div class="field">
-    <%= f.label :Ciudad %><br>
-    <%= f.text_field :city %>
-  </div>
-  <%# Datos que probablemente se generan automaticamente %>
-  <div class="field">
-    <%= f.label :recover %><br>
-    <%= f.text_field :recover_digest %>
-  </div>
+    <div class="field">
+      <%= f.label :nivel_acceso, :class => 'login-label' %>
+      <%= f.select :nivel_acceso, options_for_select([["Administrador", "admin"], ["Editor", "editor"], ["Usuario", "usuario"]]), :class => 'input-select' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :nivel_acceso %><br>
-    <%= f.select :nivel_acceso, options_for_select([["Administrador", "admin"], ["Editor", "editor"], ["Usuario", "usuario"]]) %>
-  </div>
-  
-  <div class="actions">
-    <%= f.submit %>
+    <div class="actions">
+      <%= f.submit :class => 'login-form-actions' %>
+    </div>
   </div>
 
 <% end %>
