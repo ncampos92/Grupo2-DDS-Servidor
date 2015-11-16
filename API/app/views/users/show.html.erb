@@ -1,48 +1,49 @@
+<div class="content-box">
+  <p>
+    <strong>Recover:</strong>
+    <%= @user.recover_digest %>
+  </p>
 
-<p>
-  <strong>Recover:</strong>
-  <%= @user.recover_digest %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <p>
+    <strong>Gender:</strong>
+    <%= @user.gender %>
+  </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
-</p>
+  <p>
+    <strong>Birth date:</strong>
+    <%= @user.birth_date %>
+  </p>
 
-<p>
-  <strong>Birth date:</strong>
-  <%= @user.birth_date %>
-</p>
+  <p>
+    <strong>Region:</strong>
+    <%= @user.region %>
+  </p>
 
-<p>
-  <strong>Region:</strong>
-  <%= @user.region %>
-</p>
+  <p>
+    <strong>City:</strong>
+    <%= @user.city %>
+  </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
+  <p>
+    <strong>Nivel acceso:</strong>
+    <%= @user.nivel_acceso %>
+  </p>
 
-<p>
-  <strong>Nivel acceso:</strong>
-  <%= @user.nivel_acceso %>
-</p>
+  <p>
+    <strong>First name:</strong>
+    <%= @user.first_name %>
+  </p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+  <p>
+    <strong>Last name:</strong>
+    <%= @user.last_name %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+</div>
