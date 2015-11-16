@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    @user.nivel_acceso = 'usuario' unless params[:user][:nivel_acceso]
     respond_to do |format|
       if @user.save
         tok = User.new_token
@@ -100,7 +101,7 @@ class UsersController < ApplicationController
     end
 
     def user_level_authorization
-      if !is_admin?
+      if !is_admin? && params[:user][:nivel_acceso]
         params[:user][:nivel_acceso] = 'usuario'
       end
     end
