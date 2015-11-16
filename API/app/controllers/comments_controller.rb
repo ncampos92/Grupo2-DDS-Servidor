@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to([@comment.proposal, @comment] , notice: 'Comment was successfully created.') }
-        format.json { render :show, status: :created, location: @comment }
+        format.json { render :show, status: :created, location: [@comment.proposal, @comment] }
       else
         format.html { render :new }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.update(proposal_comment_params)
         format.html { redirect_to([@comment.proposal, @comment] , notice: 'Comment was successfully updated.') }
-        format.json { render :show, status: :ok, location: @comment }
+        format.json { render :show, status: :ok, location: [@comment.proposal, @comment] }
       else
         format.html { render :edit }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
