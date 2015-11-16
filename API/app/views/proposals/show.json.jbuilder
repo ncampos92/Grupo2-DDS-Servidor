@@ -7,7 +7,7 @@ json.aprueba @proposal.proplikes.where(score: 1).count
 json.desaprueba @proposal.proplikes.where(score: -1).count
 json.comments @proposal.comments.each do |comment|
 		json.comment do
-			json.text comment.texto
+			json.texto comment.texto
 			json.created comment.created_at
 			json.author_first User.find_by(id: comment.user_id).first_name
 			json.author_last User.find_by(id: comment.user_id).last_name
