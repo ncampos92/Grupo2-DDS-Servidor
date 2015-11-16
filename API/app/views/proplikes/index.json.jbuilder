@@ -1,4 +1,4 @@
 json.array!(@proplikes) do |proplike|
   json.extract! proplike, :id, :user_id, :proposal_id, :score
-  json.url proplike_url(proplike, format: :json)
+  json.url proposal_proplike_url(proplike.proposal, proplike, format: :json)
 end
