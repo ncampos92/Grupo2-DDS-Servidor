@@ -10,16 +10,17 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :Titulo %><br>
-    <%= f.text_field :titulo %>
-  </div>
-  <div class="field">
-    <%= f.label :texto %><br>
-    <%= f.text_area :texto %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="content-box">
+    <div class="field">
+      <%= f.label :Titulo, :class => 'login-label' %>
+      <%= f.text_field :titulo, :class => 'input-field' %>
+    </div>
+    <div class="field">
+      <%= f.label :texto, :class => 'login-label' %>
+      <%= f.text_area :texto, :class => 'form-control' %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>
