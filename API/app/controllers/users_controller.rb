@@ -33,9 +33,12 @@ class UsersController < ApplicationController
       if @user.save
         tok = User.new_token
         @user.update_attribute(:user_token,tok)
-	      log_in @user
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+        format.html {
+  	      log_in @user
+          redirect_to @user, notice: 'User was successfully created.' }
+        format.json {
+          request.headers["token"] = @user.user_token
+          render :show, status: :created, location: @user }
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }

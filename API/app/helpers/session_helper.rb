@@ -10,7 +10,9 @@ module SessionHelper
   end
 
   def current_user_api
-    @current_user ||= User.find_by(user_token: request.headers["token"])
+    if request.headers["token"]
+      @current_user ||= User.find_by(user_token: request.headers["token"])
+    end
   end
 
 	# Returns true if the user is logged in, false otherwise.
