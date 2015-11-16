@@ -36,7 +36,7 @@ class ProplikesController < ApplicationController
     respond_to do |format|
       if @proplike.save
         format.html { redirect_to @proplike.proposal, notice: 'Proplike was successfully created.' }
-        format.json { render :show, status: :created, location: @proplike }
+        format.json { render :show, status: :created, location: [@proplike.proposal, @proplike] }
       else
         format.html { render :new }
         format.json { render json: @proplike.errors, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class ProplikesController < ApplicationController
     respond_to do |format|
       if @proplike.update(proplike_params)
         format.html { redirect_to @proplike.proposal, notice: 'Proplike was successfully updated.' }
-        format.json { render :show, status: :ok, location: @proplike }
+        format.json { render :show, status: :ok, location: [@proplike.proposal, @proplike] }
       else
         format.html { render :edit }
         format.json { render json: @proplike.errors, status: :unprocessable_entity }
