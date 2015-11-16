@@ -51,7 +51,7 @@ class LikesController < ApplicationController
     respond_to do |format|
       if @like.update(like_params)
         format.html { redirect_to [@proposal, @like.comment], notice: 'Like was successfully updated.' }
-        format.json { render :show, status: :ok, location: @like }
+        format.json { render :show, status: :ok, location: [@proposal, @like.comment, @like] }
       else
         format.html { render :edit }
         format.json { render json: @like.errors, status: :unprocessable_entity }
