@@ -16,17 +16,17 @@ class Proposal < ActiveRecord::Base
 
   def user_likes user
     if self.proplikes.find_by(user_id: user, score: 1)
-    	true
+    	return 'true'
     else
-    	false
+    	return 'false'
     end
   end
 
   def user_dislikes user
     if self.proplikes.find_by(user_id: user, score: -1)
-    	true
+    	return 'true'
     else
-    	false
+    	return 'false'
     end
   end
 end
