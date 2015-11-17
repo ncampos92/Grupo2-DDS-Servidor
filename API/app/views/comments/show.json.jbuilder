@@ -1,6 +1,3 @@
 json.extract! @comment, :id, :texto, :approved, :user_id, :proposal_id, :created_at, :updated_at
-if @comment.likes.find_by(user_id: current_user_api)
-  json.user_likes true
-else
-  json.user_likes false
-end
+json.user_likes @comment.user_likes(current_user_api)
+json.user_dislikes @comment.user_dislikes(current_user_api)

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'home' => 'proposals#index'
   get 'signup' => 'users#new'
   post 'signup' => 'users#create'
+  delete '/proposals/:proposal_id/proplikes' => 'proplikes#delete_by_user'
+  delete '/proposals/:proposal_id/comments/:comment_id/likes' => 'likes#delete_by_user'
 
   root 'session#new'
 
