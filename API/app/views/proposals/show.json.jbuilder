@@ -5,6 +5,11 @@ json.titulo @proposal.titulo
 json.autor @dueno
 json.likes @proposal.upvotes
 json.dislikes @proposal.downvotes
+if @proposal.proplikes.find_by(user_id: current_user_api)
+	json.user_likes true
+else
+	json.user_likes false
+end
 json.comments @proposal.comments.each do |comment|
 		json.comment do
 			json.texto comment.texto
@@ -15,5 +20,10 @@ json.comments @proposal.comments.each do |comment|
 			json.comment_id comment.id
 			json.likes comment.upvotes
 			json.dislikes comment.downvotes
+			if comment.likes.find_by(user_id: current_user_api)
+				json.user_likes true
+			else
+				json.user_likes false
+			end
 		end
 end

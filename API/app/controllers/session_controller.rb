@@ -28,7 +28,7 @@ class SessionController < ApplicationController
         format.json {
 	        tok = User.new_token
 				  user.update_attribute(:user_token, tok)
-      	  render json: {user_id: user.id, user_token: user.user_token, profile: users_path(user), status: :ok}
+      	  render json: {user_id: user.id, user_token: user.user_token, profile: user_path(user), status: :ok}
         }
       end
     else
