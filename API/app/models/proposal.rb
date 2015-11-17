@@ -13,4 +13,8 @@ class Proposal < ActiveRecord::Base
   def downvotes
     self.proplikes.where(score: -1).count
   end
+
+  def score
+    self.upvotes - self.downvotes
+  end
 end

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'home' => 'proposals#index'
   get 'signup' => 'users#new'
   post 'signup' => 'users#create'
+  get 'statistics' => 'estadisticas#show'
 
   root 'session#new'
 
