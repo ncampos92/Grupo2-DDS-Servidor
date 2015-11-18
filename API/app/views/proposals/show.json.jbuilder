@@ -7,7 +7,7 @@ json.likes @proposal.upvotes
 json.dislikes @proposal.downvotes
 json.user_likes @proposal.user_likes(current_user_api)
 json.user_dislikes @proposal.user_dislikes(current_user_api)
-json.comments @proposal.comments.each do |comment|
+json.comments @proposal.get_comments_by_date.each do |comment|
 		json.comment do
 			json.texto comment.texto
 			json.created comment.created_at

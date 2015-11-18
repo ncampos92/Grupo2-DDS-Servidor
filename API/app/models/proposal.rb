@@ -29,4 +29,8 @@ class Proposal < ActiveRecord::Base
     	return 'false'
     end
   end
+
+  def get_comments_by_date
+    self.comments.sort {|a,b| a.created_at <=> b.created_at}
+  end
 end
