@@ -1,22 +1,46 @@
 <h1>Estadísticas</h1>
 
+<h4>Propuestas con mayor aceptación</h4>
 <table class="table">
   <thead>
     <tr>
       <th>Titulo</th>
+      <th>Likes</th>
+      <th>Dislikes</th>
       <th>Score</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @proposals.each do |proposal| %>
+    <% @most_liked_proposals.each do |proposal| %>
       <tr>
-        <td><%= proposal.titulo %></td>
+        <td><%= link_to proposal.titulo, proposal %></td>
+        <td><%= proposal.upvotes %></td>
+        <td><%= proposal.downvotes %></td>
         <td><%= proposal.score %></td>
-        <td><%= link_to 'Show', proposal %></td>
-        <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
-        <td><%= link_to 'Destroy', proposal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h4>Propuestas con mayor rechazo</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Likes</th>
+      <th>Dislikes</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @most_disliked_proposals.each do |proposal| %>
+      <tr>
+        <td><%= link_to proposal.titulo, proposal %></td>
+        <td><%= proposal.upvotes %></td>
+        <td><%= proposal.downvotes %></td>
+        <td><%= proposal.score %></td>
       </tr>
     <% end %>
   </tbody>

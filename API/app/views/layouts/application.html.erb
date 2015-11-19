@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Bootstrap --> 
+  <!-- Bootstrap -->
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <!-- jQuery -->
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -21,6 +21,7 @@
 
           <% if current_user %>
           <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to 'statistics', statistics_path %></li>
             <li><%= link_to 'proposals', proposals_path %></li>
             <li><%= link_to 'users', users_path %></li>
           </ul>

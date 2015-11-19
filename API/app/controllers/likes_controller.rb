@@ -2,7 +2,8 @@ class LikesController < ApplicationController
   before_action :restrict_access
   before_action :find_owner
   before_action :set_like, only: [:show, :edit, :update, :destroy]
-  before_action :authorize, only: [:edit, :update, :destroy]
+  before_action :set_like_by_user, only: :delete_by_user
+  before_action :authorize, only: [:edit, :update, :destroy, :delete_by_user]
 
   # GET  /proposals/:proposal_id/comments/:comment_id/likes
   # GET /proposals/:proposal_id/comments/:comment_id/likes.json
@@ -70,18 +71,35 @@ class LikesController < ApplicationController
     end
   end
 
+  def delete_by_user
+    respond_to do |format|
+      format.html {
+        flash[:notice] = "Function available for mobile app only."
+        redirect_to proposal_path(@proposal)
+      }
+      format.json {
+        if @like
+          @like.destroy
+          render json: {destroy: "like deleted", status: :ok}
+        else
+          render json: {error: "user doesnt have like", status: :error}
+        end
+      }
+    end
+  end
+
   private
     def authorize
       respond_to do |format|
         format.html{
-          if current_user && (@like.user.id == current_user.id || is_admin?)
+          if current_user && @like && (@like.user.id == current_user.id || is_admin?)
           else
             flash[:notice] = "Access Denied."
             redirect_to proposal_comment_likes_path(@comment)
           end
         }
         format.json{
-          if current_user_api && (@like.user.id == current_user_api.id || is_admin?)
+          if current_user_api && @like && (@like.user.id == current_user_api.id || is_admin?)
           else
             render json: {
               error: "Denied Acces",
@@ -102,6 +120,9 @@ class LikesController < ApplicationController
       @like = Like.find(params[:id])
     end
 
+    def set_like_by_user
+      @like = @comment.likes.find_by(user_id: current_user_api)
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def like_params
       params.require(:like).permit(:score)

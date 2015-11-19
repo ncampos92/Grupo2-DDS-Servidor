@@ -9,6 +9,7 @@ class EstadisticasController < ApplicationController
 
   private
     def set_proposals
-      @proposals = Proposal.all.sort {|a,b| b.score <=> a.score}
+      @most_liked_proposals = Proposal.all.sort {|a,b| b.upvotes <=> a.upvotes}.first(5)
+      @most_disliked_proposals = Proposal.all.sort {|a,b| b.downvotes <=> a.downvotes}.first(5)
     end
 end

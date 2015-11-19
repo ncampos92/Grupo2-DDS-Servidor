@@ -4,9 +4,6 @@ json.array!(@proposals) do |proposal|
   json.likes proposal.upvotes
   json.dislikes proposal.downvotes
   json.comments proposal.comments.count
-  if proposal.proplikes.find_by(user_id: current_user_api)
-    json.user_likes true
-  else
-    json.user_likes false
-  end
+  json.user_likes proposal.user_likes(current_user_api)
+  json.user_dislikes proposal.user_dislikes(current_user_api)
 end
