@@ -8,20 +8,22 @@
   <table class="table">
     <thead>
       <tr>
-        <th class="col-md-6">Titulo</th>
+        <th class="col-md-4">Titulo</th>
         <th class="col-md-2">Likes</th>
         <th class="col-md-2">Dislikes</th>
         <th class="col-md-2">Score</th>
+        <th class="col-md-2">Apoyo</th>
       </tr>
     </thead>
 
     <tbody>
       <% @top_proposals.each do |proposal| %>
       <tr>
-        <td class="col-md-6"><%= link_to proposal.titulo, proposal %></td>
+        <td class="col-md-4"><%= link_to proposal.titulo, proposal %></td>
         <td class="col-md-2"><%= proposal.upvotes %></td>
         <td class="col-md-2"><%= proposal.downvotes %></td>
         <td class="col-md-2"><%= proposal.score %></td>
+        <td class="col-md-2"><%= proposal.apoyo %>%</td>
       </tr>
       <% end %>
     </tbody>
@@ -34,20 +36,22 @@
   <table class="table">
     <thead>
       <tr>
-        <th class="col-md-6">Titulo</th>
+        <th class="col-md-4">Titulo</th>
         <th class="col-md-2">Likes</th>
         <th class="col-md-2">Dislikes</th>
         <th class="col-md-2">Score</th>
+        <th class="col-md-2">Apoyo</th>
       </tr>
     </thead>
 
     <tbody>
       <% @most_liked_proposals.each do |proposal| %>
       <tr>
-        <td class="col-md-6"><%= link_to proposal.titulo, proposal %></td>
+        <td class="col-md-4"><%= link_to proposal.titulo, proposal %></td>
         <td class="col-md-2"><%= proposal.upvotes %></td>
         <td class="col-md-2"><%= proposal.downvotes %></td>
         <td class="col-md-2"><%= proposal.score %></td>
+        <td class="col-md-2"><%= proposal.apoyo %>%</td>
       </tr>
       <% end %>
     </tbody>
@@ -60,20 +64,22 @@
   <table class="table">
     <thead>
       <tr>
-        <th class="col-md-6">Titulo</th>
+        <th class="col-md-4">Titulo</th>
         <th class="col-md-2">Likes</th>
         <th class="col-md-2">Dislikes</th>
         <th class="col-md-2">Score</th>
+        <th class="col-md-2">Apoyo</th>
       </tr>
     </thead>
 
     <tbody>
       <% @most_disliked_proposals.each do |proposal| %>
       <tr>
-        <td class="col-md-6"><%= link_to proposal.titulo, proposal %></td>
+        <td class="col-md-4"><%= link_to proposal.titulo, proposal %></td>
         <td class="col-md-2"><%= proposal.upvotes %></td>
         <td class="col-md-2"><%= proposal.downvotes %></td>
         <td class="col-md-2"><%= proposal.score %></td>
+        <td class="col-md-2"><%= proposal.apoyo %>%</td>
       </tr>
       <% end %>
     </tbody>

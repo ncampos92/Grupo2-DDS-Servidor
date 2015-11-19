@@ -41,4 +41,13 @@ class Proposal < ActiveRecord::Base
   def interactions
     self.upvotes + self.downvotes
   end
+
+  def apoyo
+    if self.interactions != 0
+      apoyo = self.upvotes/self.interactions*100;
+      return apoyo.round(2);
+    else
+      return 0;
+    end
+  end
 end
