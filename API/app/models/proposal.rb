@@ -44,7 +44,7 @@ class Proposal < ActiveRecord::Base
 
   def apoyo
     if self.interactions != 0
-      apoyo = self.upvotes/self.interactions*100;
+      apoyo = Float(self.upvotes)/self.interactions*100;
       return apoyo.round(2);
     else
       return 0;
