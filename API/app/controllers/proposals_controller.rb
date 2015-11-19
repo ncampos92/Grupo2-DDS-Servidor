@@ -14,6 +14,7 @@ class ProposalsController < ApplicationController
   # GET /proposals/1
   # GET /proposals/1.json
   def show
+    @top_comments = @proposal.comments.sort { |a, b| b.interactions <=> a.interactions }.first(5)
   end
 
   # GET /proposals/new

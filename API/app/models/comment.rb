@@ -14,6 +14,10 @@ class Comment < ActiveRecord::Base
     self.likes.where(score: -1).count
   end
 
+  def score
+    self.upvotes - self.downvotes
+  end
+
   def user_likes user
     if self.likes.find_by(user_id: user, score: 1)
     	return 'true'
@@ -28,5 +32,9 @@ class Comment < ActiveRecord::Base
     else
     	return 'false'
     end
+  end
+
+  def interactions
+    self.upvotes + self.downvotes
   end
 end
