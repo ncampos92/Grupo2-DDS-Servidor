@@ -1,0 +1,5559 @@
+---
+:flay:
+  :total_score: '534'
+  :matches:
+  - :reason: 1) Similar code found in :defn (mass = 150)
+    :matches:
+    - :name: app/controllers/comments_controller.rb
+      :line: '74'
+    - :name: app/controllers/likes_controller.rb
+      :line: '74'
+    - :name: app/controllers/proplikes_controller.rb
+      :line: '74'
+  - :reason: 2) Similar code found in :defn (mass = 88)
+    :matches:
+    - :name: app/controllers/proposals_controller.rb
+      :line: '47'
+    - :name: app/controllers/users_controller.rb
+      :line: '52'
+  - :reason: 3) Similar code found in :defn (mass = 58)
+    :matches:
+    - :name: app/controllers/comments_controller.rb
+      :line: '64'
+    - :name: app/controllers/proplikes_controller.rb
+      :line: '64'
+  - :reason: 4) Similar code found in :block (mass = 52)
+    :matches:
+    - :name: app/controllers/likes_controller.rb
+      :line: '38'
+    - :name: app/controllers/likes_controller.rb
+      :line: '53'
+  - :reason: 5) Similar code found in :block (mass = 50)
+    :matches:
+    - :name: app/controllers/comments_controller.rb
+      :line: '38'
+    - :name: app/controllers/comments_controller.rb
+      :line: '53'
+  - :reason: 6) Similar code found in :call (mass = 48)
+    :matches:
+    - :name: app/views/comments/index.html.erb
+      :line: '23'
+    - :name: app/views/proplikes/index.html.erb
+      :line: '21'
+    - :name: app/views/proposals/show.html.erb
+      :line: '50'
+  - :reason: 7) Similar code found in :block (mass = 46)
+    :matches:
+    - :name: app/controllers/proplikes_controller.rb
+      :line: '38'
+    - :name: app/controllers/proplikes_controller.rb
+      :line: '53'
+  - :reason: 8) Similar code found in :defn (mass = 42)
+    :matches:
+    - :name: app/controllers/proposals_controller.rb
+      :line: '61'
+    - :name: app/controllers/users_controller.rb
+      :line: '66'
+:reek:
+  :matches:
+  - :file_path: app/models/comment.rb
+    :code_smells:
+    - :method: Comment
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/controllers/comments_controller.rb
+    :code_smells:
+    - :method: CommentsController
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+    - :method: CommentsController#authorize
+      :message: calls @comment.user 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 77
+      - 84
+    - :method: CommentsController#authorize
+      :message: calls @comment.user.id 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 77
+      - 84
+    - :method: CommentsController#authorize
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 83
+    - :method: CommentsController#authorize
+      :message: has approx 6 statements
+      :type: TooManyStatements
+      :lines:
+      - 74
+    - :method: CommentsController#create
+      :message: calls @comment.proposal 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 38
+      - 39
+    - :method: CommentsController#create
+      :message: calls @comment.user 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 33
+      - 34
+    - :method: CommentsController#create
+      :message: calls format.html 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 38
+      - 41
+    - :method: CommentsController#create
+      :message: calls format.json 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 39
+      - 42
+    - :method: CommentsController#create
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 42
+    - :method: CommentsController#create
+      :message: has approx 12 statements
+      :type: TooManyStatements
+      :lines:
+      - 31
+    - :method: CommentsController#destroy
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 69
+    - :method: CommentsController#destroy
+      :message: has approx 7 statements
+      :type: TooManyStatements
+      :lines:
+      - 64
+    - :method: CommentsController#update
+      :message: calls @comment.proposal 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 53
+      - 54
+    - :method: CommentsController#update
+      :message: calls format.html 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 53
+      - 56
+    - :method: CommentsController#update
+      :message: calls format.json 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 54
+      - 57
+    - :method: CommentsController#update
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 57
+    - :method: CommentsController#update
+      :message: has approx 10 statements
+      :type: TooManyStatements
+      :lines:
+      - 49
+  - :file_path: app/models/like.rb
+    :code_smells:
+    - :method: Like
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/controllers/likes_controller.rb
+    :code_smells:
+    - :method: LikesController
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+    - :method: LikesController#authorize
+      :message: calls @like.user 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 77
+      - 84
+    - :method: LikesController#authorize
+      :message: calls @like.user.id 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 77
+      - 84
+    - :method: LikesController#authorize
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 83
+    - :method: LikesController#authorize
+      :message: has approx 6 statements
+      :type: TooManyStatements
+      :lines:
+      - 74
+    - :method: LikesController#create
+      :message: calls @like.comment 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 38
+      - 39
+    - :method: LikesController#create
+      :message: calls @like.user 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 33
+      - 34
+    - :method: LikesController#create
+      :message: calls format.html 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 38
+      - 41
+    - :method: LikesController#create
+      :message: calls format.json 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 39
+      - 42
+    - :method: LikesController#create
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 42
+    - :method: LikesController#create
+      :message: has approx 12 statements
+      :type: TooManyStatements
+      :lines:
+      - 31
+    - :method: LikesController#destroy
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 69
+    - :method: LikesController#destroy
+      :message: has approx 7 statements
+      :type: TooManyStatements
+      :lines:
+      - 64
+    - :method: LikesController#update
+      :message: calls @like.comment 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 53
+      - 54
+    - :method: LikesController#update
+      :message: calls format.html 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 53
+      - 56
+    - :method: LikesController#update
+      :message: calls format.json 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 54
+      - 57
+    - :method: LikesController#update
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 57
+    - :method: LikesController#update
+      :message: has approx 10 statements
+      :type: TooManyStatements
+      :lines:
+      - 49
+  - :file_path: app/models/proplike.rb
+    :code_smells:
+    - :method: Proplike
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/controllers/proplikes_controller.rb
+    :code_smells:
+    - :method: ProplikesController
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+    - :method: ProplikesController#authorize
+      :message: calls @proplike.user 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 77
+      - 84
+    - :method: ProplikesController#authorize
+      :message: calls @proplike.user.id 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 77
+      - 84
+    - :method: ProplikesController#authorize
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 83
+    - :method: ProplikesController#authorize
+      :message: has approx 6 statements
+      :type: TooManyStatements
+      :lines:
+      - 74
+    - :method: ProplikesController#create
+      :message: calls @proplike.proposal 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 38
+      - 39
+    - :method: ProplikesController#create
+      :message: calls @proplike.user 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 33
+      - 34
+    - :method: ProplikesController#create
+      :message: calls format.html 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 38
+      - 41
+    - :method: ProplikesController#create
+      :message: calls format.json 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 39
+      - 42
+    - :method: ProplikesController#create
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 42
+    - :method: ProplikesController#create
+      :message: has approx 12 statements
+      :type: TooManyStatements
+      :lines:
+      - 31
+    - :method: ProplikesController#destroy
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 69
+    - :method: ProplikesController#destroy
+      :message: has approx 7 statements
+      :type: TooManyStatements
+      :lines:
+      - 64
+    - :method: ProplikesController#update
+      :message: calls @proplike.proposal 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 53
+      - 54
+    - :method: ProplikesController#update
+      :message: calls format.html 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 53
+      - 56
+    - :method: ProplikesController#update
+      :message: calls format.json 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 54
+      - 57
+    - :method: ProplikesController#update
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 57
+    - :method: ProplikesController#update
+      :message: has approx 10 statements
+      :type: TooManyStatements
+      :lines:
+      - 49
+  - :file_path: app/models/proposal.rb
+    :code_smells:
+    - :method: Proposal
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/controllers/proposals_controller.rb
+    :code_smells:
+    - :method: ProposalsController
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+    - :method: ProposalsController#create
+      :message: calls format.html 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 36
+      - 39
+    - :method: ProposalsController#create
+      :message: calls format.json 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 37
+      - 40
+    - :method: ProposalsController#create
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 40
+    - :method: ProposalsController#create
+      :message: has approx 12 statements
+      :type: TooManyStatements
+      :lines:
+      - 30
+    - :method: ProposalsController#destroy
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 65
+    - :method: ProposalsController#destroy
+      :message: has approx 6 statements
+      :type: TooManyStatements
+      :lines:
+      - 61
+    - :method: ProposalsController#update
+      :message: calls format.html 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 50
+      - 53
+    - :method: ProposalsController#update
+      :message: calls format.json 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 51
+      - 54
+    - :method: ProposalsController#update
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 54
+    - :method: ProposalsController#update
+      :message: has approx 9 statements
+      :type: TooManyStatements
+      :lines:
+      - 47
+  - :file_path: app/helpers/scrapping_la_lupa.rb
+    :code_smells:
+    - :method: ScrappingLaLupa#get_porposal
+      :message: calls proposal_page.search(".TwitterCard-body") 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 19
+      - 20
+    - :method: ScrappingLaLupa#get_porposal
+      :message: has approx 6 statements
+      :type: TooManyStatements
+      :lines:
+      - 15
+    - :method: ScrappingLaLupa#get_proposals
+      :message: has approx 7 statements
+      :type: TooManyStatements
+      :lines:
+      - 5
+    - :method: ScrappingLaLupa#save_proposal
+      :message: calls user.id 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 29
+      - 31
+    - :method: ScrappingLaLupa#save_proposal
+      :message: doesn't depend on instance state
+      :type: UtilityFunction
+      :lines:
+      - 24
+    - :method: ScrappingLaLupa#save_proposal
+      :message: has unused parameter 'author'
+      :type: UnusedParameters
+      :lines:
+      - 24
+    - :method: ScrappingLaLupa#save_proposal
+      :message: performs a nil-check
+      :type: NilCheck
+      :lines:
+      - 26
+  - :file_path: app/helpers/session_helper.rb
+    :code_smells:
+    - :method: SessionHelper#current_user_api
+      :message: calls request.headers 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 13
+      - 14
+    - :method: SessionHelper#current_user_api
+      :message: calls request.headers["token"] 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 13
+      - 14
+    - :method: SessionHelper#logged_in?
+      :message: performs a nil-check
+      :type: NilCheck
+      :lines:
+      - 20
+    - :method: SessionHelper#logged_in_api?
+      :message: calls request.headers 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 24
+      - 25
+    - :method: SessionHelper#logged_in_api?
+      :message: performs a nil-check
+      :type: NilCheck
+      :lines:
+      - 25
+  - :file_path: app/models/user.rb
+    :code_smells:
+    - :method: User
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/controllers/users_controller.rb
+    :code_smells:
+    - :method: UsersController
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+    - :method: UsersController#authorize
+      :message: calls @user.id 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 85
+      - 92
+    - :method: UsersController#authorize
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 91
+    - :method: UsersController#authorize
+      :message: has approx 6 statements
+      :type: TooManyStatements
+      :lines:
+      - 82
+    - :method: UsersController#create
+      :message: calls format.html 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 37
+      - 44
+    - :method: UsersController#create
+      :message: calls format.json 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 40
+      - 45
+    - :method: UsersController#create
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 45
+    - :method: UsersController#create
+      :message: has approx 15 statements
+      :type: TooManyStatements
+      :lines:
+      - 30
+    - :method: UsersController#destroy
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 70
+    - :method: UsersController#destroy
+      :message: has approx 6 statements
+      :type: TooManyStatements
+      :lines:
+      - 66
+    - :method: UsersController#update
+      :message: calls format.html 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 55
+      - 58
+    - :method: UsersController#update
+      :message: calls format.json 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 56
+      - 59
+    - :method: UsersController#update
+      :message: contains iterators nested 2 deep
+      :type: NestedIterators
+      :lines:
+      - 59
+    - :method: UsersController#update
+      :message: has approx 9 statements
+      :type: TooManyStatements
+      :lines:
+      - 52
+    - :method: UsersController#user_level_authorization
+      :message: calls params[:user] 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 104
+      - 105
+:cane:
+  :total_violations: 132
+  :violations:
+    :abc_complexity:
+    - :file: app/controllers/session_controller.rb
+      :method: SessionController#create
+      :complexity: '20'
+    - :file: app/controllers/users_controller.rb
+      :method: UsersController#create
+      :complexity: '18'
+    - :file: app/controllers/comments_controller.rb
+      :method: CommentsController#update
+      :complexity: '18'
+    - :file: app/controllers/comments_controller.rb
+      :method: CommentsController#create
+      :complexity: '18'
+    - :file: app/controllers/proplikes_controller.rb
+      :method: ProplikesController#authorize
+      :complexity: '17'
+    - :file: app/controllers/proplikes_controller.rb
+      :method: ProplikesController#update
+      :complexity: '17'
+    - :file: app/controllers/proplikes_controller.rb
+      :method: ProplikesController#create
+      :complexity: '17'
+    - :file: app/controllers/comments_controller.rb
+      :method: CommentsController#authorize
+      :complexity: '17'
+    - :file: app/controllers/likes_controller.rb
+      :method: LikesController#authorize
+      :complexity: '17'
+    - :file: app/controllers/likes_controller.rb
+      :method: LikesController#update
+      :complexity: '17'
+    - :file: app/controllers/likes_controller.rb
+      :method: LikesController#create
+      :complexity: '17'
+    :line_style:
+    - :line: app/helpers/scrapping_la_lupa.rb:7
+      :description: Line is >80 characters (89)
+    - :line: app/helpers/scrapping_la_lupa.rb:19
+      :description: Line is >80 characters (92)
+    - :line: app/helpers/session_helper.rb:7
+      :description: Line contains hard tabs
+    - :line: app/helpers/session_helper.rb:8
+      :description: Line contains hard tabs
+    - :line: app/helpers/session_helper.rb:18
+      :description: Line contains hard tabs
+    - :line: app/helpers/session_helper.rb:19
+      :description: Line contains hard tabs
+    - :line: app/helpers/session_helper.rb:20
+      :description: Line contains hard tabs
+    - :line: app/helpers/session_helper.rb:21
+      :description: Line contains hard tabs
+    - :line: app/helpers/session_helper.rb:33
+      :description: Line contains hard tabs
+    - :line: app/helpers/session_helper.rb:35
+      :description: Line contains hard tabs
+    - :line: app/models/user.rb:12
+      :description: Line is >80 characters (135)
+    - :line: app/models/user.rb:13
+      :description: Line is >80 characters (81)
+    - :line: app/models/user.rb:17
+      :description: Line contains trailing whitespace
+    - :line: app/models/user.rb:23
+      :description: Line contains hard tabs
+    - :line: app/models/user.rb:24
+      :description: Line contains hard tabs
+    - :line: app/models/user.rb:25
+      :description: Line contains hard tabs
+    - :line: app/models/user.rb:27
+      :description: Line contains hard tabs
+    - :line: app/models/user.rb:28
+      :description: Line contains hard tabs
+    - :line: app/controllers/likes_controller.rb:38
+      :description: Line is >80 characters (104)
+    - :line: app/controllers/likes_controller.rb:39
+      :description: Line is >80 characters (99)
+    - :line: app/controllers/likes_controller.rb:53
+      :description: Line is >80 characters (104)
+    - :line: app/controllers/likes_controller.rb:54
+      :description: Line is >80 characters (94)
+    - :line: app/controllers/likes_controller.rb:68
+      :description: Line is >80 characters (126)
+    - :line: app/controllers/likes_controller.rb:84
+      :description: Line is >80 characters (84)
+    - :line: app/controllers/likes_controller.rb:105
+      :description: Line is >80 characters (88)
+    - :line: app/controllers/session_controller.rb:2
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:4
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:5
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:6
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:7
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:8
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:9
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:10
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:11
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:12
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:13
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:14
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:15
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:16
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:17
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:19
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:20
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:25
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:26
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:27
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:29
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:30
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:31
+      :description: Line is >80 characters (108)
+    - :line: app/controllers/session_controller.rb:31
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:36
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:37
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:38
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:39
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:40
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:41
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:42
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:44
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:46
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:47
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:48
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:49
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:50
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:51
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:52
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:53
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:54
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:55
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:56
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:57
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:58
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:59
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:60
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:61
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:62
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:63
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:65
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:66
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:67
+      :description: Line contains hard tabs
+    - :line: app/controllers/session_controller.rb:68
+      :description: Line contains hard tabs
+    - :line: app/controllers/proposals_controller.rb:36
+      :description: Line is >80 characters (91)
+    - :line: app/controllers/proposals_controller.rb:40
+      :description: Line is >80 characters (84)
+    - :line: app/controllers/proposals_controller.rb:50
+      :description: Line is >80 characters (91)
+    - :line: app/controllers/proposals_controller.rb:54
+      :description: Line is >80 characters (84)
+    - :line: app/controllers/proposals_controller.rb:64
+      :description: Line is >80 characters (95)
+    - :line: app/controllers/proposals_controller.rb:101
+      :description: Line is >80 characters (88)
+    - :line: app/controllers/application_controller.rb:19
+      :description: Line is >80 characters (128)
+    - :line: app/controllers/comments_controller.rb:38
+      :description: Line is >80 characters (112)
+    - :line: app/controllers/comments_controller.rb:39
+      :description: Line is >80 characters (95)
+    - :line: app/controllers/comments_controller.rb:42
+      :description: Line is >80 characters (83)
+    - :line: app/controllers/comments_controller.rb:53
+      :description: Line is >80 characters (112)
+    - :line: app/controllers/comments_controller.rb:54
+      :description: Line is >80 characters (90)
+    - :line: app/controllers/comments_controller.rb:57
+      :description: Line is >80 characters (83)
+    - :line: app/controllers/comments_controller.rb:68
+      :description: Line is >80 characters (115)
+    - :line: app/controllers/comments_controller.rb:84
+      :description: Line is >80 characters (87)
+    - :line: app/controllers/comments_controller.rb:103
+      :description: Line is >80 characters (88)
+    - :line: app/controllers/users_controller.rb:38
+      :description: Line contains hard tabs
+    - :line: app/controllers/users_controller.rb:55
+      :description: Line is >80 characters (83)
+    - :line: app/controllers/users_controller.rb:69
+      :description: Line is >80 characters (88)
+    - :line: app/controllers/users_controller.rb:113
+      :description: Line is >80 characters (88)
+    - :line: app/controllers/users_controller.rb:115
+      :description: Line is >80 characters (185)
+    - :line: app/controllers/proplikes_controller.rb:38
+      :description: Line is >80 characters (100)
+    - :line: app/controllers/proplikes_controller.rb:39
+      :description: Line is >80 characters (97)
+    - :line: app/controllers/proplikes_controller.rb:42
+      :description: Line is >80 characters (84)
+    - :line: app/controllers/proplikes_controller.rb:53
+      :description: Line is >80 characters (100)
+    - :line: app/controllers/proplikes_controller.rb:54
+      :description: Line is >80 characters (92)
+    - :line: app/controllers/proplikes_controller.rb:57
+      :description: Line is >80 characters (84)
+    - :line: app/controllers/proplikes_controller.rb:68
+      :description: Line is >80 characters (115)
+    - :line: app/controllers/proplikes_controller.rb:84
+      :description: Line is >80 characters (88)
+    - :line: app/controllers/proplikes_controller.rb:103
+      :description: Line is >80 characters (88)
+    :comment:
+    - :line: app/helpers/scrapping_la_lupa.rb:3
+      :class_name: ScrappingLaLupa
+    - :line: app/helpers/session_helper.rb:1
+      :class_name: SessionHelper
+    - :line: app/models/comment.rb:1
+      :class_name: Comment
+    - :line: app/models/user.rb:1
+      :class_name: User
+    - :line: app/models/proposal.rb:1
+      :class_name: Proposal
+    - :line: app/controllers/likes_controller.rb:1
+      :class_name: LikesController
+    - :line: app/controllers/session_controller.rb:1
+      :class_name: SessionController
+    - :line: app/controllers/proposals_controller.rb:1
+      :class_name: ProposalsController
+    - :line: app/controllers/application_controller.rb:1
+      :class_name: ApplicationController
+    - :line: app/controllers/comments_controller.rb:1
+      :class_name: CommentsController
+    - :line: app/controllers/users_controller.rb:1
+      :class_name: UsersController
+    - :line: app/controllers/proplikes_controller.rb:1
+      :class_name: ProplikesController
+:roodi:
+  :total:
+  - Checked 20 files
+  :problems:
+  - :file: app/controllers/likes_controller.rb
+    :line: '75'
+    :problem: Block cyclomatic complexity is 7.  It should be 4 or less.
+  - :file: app/controllers/comments_controller.rb
+    :line: '75'
+    :problem: Block cyclomatic complexity is 7.  It should be 4 or less.
+  - :file: app/controllers/users_controller.rb
+    :line: '83'
+    :problem: Block cyclomatic complexity is 7.  It should be 4 or less.
+  - :file: app/controllers/proplikes_controller.rb
+    :line: '75'
+    :problem: Block cyclomatic complexity is 7.  It should be 4 or less.
+:saikuro:
+  :files:
+  - :classes:
+    - :class_name: UsersController
+      :complexity: 35
+      :lines: 116
+      :methods:
+      - :name: UsersController#create
+        :complexity: 8
+        :lines: 18
+      - :name: UsersController#update
+        :complexity: 7
+        :lines: 10
+      - :name: UsersController#authorize
+        :complexity: 6
+        :lines: 19
+      - :name: UsersController#destroy
+        :complexity: 4
+        :lines: 6
+      - :name: UsersController#user_level_authorization
+        :complexity: 2
+        :lines: 4
+      - :name: UsersController#restrict_register
+        :complexity: 2
+        :lines: 4
+      - :name: UsersController#user_params
+        :complexity: 1
+        :lines: 2
+      - :name: UsersController#set_user
+        :complexity: 1
+        :lines: 2
+      - :name: UsersController#edit
+        :complexity: 1
+        :lines: 1
+      - :name: UsersController#new
+        :complexity: 1
+        :lines: 2
+      - :name: UsersController#show
+        :complexity: 1
+        :lines: 1
+      - :name: UsersController#index
+        :complexity: 1
+        :lines: 2
+    :filename: app/controllers/users_controller.rb
+  - :classes:
+    - :class_name: ProplikesController
+      :complexity: 31
+      :lines: 106
+      :methods:
+      - :name: ProplikesController#update
+        :complexity: 7
+        :lines: 11
+      - :name: ProplikesController#create
+        :complexity: 7
+        :lines: 14
+      - :name: ProplikesController#authorize
+        :complexity: 6
+        :lines: 19
+      - :name: ProplikesController#destroy
+        :complexity: 4
+        :lines: 7
+      - :name: ProplikesController#proplike_params
+        :complexity: 1
+        :lines: 2
+      - :name: ProplikesController#set_proplike
+        :complexity: 1
+        :lines: 2
+      - :name: ProplikesController#find_owner
+        :complexity: 1
+        :lines: 2
+      - :name: ProplikesController#edit
+        :complexity: 1
+        :lines: 2
+      - :name: ProplikesController#new
+        :complexity: 1
+        :lines: 2
+      - :name: ProplikesController#show
+        :complexity: 1
+        :lines: 2
+      - :name: ProplikesController#index
+        :complexity: 1
+        :lines: 2
+    :filename: app/controllers/proplikes_controller.rb
+  - :classes:
+    - :class_name: LikesController
+      :complexity: 31
+      :lines: 108
+      :methods:
+      - :name: LikesController#update
+        :complexity: 7
+        :lines: 11
+      - :name: LikesController#create
+        :complexity: 7
+        :lines: 14
+      - :name: LikesController#authorize
+        :complexity: 6
+        :lines: 19
+      - :name: LikesController#destroy
+        :complexity: 4
+        :lines: 7
+      - :name: LikesController#like_params
+        :complexity: 1
+        :lines: 2
+      - :name: LikesController#set_like
+        :complexity: 1
+        :lines: 2
+      - :name: LikesController#find_owner
+        :complexity: 1
+        :lines: 3
+      - :name: LikesController#edit
+        :complexity: 1
+        :lines: 2
+      - :name: LikesController#new
+        :complexity: 1
+        :lines: 2
+      - :name: LikesController#show
+        :complexity: 1
+        :lines: 2
+      - :name: LikesController#index
+        :complexity: 1
+        :lines: 2
+    :filename: app/controllers/likes_controller.rb
+  - :classes:
+    - :class_name: CommentsController
+      :complexity: 31
+      :lines: 106
+      :methods:
+      - :name: CommentsController#update
+        :complexity: 7
+        :lines: 11
+      - :name: CommentsController#create
+        :complexity: 7
+        :lines: 14
+      - :name: CommentsController#authorize
+        :complexity: 6
+        :lines: 19
+      - :name: CommentsController#destroy
+        :complexity: 4
+        :lines: 7
+      - :name: CommentsController#proposal_comment_params
+        :complexity: 1
+        :lines: 2
+      - :name: CommentsController#set_comment
+        :complexity: 1
+        :lines: 2
+      - :name: CommentsController#find_owner
+        :complexity: 1
+        :lines: 2
+      - :name: CommentsController#edit
+        :complexity: 1
+        :lines: 2
+      - :name: CommentsController#new
+        :complexity: 1
+        :lines: 2
+      - :name: CommentsController#show
+        :complexity: 1
+        :lines: 2
+      - :name: CommentsController#index
+        :complexity: 1
+        :lines: 2
+    :filename: app/controllers/comments_controller.rb
+  - :classes:
+    - :class_name: ProposalsController
+      :complexity: 30
+      :lines: 104
+      :methods:
+      - :name: ProposalsController#update
+        :complexity: 7
+        :lines: 10
+      - :name: ProposalsController#create
+        :complexity: 7
+        :lines: 13
+      - :name: ProposalsController#destroy
+        :complexity: 4
+        :lines: 6
+      - :name: ProposalsController#set_owner
+        :complexity: 2
+        :lines: 5
+      - :name: ProposalsController#authorize_create
+        :complexity: 2
+        :lines: 6
+      - :name: ProposalsController#authorize
+        :complexity: 2
+        :lines: 6
+      - :name: ProposalsController#proposal_params
+        :complexity: 1
+        :lines: 2
+      - :name: ProposalsController#set_proposal
+        :complexity: 1
+        :lines: 2
+      - :name: ProposalsController#edit
+        :complexity: 1
+        :lines: 1
+      - :name: ProposalsController#new
+        :complexity: 1
+        :lines: 2
+      - :name: ProposalsController#show
+        :complexity: 1
+        :lines: 1
+      - :name: ProposalsController#index
+        :complexity: 1
+        :lines: 2
+    :filename: app/controllers/proposals_controller.rb
+  - :classes:
+    - :class_name: SessionController
+      :complexity: 21
+      :lines: 68
+      :methods:
+      - :name: SessionController#create
+        :complexity: 8
+        :lines: 25
+      - :name: SessionController#destroy
+        :complexity: 6
+        :lines: 17
+      - :name: SessionController#new
+        :complexity: 6
+        :lines: 13
+      - :name: SessionController#session_params
+        :complexity: 1
+        :lines: 2
+    :filename: app/controllers/session_controller.rb
+  - :classes:
+    - :class_name: ApplicationController
+      :complexity: 16
+      :lines: 52
+      :methods:
+      - :name: ApplicationController#restrict_access
+        :complexity: 6
+        :lines: 14
+      - :name: ApplicationController#is_editor?
+        :complexity: 5
+        :lines: 11
+      - :name: ApplicationController#is_admin?
+        :complexity: 5
+        :lines: 11
+    :filename: app/controllers/application_controller.rb
+  - :classes:
+    - :class_name: SessionHelper
+      :complexity: 8
+      :lines: 35
+      :methods:
+      - :name: SessionHelper#current_user_api
+        :complexity: 2
+        :lines: 4
+      - :name: SessionHelper#log_out
+        :complexity: 1
+        :lines: 2
+      - :name: SessionHelper#log_out_api
+        :complexity: 1
+        :lines: 2
+      - :name: SessionHelper#logged_in_api?
+        :complexity: 1
+        :lines: 3
+      - :name: SessionHelper#logged_in?
+        :complexity: 1
+        :lines: 2
+      - :name: SessionHelper#current_user
+        :complexity: 1
+        :lines: 2
+      - :name: SessionHelper#log_in
+        :complexity: 1
+        :lines: 2
+    :filename: app/helpers/session_helper.rb
+  - :classes:
+    - :class_name: ScrappingLaLupa
+      :complexity: 7
+      :lines: 31
+      :methods:
+      - :name: ScrappingLaLupa#save_proposal
+        :complexity: 3
+        :lines: 9
+      - :name: ScrappingLaLupa#get_proposals
+        :complexity: 3
+        :lines: 8
+      - :name: ScrappingLaLupa#get_porposal
+        :complexity: 1
+        :lines: 7
+    :filename: app/helpers/scrapping_la_lupa.rb
+  - :classes:
+    - :class_name: User
+      :complexity: 5
+      :lines: 35
+      :methods:
+      - :name: User#User.new_token
+        :complexity: 2
+        :lines: 5
+      - :name: User#User.digest
+        :complexity: 2
+        :lines: 4
+    :filename: app/models/user.rb
+  - :classes:
+    - :class_name: Comment
+      :complexity: 2
+      :lines: 15
+      :methods:
+      - :name: Comment#downvotes
+        :complexity: 1
+        :lines: 2
+      - :name: Comment#upvotes
+        :complexity: 1
+        :lines: 2
+    :filename: app/models/comment.rb
+  - :classes:
+    - :class_name: Proposal
+      :complexity: 2
+      :lines: 15
+      :methods:
+      - :name: Proposal#downvotes
+        :complexity: 1
+        :lines: 2
+      - :name: Proposal#upvotes
+        :complexity: 1
+        :lines: 2
+    :filename: app/models/proposal.rb
+  - :classes:
+    - :class_name: ''
+      :complexity: 1
+      :lines: 0
+      :methods: []
+    :filename: app/views/proplikes/index.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 1
+      :lines: 0
+      :methods: []
+    :filename: app/views/likes/index.html.erb
+  - :classes:
+    - :class_name: Titulo
+      :complexity: 1
+      :lines: 9
+      :methods: []
+    :filename: app/views/proposals/index.html.erb
+  - :classes:
+    - :class_name: Like
+      :complexity: 0
+      :lines: 7
+      :methods: []
+    :filename: app/models/like.rb
+  - :classes:
+    - :class_name: Proplike
+      :complexity: 0
+      :lines: 7
+      :methods: []
+    :filename: app/models/proplike.rb
+  - :classes:
+    - :class_name: ProposalsHelper
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/helpers/proposals_helper.rb
+  - :classes:
+    - :class_name: LikesHelper
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/helpers/likes_helper.rb
+  - :classes:
+    - :class_name: ApplicationHelper
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/helpers/application_helper.rb
+  - :classes:
+    - :class_name: CommentsHelper
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/helpers/comments_helper.rb
+  - :classes:
+    - :class_name: UsersHelper
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/helpers/users_helper.rb
+  - :classes:
+    - :class_name: ProplikesHelper
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/helpers/proplikes_helper.rb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/views/proplikes/_form.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 0
+      :methods: []
+    :filename: app/views/proplikes/show.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 4
+      :methods: []
+    :filename: app/views/comments/_form.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 0
+      :methods: []
+    :filename: app/views/comments/show.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/views/likes/_form.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 0
+      :methods: []
+    :filename: app/views/likes/show.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    - :class_name: "::Iniciar"
+      :complexity: 0
+      :lines: 7
+      :methods: []
+    - :class_name: "::Iniciar::"
+      :complexity: 0
+      :lines: 3
+      :methods: []
+    :filename: app/views/session/new.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 4
+      :methods: []
+    :filename: app/views/proposals/_form.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 0
+      :methods: []
+    :filename: app/views/proposals/show.html.erb
+  - :classes:
+    - :class_name: Recover
+      :complexity: 0
+      :lines: 13
+      :methods: []
+    :filename: app/views/users/index.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 6
+      :methods: []
+    - :class_name: "::"
+      :complexity: 0
+      :lines: 5
+      :methods: []
+    - :class_name: "::::"
+      :complexity: 0
+      :lines: 5
+      :methods: []
+    - :class_name: "::::::"
+      :complexity: 0
+      :lines: 4
+      :methods: []
+    - :class_name: "::::::::"
+      :complexity: 0
+      :lines: 4
+      :methods: []
+    :filename: app/views/users/_form.html.erb
+  - :classes:
+    - :class_name: Recover
+      :complexity: 0
+      :lines: 3
+      :methods: []
+    :filename: app/views/users/show.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 0
+      :methods: []
+    :filename: app/views/users/new.html.erb
+  :classes:
+  - :name: UsersController
+    :complexity: 35
+    :lines: 116
+    :defs:
+    - :name: UsersController#index
+      :complexity: 1
+      :lines: 2
+    - :name: UsersController#show
+      :complexity: 1
+      :lines: 1
+    - :name: UsersController#new
+      :complexity: 1
+      :lines: 2
+    - :name: UsersController#edit
+      :complexity: 1
+      :lines: 1
+    - :name: UsersController#create
+      :complexity: 8
+      :lines: 18
+    - :name: UsersController#update
+      :complexity: 7
+      :lines: 10
+    - :name: UsersController#destroy
+      :complexity: 4
+      :lines: 6
+    - :name: UsersController#restrict_register
+      :complexity: 2
+      :lines: 4
+    - :name: UsersController#authorize
+      :complexity: 6
+      :lines: 19
+    - :name: UsersController#user_level_authorization
+      :complexity: 2
+      :lines: 4
+    - :name: UsersController#set_user
+      :complexity: 1
+      :lines: 2
+    - :name: UsersController#user_params
+      :complexity: 1
+      :lines: 2
+  - :name: CommentsController
+    :complexity: 31
+    :lines: 106
+    :defs:
+    - :name: CommentsController#index
+      :complexity: 1
+      :lines: 2
+    - :name: CommentsController#show
+      :complexity: 1
+      :lines: 2
+    - :name: CommentsController#new
+      :complexity: 1
+      :lines: 2
+    - :name: CommentsController#edit
+      :complexity: 1
+      :lines: 2
+    - :name: CommentsController#create
+      :complexity: 7
+      :lines: 14
+    - :name: CommentsController#update
+      :complexity: 7
+      :lines: 11
+    - :name: CommentsController#destroy
+      :complexity: 4
+      :lines: 7
+    - :name: CommentsController#authorize
+      :complexity: 6
+      :lines: 19
+    - :name: CommentsController#find_owner
+      :complexity: 1
+      :lines: 2
+    - :name: CommentsController#set_comment
+      :complexity: 1
+      :lines: 2
+    - :name: CommentsController#proposal_comment_params
+      :complexity: 1
+      :lines: 2
+  - :name: LikesController
+    :complexity: 31
+    :lines: 108
+    :defs:
+    - :name: LikesController#index
+      :complexity: 1
+      :lines: 2
+    - :name: LikesController#show
+      :complexity: 1
+      :lines: 2
+    - :name: LikesController#new
+      :complexity: 1
+      :lines: 2
+    - :name: LikesController#edit
+      :complexity: 1
+      :lines: 2
+    - :name: LikesController#create
+      :complexity: 7
+      :lines: 14
+    - :name: LikesController#update
+      :complexity: 7
+      :lines: 11
+    - :name: LikesController#destroy
+      :complexity: 4
+      :lines: 7
+    - :name: LikesController#authorize
+      :complexity: 6
+      :lines: 19
+    - :name: LikesController#find_owner
+      :complexity: 1
+      :lines: 3
+    - :name: LikesController#set_like
+      :complexity: 1
+      :lines: 2
+    - :name: LikesController#like_params
+      :complexity: 1
+      :lines: 2
+  - :name: ProplikesController
+    :complexity: 31
+    :lines: 106
+    :defs:
+    - :name: ProplikesController#index
+      :complexity: 1
+      :lines: 2
+    - :name: ProplikesController#show
+      :complexity: 1
+      :lines: 2
+    - :name: ProplikesController#new
+      :complexity: 1
+      :lines: 2
+    - :name: ProplikesController#edit
+      :complexity: 1
+      :lines: 2
+    - :name: ProplikesController#create
+      :complexity: 7
+      :lines: 14
+    - :name: ProplikesController#update
+      :complexity: 7
+      :lines: 11
+    - :name: ProplikesController#destroy
+      :complexity: 4
+      :lines: 7
+    - :name: ProplikesController#authorize
+      :complexity: 6
+      :lines: 19
+    - :name: ProplikesController#find_owner
+      :complexity: 1
+      :lines: 2
+    - :name: ProplikesController#set_proplike
+      :complexity: 1
+      :lines: 2
+    - :name: ProplikesController#proplike_params
+      :complexity: 1
+      :lines: 2
+  - :name: ProposalsController
+    :complexity: 30
+    :lines: 104
+    :defs:
+    - :name: ProposalsController#index
+      :complexity: 1
+      :lines: 2
+    - :name: ProposalsController#show
+      :complexity: 1
+      :lines: 1
+    - :name: ProposalsController#new
+      :complexity: 1
+      :lines: 2
+    - :name: ProposalsController#edit
+      :complexity: 1
+      :lines: 1
+    - :name: ProposalsController#create
+      :complexity: 7
+      :lines: 13
+    - :name: ProposalsController#update
+      :complexity: 7
+      :lines: 10
+    - :name: ProposalsController#destroy
+      :complexity: 4
+      :lines: 6
+    - :name: ProposalsController#authorize
+      :complexity: 2
+      :lines: 6
+    - :name: ProposalsController#authorize_create
+      :complexity: 2
+      :lines: 6
+    - :name: ProposalsController#set_proposal
+      :complexity: 1
+      :lines: 2
+    - :name: ProposalsController#set_owner
+      :complexity: 2
+      :lines: 5
+    - :name: ProposalsController#proposal_params
+      :complexity: 1
+      :lines: 2
+  - :name: SessionController
+    :complexity: 21
+    :lines: 68
+    :defs:
+    - :name: SessionController#new
+      :complexity: 6
+      :lines: 13
+    - :name: SessionController#create
+      :complexity: 8
+      :lines: 25
+    - :name: SessionController#destroy
+      :complexity: 6
+      :lines: 17
+    - :name: SessionController#session_params
+      :complexity: 1
+      :lines: 2
+  - :name: ApplicationController
+    :complexity: 16
+    :lines: 52
+    :defs:
+    - :name: ApplicationController#restrict_access
+      :complexity: 6
+      :lines: 14
+    - :name: ApplicationController#is_admin?
+      :complexity: 5
+      :lines: 11
+    - :name: ApplicationController#is_editor?
+      :complexity: 5
+      :lines: 11
+  - :name: SessionHelper
+    :complexity: 8
+    :lines: 35
+    :defs:
+    - :name: SessionHelper#log_in
+      :complexity: 1
+      :lines: 2
+    - :name: SessionHelper#current_user
+      :complexity: 1
+      :lines: 2
+    - :name: SessionHelper#current_user_api
+      :complexity: 2
+      :lines: 4
+    - :name: SessionHelper#logged_in?
+      :complexity: 1
+      :lines: 2
+    - :name: SessionHelper#logged_in_api?
+      :complexity: 1
+      :lines: 3
+    - :name: SessionHelper#log_out_api
+      :complexity: 1
+      :lines: 2
+    - :name: SessionHelper#log_out
+      :complexity: 1
+      :lines: 2
+  - :name: ScrappingLaLupa
+    :complexity: 7
+    :lines: 31
+    :defs:
+    - :name: ScrappingLaLupa#get_proposals
+      :complexity: 3
+      :lines: 8
+    - :name: ScrappingLaLupa#get_porposal
+      :complexity: 1
+      :lines: 7
+    - :name: ScrappingLaLupa#save_proposal
+      :complexity: 3
+      :lines: 9
+  - :name: User
+    :complexity: 5
+    :lines: 35
+    :defs:
+    - :name: User#User.digest
+      :complexity: 2
+      :lines: 4
+    - :name: User#User.new_token
+      :complexity: 2
+      :lines: 5
+  - :name: Proposal
+    :complexity: 2
+    :lines: 15
+    :defs:
+    - :name: Proposal#upvotes
+      :complexity: 1
+      :lines: 2
+    - :name: Proposal#downvotes
+      :complexity: 1
+      :lines: 2
+  - :name: Comment
+    :complexity: 2
+    :lines: 15
+    :defs:
+    - :name: Comment#upvotes
+      :complexity: 1
+      :lines: 2
+    - :name: Comment#downvotes
+      :complexity: 1
+      :lines: 2
+  - :name: Titulo
+    :complexity: 1
+    :lines: 9
+  - :name: ''
+    :complexity: 1
+    :lines: 0
+  - :name: ''
+    :complexity: 1
+    :lines: 0
+  - :name: ''
+    :complexity: 0
+    :lines: 0
+  - :name: Recover
+    :complexity: 0
+    :lines: 3
+  - :name: "::::::::"
+    :complexity: 0
+    :lines: 4
+  - :name: "::::::"
+    :complexity: 0
+    :lines: 4
+  - :name: "::::"
+    :complexity: 0
+    :lines: 5
+  - :name: "::"
+    :complexity: 0
+    :lines: 5
+  - :name: ''
+    :complexity: 0
+    :lines: 6
+  - :name: Recover
+    :complexity: 0
+    :lines: 13
+  - :name: ''
+    :complexity: 0
+    :lines: 0
+  - :name: ''
+    :complexity: 0
+    :lines: 4
+  - :name: "::Iniciar::"
+    :complexity: 0
+    :lines: 3
+  - :name: "::Iniciar"
+    :complexity: 0
+    :lines: 7
+  - :name: ''
+    :complexity: 0
+    :lines: 1
+  - :name: ''
+    :complexity: 0
+    :lines: 0
+  - :name: ''
+    :complexity: 0
+    :lines: 1
+  - :name: ''
+    :complexity: 0
+    :lines: 0
+  - :name: ''
+    :complexity: 0
+    :lines: 4
+  - :name: ''
+    :complexity: 0
+    :lines: 0
+  - :name: ''
+    :complexity: 0
+    :lines: 1
+  - :name: ProplikesHelper
+    :complexity: 0
+    :lines: 1
+  - :name: UsersHelper
+    :complexity: 0
+    :lines: 1
+  - :name: CommentsHelper
+    :complexity: 0
+    :lines: 1
+  - :name: ApplicationHelper
+    :complexity: 0
+    :lines: 1
+  - :name: LikesHelper
+    :complexity: 0
+    :lines: 1
+  - :name: ProposalsHelper
+    :complexity: 0
+    :lines: 1
+  - :name: Proplike
+    :complexity: 0
+    :lines: 7
+  - :name: Like
+    :complexity: 0
+    :lines: 7
+  :methods:
+  - :name: SessionController#create
+    :complexity: 8
+    :lines: 25
+  - :name: UsersController#create
+    :complexity: 8
+    :lines: 18
+  - :name: ProposalsController#update
+    :complexity: 7
+    :lines: 10
+  - :name: ProposalsController#create
+    :complexity: 7
+    :lines: 13
+  - :name: CommentsController#update
+    :complexity: 7
+    :lines: 11
+  - :name: CommentsController#create
+    :complexity: 7
+    :lines: 14
+  - :name: LikesController#update
+    :complexity: 7
+    :lines: 11
+  - :name: LikesController#create
+    :complexity: 7
+    :lines: 14
+  - :name: ProplikesController#update
+    :complexity: 7
+    :lines: 11
+  - :name: ProplikesController#create
+    :complexity: 7
+    :lines: 14
+  - :name: UsersController#update
+    :complexity: 7
+    :lines: 10
+  - :name: ApplicationController#restrict_access
+    :complexity: 6
+    :lines: 14
+  - :name: SessionController#destroy
+    :complexity: 6
+    :lines: 17
+  - :name: SessionController#new
+    :complexity: 6
+    :lines: 13
+  - :name: CommentsController#authorize
+    :complexity: 6
+    :lines: 19
+  - :name: LikesController#authorize
+    :complexity: 6
+    :lines: 19
+  - :name: ProplikesController#authorize
+    :complexity: 6
+    :lines: 19
+  - :name: UsersController#authorize
+    :complexity: 6
+    :lines: 19
+  - :name: ApplicationController#is_editor?
+    :complexity: 5
+    :lines: 11
+  - :name: ApplicationController#is_admin?
+    :complexity: 5
+    :lines: 11
+  - :name: ProposalsController#destroy
+    :complexity: 4
+    :lines: 6
+  - :name: CommentsController#destroy
+    :complexity: 4
+    :lines: 7
+  - :name: LikesController#destroy
+    :complexity: 4
+    :lines: 7
+  - :name: ProplikesController#destroy
+    :complexity: 4
+    :lines: 7
+  - :name: UsersController#destroy
+    :complexity: 4
+    :lines: 6
+  - :name: ScrappingLaLupa#save_proposal
+    :complexity: 3
+    :lines: 9
+  - :name: ScrappingLaLupa#get_proposals
+    :complexity: 3
+    :lines: 8
+  - :name: User#User.new_token
+    :complexity: 2
+    :lines: 5
+  - :name: User#User.digest
+    :complexity: 2
+    :lines: 4
+  - :name: SessionHelper#current_user_api
+    :complexity: 2
+    :lines: 4
+  - :name: ProposalsController#set_owner
+    :complexity: 2
+    :lines: 5
+  - :name: ProposalsController#authorize_create
+    :complexity: 2
+    :lines: 6
+  - :name: ProposalsController#authorize
+    :complexity: 2
+    :lines: 6
+  - :name: UsersController#user_level_authorization
+    :complexity: 2
+    :lines: 4
+  - :name: UsersController#restrict_register
+    :complexity: 2
+    :lines: 4
+  - :name: Proposal#downvotes
+    :complexity: 1
+    :lines: 2
+  - :name: Proposal#upvotes
+    :complexity: 1
+    :lines: 2
+  - :name: Comment#downvotes
+    :complexity: 1
+    :lines: 2
+  - :name: Comment#upvotes
+    :complexity: 1
+    :lines: 2
+  - :name: ScrappingLaLupa#get_porposal
+    :complexity: 1
+    :lines: 7
+  - :name: SessionHelper#log_out
+    :complexity: 1
+    :lines: 2
+  - :name: SessionHelper#log_out_api
+    :complexity: 1
+    :lines: 2
+  - :name: SessionHelper#logged_in_api?
+    :complexity: 1
+    :lines: 3
+  - :name: SessionHelper#logged_in?
+    :complexity: 1
+    :lines: 2
+  - :name: SessionHelper#current_user
+    :complexity: 1
+    :lines: 2
+  - :name: SessionHelper#log_in
+    :complexity: 1
+    :lines: 2
+  - :name: SessionController#session_params
+    :complexity: 1
+    :lines: 2
+  - :name: ProposalsController#proposal_params
+    :complexity: 1
+    :lines: 2
+  - :name: ProposalsController#set_proposal
+    :complexity: 1
+    :lines: 2
+  - :name: ProposalsController#edit
+    :complexity: 1
+    :lines: 1
+  - :name: ProposalsController#new
+    :complexity: 1
+    :lines: 2
+  - :name: ProposalsController#show
+    :complexity: 1
+    :lines: 1
+  - :name: ProposalsController#index
+    :complexity: 1
+    :lines: 2
+  - :name: CommentsController#proposal_comment_params
+    :complexity: 1
+    :lines: 2
+  - :name: CommentsController#set_comment
+    :complexity: 1
+    :lines: 2
+  - :name: CommentsController#find_owner
+    :complexity: 1
+    :lines: 2
+  - :name: CommentsController#edit
+    :complexity: 1
+    :lines: 2
+  - :name: CommentsController#new
+    :complexity: 1
+    :lines: 2
+  - :name: CommentsController#show
+    :complexity: 1
+    :lines: 2
+  - :name: CommentsController#index
+    :complexity: 1
+    :lines: 2
+  - :name: LikesController#like_params
+    :complexity: 1
+    :lines: 2
+  - :name: LikesController#set_like
+    :complexity: 1
+    :lines: 2
+  - :name: LikesController#find_owner
+    :complexity: 1
+    :lines: 3
+  - :name: LikesController#edit
+    :complexity: 1
+    :lines: 2
+  - :name: LikesController#new
+    :complexity: 1
+    :lines: 2
+  - :name: LikesController#show
+    :complexity: 1
+    :lines: 2
+  - :name: LikesController#index
+    :complexity: 1
+    :lines: 2
+  - :name: ProplikesController#proplike_params
+    :complexity: 1
+    :lines: 2
+  - :name: ProplikesController#set_proplike
+    :complexity: 1
+    :lines: 2
+  - :name: ProplikesController#find_owner
+    :complexity: 1
+    :lines: 2
+  - :name: ProplikesController#edit
+    :complexity: 1
+    :lines: 2
+  - :name: ProplikesController#new
+    :complexity: 1
+    :lines: 2
+  - :name: ProplikesController#show
+    :complexity: 1
+    :lines: 2
+  - :name: ProplikesController#index
+    :complexity: 1
+    :lines: 2
+  - :name: UsersController#user_params
+    :complexity: 1
+    :lines: 2
+  - :name: UsersController#set_user
+    :complexity: 1
+    :lines: 2
+  - :name: UsersController#edit
+    :complexity: 1
+    :lines: 1
+  - :name: UsersController#new
+    :complexity: 1
+    :lines: 2
+  - :name: UsersController#show
+    :complexity: 1
+    :lines: 1
+  - :name: UsersController#index
+    :complexity: 1
+    :lines: 2
+:flog:
+  :total: 809.6380276040459
+  :average: 9.414395669814487
+  :method_containers:
+  - :name: SessionController
+    :path: app/controllers/session_controller.rb
+    :total_score: 73.72850136980976
+    :highest_score: 39.928936875404034
+    :average_score: 14.745700273961953
+    :methods:
+      SessionController#create:
+        :operators:
+          :assignment: 4.000000000000001
+          :params: 3.3
+          :[]: 5.3999999999999995
+          :find_by: 1.0
+          :branch: 9.400000000000002
+          :authenticate: 1.1
+          :respond_to: 2.2
+          :html: 2.6000000000000005
+          :log_in: 1.5000000000000004
+          :home_path: 1.7000000000000004
+          :redirect_to: 3.000000000000001
+          :json: 2.6000000000000005
+          :new_token: 1.5000000000000004
+          :update_attribute: 1.5000000000000004
+          :id: 1.7000000000000004
+          :user_token: 1.7000000000000004
+          :user_path: 1.7000000000000004
+          :render: 2.900000000000001
+          :flash: 1.5000000000000004
+          :root_url: 1.7000000000000004
+        :score: 39.928936875404034
+        :path: app/controllers/session_controller.rb:19
+      SessionController#destroy:
+        :operators:
+          :branch: 6.100000000000001
+          :respond_to: 1.0
+          :html: 1.2000000000000002
+          :logged_in?: 1.4000000000000004
+          :log_out: 1.5000000000000004
+          :root_url: 1.6000000000000003
+          :redirect_to: 1.4000000000000004
+          :json: 1.2000000000000002
+          :logged_in_api?: 1.3000000000000003
+          :log_out_api: 1.5000000000000004
+          :render: 2.900000000000001
+        :score: 16.192899678562828
+        :path: app/controllers/session_controller.rb:46
+      SessionController#new:
+        :operators:
+          :branch: 6.000000000000002
+          :respond_to: 1.0
+          :html: 1.2000000000000002
+          :logged_in?: 1.3000000000000003
+          :current_user: 1.6000000000000003
+          :redirect_to: 1.4000000000000004
+          :json: 1.2000000000000002
+          :logged_in_api?: 1.3000000000000003
+          :render: 1.4000000000000004
+        :score: 12.00666481584291
+        :path: app/controllers/session_controller.rb:4
+      SessionController#session_params:
+        :operators:
+          :params: 1.4
+          :require: 1.2
+          :permit: 1.0
+        :score: 3.5999999999999996
+        :path: app/controllers/session_controller.rb:66
+      SessionController#none:
+        :operators:
+          :before_action: 1.0
+          :private: 1.0
+        :score: 2.0
+        :path: 
+  - :name: ProplikesController
+    :path: app/controllers/proplikes_controller.rb
+    :total_score: 127.29740658235876
+    :highest_score: 34.66266002487403
+    :average_score: 10.608117215196563
+    :methods:
+      ProplikesController#authorize:
+        :operators:
+          :branch: 11.400000000000002
+          :respond_to: 1.0
+          :html: 1.2000000000000002
+          :current_user: 3.3000000000000007
+          :user: 3.800000000000001
+          :id: 6.8000000000000025
+          :==: 3.0000000000000013
+          :is_admin?: 3.0000000000000013
+          :assignment: 1.5000000000000007
+          :flash: 1.5000000000000007
+          :proposal_proplikes_path: 1.7000000000000006
+          :redirect_to: 1.5000000000000007
+          :json: 1.2000000000000004
+          :current_user_api: 3.300000000000001
+          :render: 1.4000000000000006
+        :score: 34.66266002487403
+        :path: app/controllers/proplikes_controller.rb:74
+      ProplikesController#update:
+        :operators:
+          :assignment: 1.0
+          :proplikes: 1.2
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+          :branch: 7.3000000000000025
+          :respond_to: 1.0
+          :proplike_params: 1.3
+          :update: 1.1
+          :html: 2.6000000000000005
+          :proposal: 3.2000000000000006
+          :redirect_to: 1.4000000000000004
+          :json: 2.6000000000000005
+          :render: 4.200000000000001
+          :errors: 1.6000000000000003
+        :score: 24.91445363639348
+        :path: app/controllers/proplikes_controller.rb:49
+      ProplikesController#create:
+        :operators:
+          :assignment: 1.0
+          :proplikes: 1.2
+          :proplike_params: 1.2
+          :create: 1.0
+          :current_user: 1.0
+          :current_user_api: 1.0
+          :branch: 7.3000000000000025
+          :respond_to: 1.0
+          :save: 1.1
+          :html: 2.6000000000000005
+          :proposal: 3.2000000000000006
+          :redirect_to: 1.4000000000000004
+          :json: 2.6000000000000005
+          :render: 4.200000000000001
+          :errors: 1.6000000000000003
+        :score: 24.246649253041138
+        :path: app/controllers/proplikes_controller.rb:31
+      ProplikesController#destroy:
+        :operators:
+          :assignment: 1.0
+          :proplikes: 1.2
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+          :destroy: 1.0
+          :branch: 3.4000000000000004
+          :respond_to: 1.0
+          :html: 1.2000000000000002
+          :proposal_proplikes_url: 1.5000000000000002
+          :redirect_to: 1.3000000000000003
+          :json: 1.2000000000000002
+          :head: 1.3000000000000003
+        :score: 13.764083696345356
+        :path: app/controllers/proplikes_controller.rb:64
+      ProplikesController#none:
+        :operators:
+          :before_action: 4.0
+          :private: 1.0
+        :score: 5.0
+        :path: 
+      ProplikesController#show:
+        :operators:
+          :assignment: 1.0
+          :proplikes: 1.2
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+        :score: 4.903060268852505
+        :path: app/controllers/proplikes_controller.rb:15
+      ProplikesController#edit:
+        :operators:
+          :assignment: 1.0
+          :proplikes: 1.2
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+        :score: 4.903060268852505
+        :path: app/controllers/proplikes_controller.rb:25
+      ProplikesController#find_owner:
+        :operators:
+          :assignment: 1.0000000000000002
+          :params: 1.4000000000000001
+          :[]: 1.2000000000000002
+          :find: 1.0000000000000002
+        :score: 3.7363083384538816
+        :path: app/controllers/proplikes_controller.rb:95
+      ProplikesController#set_proplike:
+        :operators:
+          :assignment: 1.0000000000000002
+          :params: 1.4000000000000001
+          :[]: 1.2000000000000002
+          :find: 1.0000000000000002
+        :score: 3.7363083384538816
+        :path: app/controllers/proplikes_controller.rb:100
+      ProplikesController#proplike_params:
+        :operators:
+          :params: 1.4000000000000001
+          :require: 1.2000000000000002
+          :permit: 1.0000000000000002
+        :score: 3.6000000000000005
+        :path: app/controllers/proplikes_controller.rb:104
+      ProplikesController#new:
+        :operators:
+          :assignment: 1.0
+          :proplikes: 1.2
+          :build: 1.0
+        :score: 2.4166091947189146
+        :path: app/controllers/proplikes_controller.rb:20
+      ProplikesController#index:
+        :operators:
+          :assignment: 1.0
+          :proplikes: 1.0
+        :score: 1.4142135623730951
+        :path: app/controllers/proplikes_controller.rb:9
+  - :name: LikesController
+    :path: app/controllers/likes_controller.rb
+    :total_score: 132.19591150187406
+    :highest_score: 34.66266002487403
+    :average_score: 11.016325958489505
+    :methods:
+      LikesController#authorize:
+        :operators:
+          :branch: 11.400000000000002
+          :respond_to: 1.0
+          :html: 1.2000000000000002
+          :current_user: 3.3000000000000007
+          :user: 3.800000000000001
+          :id: 6.8000000000000025
+          :==: 3.0000000000000013
+          :is_admin?: 3.0000000000000013
+          :assignment: 1.5000000000000007
+          :flash: 1.5000000000000007
+          :proposal_comment_likes_path: 1.7000000000000006
+          :redirect_to: 1.5000000000000007
+          :json: 1.2000000000000004
+          :current_user_api: 3.300000000000001
+          :render: 1.4000000000000006
+        :score: 34.66266002487403
+        :path: app/controllers/likes_controller.rb:74
+      LikesController#update:
+        :operators:
+          :assignment: 1.0
+          :likes: 1.2
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+          :branch: 7.3000000000000025
+          :respond_to: 1.0
+          :like_params: 1.3
+          :update: 1.1
+          :html: 2.6000000000000005
+          :comment: 3.2000000000000006
+          :redirect_to: 1.4000000000000004
+          :json: 2.6000000000000005
+          :render: 4.200000000000001
+          :errors: 1.6000000000000003
+        :score: 24.91445363639348
+        :path: app/controllers/likes_controller.rb:49
+      LikesController#create:
+        :operators:
+          :assignment: 1.0
+          :likes: 1.2
+          :like_params: 1.2
+          :create: 1.0
+          :current_user: 1.0
+          :current_user_api: 1.0
+          :branch: 7.3000000000000025
+          :respond_to: 1.0
+          :save: 1.1
+          :html: 2.6000000000000005
+          :comment: 3.2000000000000006
+          :redirect_to: 1.4000000000000004
+          :json: 2.6000000000000005
+          :render: 4.200000000000001
+          :errors: 1.6000000000000003
+        :score: 24.246649253041138
+        :path: app/controllers/likes_controller.rb:31
+      LikesController#destroy:
+        :operators:
+          :assignment: 1.0
+          :likes: 1.2
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+          :destroy: 1.0
+          :branch: 3.4000000000000004
+          :respond_to: 1.0
+          :html: 1.2000000000000002
+          :proposal_comment_likes_path: 1.5000000000000002
+          :redirect_to: 1.3000000000000003
+          :json: 1.2000000000000002
+          :head: 1.3000000000000003
+        :score: 13.764083696345356
+        :path: app/controllers/likes_controller.rb:64
+      LikesController#find_owner:
+        :operators:
+          :assignment: 2.0000000000000004
+          :params: 2.8000000000000003
+          :[]: 2.4000000000000004
+          :find: 2.0000000000000004
+          :comments: 1.2000000000000002
+        :score: 8.634813257969164
+        :path: app/controllers/likes_controller.rb:95
+      LikesController#none:
+        :operators:
+          :before_action: 4.0
+          :private: 1.0
+        :score: 5.0
+        :path: 
+      LikesController#show:
+        :operators:
+          :assignment: 1.0
+          :likes: 1.2
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+        :score: 4.903060268852505
+        :path: app/controllers/likes_controller.rb:15
+      LikesController#edit:
+        :operators:
+          :assignment: 1.0
+          :likes: 1.2
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+        :score: 4.903060268852505
+        :path: app/controllers/likes_controller.rb:25
+      LikesController#set_like:
+        :operators:
+          :assignment: 1.0000000000000002
+          :params: 1.4000000000000001
+          :[]: 1.2000000000000002
+          :find: 1.0000000000000002
+        :score: 3.7363083384538816
+        :path: app/controllers/likes_controller.rb:101
+      LikesController#like_params:
+        :operators:
+          :params: 1.4000000000000001
+          :require: 1.2000000000000002
+          :permit: 1.0000000000000002
+        :score: 3.6000000000000005
+        :path: app/controllers/likes_controller.rb:106
+      LikesController#new:
+        :operators:
+          :assignment: 1.0
+          :likes: 1.2
+          :build: 1.0
+        :score: 2.4166091947189146
+        :path: app/controllers/likes_controller.rb:20
+      LikesController#index:
+        :operators:
+          :assignment: 1.0
+          :likes: 1.0
+        :score: 1.4142135623730951
+        :path: app/controllers/likes_controller.rb:9
+  - :name: CommentsController
+    :path: app/controllers/comments_controller.rb
+    :total_score: 127.29740658235876
+    :highest_score: 34.66266002487403
+    :average_score: 10.608117215196563
+    :methods:
+      CommentsController#authorize:
+        :operators:
+          :branch: 11.400000000000002
+          :respond_to: 1.0
+          :html: 1.2000000000000002
+          :current_user: 3.3000000000000007
+          :user: 3.800000000000001
+          :id: 6.8000000000000025
+          :==: 3.0000000000000013
+          :is_admin?: 3.0000000000000013
+          :assignment: 1.5000000000000007
+          :flash: 1.5000000000000007
+          :proposal_comments_path: 1.7000000000000006
+          :redirect_to: 1.5000000000000007
+          :json: 1.2000000000000004
+          :current_user_api: 3.300000000000001
+          :render: 1.4000000000000006
+        :score: 34.66266002487403
+        :path: app/controllers/comments_controller.rb:74
+      CommentsController#update:
+        :operators:
+          :assignment: 1.0
+          :comments: 1.2
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+          :branch: 7.3000000000000025
+          :respond_to: 1.0
+          :proposal_comment_params: 1.3
+          :update: 1.1
+          :html: 2.6000000000000005
+          :proposal: 3.2000000000000006
+          :redirect_to: 1.4000000000000004
+          :json: 2.6000000000000005
+          :render: 4.200000000000001
+          :errors: 1.6000000000000003
+        :score: 24.91445363639348
+        :path: app/controllers/comments_controller.rb:49
+      CommentsController#create:
+        :operators:
+          :assignment: 1.0
+          :comments: 1.2
+          :proposal_comment_params: 1.2
+          :create: 1.0
+          :current_user: 1.0
+          :current_user_api: 1.0
+          :branch: 7.3000000000000025
+          :respond_to: 1.0
+          :save: 1.1
+          :html: 2.6000000000000005
+          :proposal: 3.2000000000000006
+          :redirect_to: 1.4000000000000004
+          :json: 2.6000000000000005
+          :render: 4.200000000000001
+          :errors: 1.6000000000000003
+        :score: 24.246649253041138
+        :path: app/controllers/comments_controller.rb:31
+      CommentsController#destroy:
+        :operators:
+          :assignment: 1.0
+          :comments: 1.2
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+          :destroy: 1.0
+          :branch: 3.4000000000000004
+          :respond_to: 1.0
+          :html: 1.2000000000000002
+          :proposal_comments_path: 1.5000000000000002
+          :redirect_to: 1.3000000000000003
+          :json: 1.2000000000000002
+          :head: 1.3000000000000003
+        :score: 13.764083696345356
+        :path: app/controllers/comments_controller.rb:64
+      CommentsController#none:
+        :operators:
+          :before_action: 4.0
+          :private: 1.0
+        :score: 5.0
+        :path: 
+      CommentsController#show:
+        :operators:
+          :assignment: 1.0
+          :comments: 1.2
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+        :score: 4.903060268852505
+        :path: app/controllers/comments_controller.rb:15
+      CommentsController#edit:
+        :operators:
+          :assignment: 1.0
+          :comments: 1.2
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+        :score: 4.903060268852505
+        :path: app/controllers/comments_controller.rb:25
+      CommentsController#find_owner:
+        :operators:
+          :assignment: 1.0000000000000002
+          :params: 1.4000000000000001
+          :[]: 1.2000000000000002
+          :find: 1.0000000000000002
+        :score: 3.7363083384538816
+        :path: app/controllers/comments_controller.rb:95
+      CommentsController#set_comment:
+        :operators:
+          :assignment: 1.0000000000000002
+          :params: 1.4000000000000001
+          :[]: 1.2000000000000002
+          :find: 1.0000000000000002
+        :score: 3.7363083384538816
+        :path: app/controllers/comments_controller.rb:99
+      CommentsController#proposal_comment_params:
+        :operators:
+          :params: 1.4000000000000001
+          :require: 1.2000000000000002
+          :permit: 1.0000000000000002
+        :score: 3.6000000000000005
+        :path: app/controllers/comments_controller.rb:104
+      CommentsController#new:
+        :operators:
+          :assignment: 1.0
+          :comments: 1.2
+          :build: 1.0
+        :score: 2.4166091947189146
+        :path: app/controllers/comments_controller.rb:20
+      CommentsController#index:
+        :operators:
+          :assignment: 1.0
+          :comments: 1.0
+        :score: 1.4142135623730951
+        :path: app/controllers/comments_controller.rb:9
+  - :name: UsersController
+    :path: app/controllers/users_controller.rb
+    :total_score: 120.33166238999266
+    :highest_score: 31.103376022547785
+    :average_score: 10.939242035453878
+    :methods:
+      UsersController#authorize:
+        :operators:
+          :branch: 11.400000000000002
+          :respond_to: 1.0
+          :html: 1.2000000000000002
+          :current_user: 3.3000000000000007
+          :id: 6.8000000000000025
+          :==: 3.0000000000000013
+          :is_admin?: 3.0000000000000013
+          :assignment: 1.5000000000000007
+          :flash: 1.5000000000000007
+          :users_path: 1.7000000000000006
+          :redirect_to: 1.5000000000000007
+          :json: 1.2000000000000004
+          :current_user_api: 3.300000000000001
+          :render: 1.4000000000000006
+        :score: 31.103376022547785
+        :path: app/controllers/users_controller.rb:82
+      UsersController#create:
+        :operators:
+          :assignment: 4.9
+          :user_params: 1.2
+          :new: 1.0
+          :branch: 8.300000000000002
+          :params: 1.4
+          :[]: 2.2
+          :respond_to: 1.0
+          :save: 1.1
+          :new_token: 1.3000000000000003
+          :update_attribute: 1.3000000000000003
+          :html: 2.6000000000000005
+          :log_in: 1.5000000000000004
+          :redirect_to: 1.5000000000000004
+          :json: 2.6000000000000005
+          :request: 1.7000000000000004
+          :headers: 1.5000000000000004
+          :user_token: 1.5000000000000004
+          :render: 4.300000000000001
+          :errors: 1.6000000000000003
+        :score: 30.844610550305223
+        :path: app/controllers/users_controller.rb:30
+      UsersController#update:
+        :operators:
+          :branch: 7.3000000000000025
+          :respond_to: 1.0
+          :user_params: 1.3
+          :update: 1.1
+          :html: 2.6000000000000005
+          :redirect_to: 1.4000000000000004
+          :json: 2.6000000000000005
+          :render: 4.200000000000001
+          :errors: 1.6000000000000003
+        :score: 17.40488437192273
+        :path: app/controllers/users_controller.rb:52
+      UsersController#destroy:
+        :operators:
+          :destroy: 1.0
+          :branch: 3.4000000000000004
+          :respond_to: 1.0
+          :html: 1.2000000000000002
+          :users_path: 1.5000000000000002
+          :redirect_to: 1.3000000000000003
+          :json: 1.2000000000000002
+          :head: 1.3000000000000003
+        :score: 9.154780172128657
+        :path: app/controllers/users_controller.rb:66
+      UsersController#user_level_authorization:
+        :operators:
+          :branch: 2.0000000000000004
+          :is_admin?: 1.3000000000000003
+          :!: 1.1000000000000003
+          :params: 2.8000000000000007
+          :[]: 3.500000000000001
+          :assignment: 1.1000000000000003
+        :score: 8.994442728707547
+        :path: app/controllers/users_controller.rb:103
+      UsersController#restrict_register:
+        :operators:
+          :branch: 3.1
+          :is_admin?: 1.3
+          :!: 1.1
+          :current_user: 1.2000000000000002
+          :current_user_api: 1.2000000000000002
+          :redirect_to: 1.1
+        :score: 6.664833081180653
+        :path: app/controllers/users_controller.rb:75
+      UsersController#none:
+        :operators:
+          :before_action: 5.0
+          :private: 1.0
+        :score: 6.0
+        :path: 
+      UsersController#set_user:
+        :operators:
+          :assignment: 1.0000000000000002
+          :params: 1.4000000000000001
+          :[]: 1.2000000000000002
+          :find: 1.0000000000000002
+        :score: 3.7363083384538816
+        :path: app/controllers/users_controller.rb:109
+      UsersController#user_params:
+        :operators:
+          :params: 1.4000000000000001
+          :require: 1.2000000000000002
+          :permit: 1.0000000000000002
+        :score: 3.6000000000000005
+        :path: app/controllers/users_controller.rb:114
+      UsersController#index:
+        :operators:
+          :assignment: 1.0
+          :all: 1.0
+        :score: 1.4142135623730951
+        :path: app/controllers/users_controller.rb:10
+      UsersController#new:
+        :operators:
+          :assignment: 1.0
+          :new: 1.0
+        :score: 1.4142135623730951
+        :path: app/controllers/users_controller.rb:20
+  - :name: ProposalsController
+    :path: app/controllers/proposals_controller.rb
+    :total_score: 93.50251839614306
+    :highest_score: 21.29084310214136
+    :average_score: 8.500228945103915
+    :methods:
+      ProposalsController#create:
+        :operators:
+          :assignment: 2.0
+          :proposal_params: 1.2
+          :new: 1.0
+          :user: 1.2
+          :print: 1.0
+          :current_user: 1.0
+          :branch: 7.3000000000000025
+          :respond_to: 1.0
+          :save: 1.1
+          :html: 2.6000000000000005
+          :redirect_to: 1.4000000000000004
+          :json: 2.6000000000000005
+          :render: 4.200000000000001
+          :errors: 1.6000000000000003
+        :score: 21.29084310214136
+        :path: app/controllers/proposals_controller.rb:30
+      ProposalsController#update:
+        :operators:
+          :branch: 7.3000000000000025
+          :respond_to: 1.0
+          :proposal_params: 1.3
+          :update: 1.1
+          :html: 2.6000000000000005
+          :redirect_to: 1.4000000000000004
+          :json: 2.6000000000000005
+          :render: 4.200000000000001
+          :errors: 1.6000000000000003
+        :score: 17.40488437192273
+        :path: app/controllers/proposals_controller.rb:47
+      ProposalsController#authorize:
+        :operators:
+          :branch: 3.1
+          :current_user: 2.7
+          :user: 1.6
+          :id: 2.8000000000000003
+          :==: 1.2000000000000002
+          :is_admin?: 1.2000000000000002
+          :assignment: 1.2000000000000002
+          :flash: 1.2000000000000002
+          :proposals_path: 1.4000000000000001
+          :redirect_to: 1.2000000000000002
+        :score: 13.709121051329294
+        :path: app/controllers/proposals_controller.rb:72
+      ProposalsController#destroy:
+        :operators:
+          :destroy: 1.0
+          :branch: 3.4000000000000004
+          :respond_to: 1.0
+          :html: 1.2000000000000002
+          :proposals_url: 1.5000000000000002
+          :redirect_to: 1.3000000000000003
+          :json: 1.2000000000000002
+          :head: 1.3000000000000003
+        :score: 9.154780172128657
+        :path: app/controllers/proposals_controller.rb:61
+      ProposalsController#authorize_create:
+        :operators:
+          :branch: 3.1
+          :current_user: 1.1
+          :is_editor?: 1.2000000000000002
+          :is_admin?: 1.2000000000000002
+          :assignment: 1.2000000000000002
+          :flash: 1.2000000000000002
+          :proposals_path: 1.4000000000000001
+          :redirect_to: 1.2000000000000002
+        :score: 8.021221852062192
+        :path: app/controllers/proposals_controller.rb:81
+      ProposalsController#set_owner:
+        :operators:
+          :assignment: 2.1
+          :user_id: 1.2
+          :find_by: 1.0
+          :branch: 1.0
+          :first_name: 1.5
+          :+: 2.4000000000000004
+          :last_name: 1.3
+        :score: 7.756932383358772
+        :path: app/controllers/proposals_controller.rb:94
+      ProposalsController#none:
+        :operators:
+          :before_action: 5.0
+          :private: 1.0
+        :score: 6.0
+        :path: 
+      ProposalsController#set_proposal:
+        :operators:
+          :assignment: 1.0
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+        :score: 3.7363083384538807
+        :path: app/controllers/proposals_controller.rb:90
+      ProposalsController#proposal_params:
+        :operators:
+          :params: 1.4
+          :require: 1.2
+          :permit: 1.0
+        :score: 3.5999999999999996
+        :path: app/controllers/proposals_controller.rb:102
+      ProposalsController#index:
+        :operators:
+          :assignment: 1.0
+          :all: 1.0
+        :score: 1.4142135623730951
+        :path: app/controllers/proposals_controller.rb:10
+      ProposalsController#new:
+        :operators:
+          :assignment: 1.0
+          :new: 1.0
+        :score: 1.4142135623730951
+        :path: app/controllers/proposals_controller.rb:20
+  - :name: ScrappingLaLupa
+    :path: app/helpers/scrapping_la_lupa.rb
+    :total_score: 34.228381006859195
+    :highest_score: 14.577379737113255
+    :average_score: 11.409460335619732
+    :methods:
+      ScrappingLaLupa#get_porposal:
+        :operators:
+          :assignment: 5.500000000000002
+          :new: 1.1000000000000003
+          :get: 1.1000000000000003
+          :search: 6.900000000000002
+          :text: 3.3000000000000007
+          :save_proposal: 1.1000000000000003
+        :score: 14.577379737113255
+        :path: app/helpers/scrapping_la_lupa.rb:15
+      ScrappingLaLupa#get_proposals:
+        :operators:
+          :assignment: 4.400000000000001
+          :new: 1.1000000000000003
+          :get: 1.1000000000000003
+          :branch: 2.2000000000000006
+          :search: 2.8000000000000007
+          :map: 1.1000000000000003
+          :[]: 1.2000000000000004
+          :each: 1.1000000000000003
+          :get_porposal: 1.2000000000000004
+        :score: 10.787029248129445
+        :path: app/helpers/scrapping_la_lupa.rb:5
+      ScrappingLaLupa#save_proposal:
+        :operators:
+          :assignment: 2.2000000000000006
+          :find_by: 2.2000000000000006
+          :branch: 2.2000000000000006
+          :==: 2.2000000000000006
+          :id: 2.7000000000000006
+          :create: 1.2000000000000004
+        :score: 8.863972021616497
+        :path: app/helpers/scrapping_la_lupa.rb:24
+  - :name: User
+    :path: ''
+    :total_score: 13.084723917607127
+    :highest_score: 13.084723917607127
+    :average_score: 13.084723917607127
+    :methods:
+      User#none:
+        :operators:
+          :has_secure_password: 1.0
+          :has_many: 4.0
+          :branch: 1.0
+          :before_save: 1.0
+          :assignment: 1.1
+          :email: 1.3
+          :downcase: 1.1
+          :lit_fixnum: 0.6
+          :validates: 4.0
+        :score: 13.084723917607127
+        :path: 
+  - :name: SessionHelper
+    :path: app/helpers/session_helper.rb
+    :total_score: 37.90898724009125
+    :highest_score: 13.0384048104053
+    :average_score: 5.415569605727321
+    :methods:
+      SessionHelper#logged_in_api?:
+        :operators:
+          :request: 3.1000000000000005
+          :headers: 2.7
+          :[]: 2.3000000000000007
+          :print: 1.0000000000000002
+          :branch: 1.0000000000000002
+          :current_user_api: 1.5000000000000002
+          :nil?: 1.3000000000000003
+          :!: 1.1000000000000003
+        :score: 13.0384048104053
+        :path: app/helpers/session_helper.rb:23
+      SessionHelper#current_user_api:
+        :operators:
+          :branch: 1.0000000000000002
+          :request: 3.1000000000000005
+          :headers: 2.7
+          :[]: 2.3000000000000007
+          :assignment: 1.1000000000000003
+          :find_by: 1.1000000000000003
+        :score: 9.319334740205441
+        :path: app/helpers/session_helper.rb:12
+      SessionHelper#logged_in?:
+        :operators:
+          :branch: 1.0000000000000002
+          :current_user: 1.5000000000000002
+          :nil?: 1.3000000000000003
+          :!: 1.1000000000000003
+          :session: 1.3000000000000003
+          :[]: 1.1000000000000003
+        :score: 6.3788713735268265
+        :path: app/helpers/session_helper.rb:19
+      SessionHelper#current_user:
+        :operators:
+          :assignment: 1.0000000000000002
+          :session: 1.4000000000000001
+          :[]: 1.2000000000000002
+          :find_by: 1.0000000000000002
+        :score: 3.7363083384538816
+        :path: app/helpers/session_helper.rb:8
+      SessionHelper#log_in:
+        :operators:
+          :assignment: 1.0000000000000002
+          :session: 1.0000000000000002
+          :id: 1.0000000000000002
+        :score: 2.2360679774997902
+        :path: app/helpers/session_helper.rb:3
+      SessionHelper#log_out_api:
+        :operators:
+          :current_user_api: 1.2000000000000002
+          :update_attribute: 1.0000000000000002
+        :score: 2.2
+        :path: app/helpers/session_helper.rb:29
+      SessionHelper#log_out:
+        :operators:
+          :reset_session: 1.0000000000000002
+        :score: 1.0000000000000002
+        :path: app/helpers/session_helper.rb:33
+  - :name: task
+    :path: lib/tasks/scrapper_task.rake
+    :total_score: 7.1000000000000005
+    :highest_score: 7.1000000000000005
+    :average_score: 7.1000000000000005
+    :methods:
+      task#scrapping_la_lupa:
+        :operators:
+          :task: 1.1
+          :puts: 2.4000000000000004
+          :include: 2.4000000000000004
+          :get_proposals: 1.2000000000000002
+        :score: 7.1000000000000005
+        :path: lib/tasks/scrapper_task.rake:2
+  - :name: Proplike
+    :path: ''
+    :total_score: 5.3
+    :highest_score: 5.3
+    :average_score: 5.3
+    :methods:
+      Proplike#none:
+        :operators:
+          :belongs_to: 2.0
+          :validates: 3.0
+          :lit_fixnum: 0.3
+        :score: 5.3
+        :path: 
+  - :name: Like
+    :path: ''
+    :total_score: 5.3
+    :highest_score: 5.3
+    :average_score: 5.3
+    :methods:
+      Like#none:
+        :operators:
+          :belongs_to: 2.0
+          :validates: 3.0
+          :lit_fixnum: 0.3
+        :score: 5.3
+        :path: 
+  - :name: Proposal
+    :path: app/models/proposal.rb
+    :total_score: 12.549999999999999
+    :highest_score: 5.0
+    :average_score: 4.183333333333333
+    :methods:
+      Proposal#none:
+        :operators:
+          :belongs_to: 1.0
+          :has_many: 2.0
+          :validates: 2.0
+        :score: 5.0
+        :path: 
+      Proposal#upvotes:
+        :operators:
+          :proplikes: 1.4
+          :lit_fixnum: 0.35
+          :where: 1.2
+          :count: 1.0
+        :score: 3.95
+        :path: app/models/proposal.rb:9
+      Proposal#downvotes:
+        :operators:
+          :proplikes: 1.4
+          :where: 1.2
+          :count: 1.0
+        :score: 3.5999999999999996
+        :path: app/models/proposal.rb:13
+  - :name: Comment
+    :path: app/models/comment.rb
+    :total_score: 11.55
+    :highest_score: 4.0
+    :average_score: 3.85
+    :methods:
+      Comment#none:
+        :operators:
+          :has_many: 1.0
+          :belongs_to: 2.0
+          :validates: 1.0
+        :score: 4.0
+        :path: 
+      Comment#upvotes:
+        :operators:
+          :likes: 1.4
+          :lit_fixnum: 0.35
+          :where: 1.2
+          :count: 1.0
+        :score: 3.95
+        :path: app/models/comment.rb:9
+      Comment#downvotes:
+        :operators:
+          :likes: 1.4
+          :where: 1.2
+          :count: 1.0
+        :score: 3.5999999999999996
+        :path: app/models/comment.rb:13
+  - :name: User::digest
+    :path: app/models/user.rb
+    :total_score: 3.4073450074801643
+    :highest_score: 3.4073450074801643
+    :average_score: 3.4073450074801643
+    :methods:
+      User::digest:
+        :operators:
+          :assignment: 1.0
+          :branch: 1.0
+          :min_cost: 1.0
+          :cost: 1.1
+          :create: 1.0
+        :score: 3.4073450074801643
+        :path: app/models/user.rb:24
+  - :name: User::new_token
+    :path: app/models/user.rb
+    :total_score: 2.6551836094703507
+    :highest_score: 2.6551836094703507
+    :average_score: 2.6551836094703507
+    :methods:
+      User::new_token:
+        :operators:
+          :branch: 1.0
+          :exists?: 1.1
+          :assignment: 1.1
+          :urlsafe_base64: 1.1
+        :score: 2.6551836094703507
+        :path: app/models/user.rb:30
+  - :name: main
+    :path: ''
+    :total_score: 2.2
+    :highest_score: 2.2
+    :average_score: 2.2
+    :methods:
+      main#none:
+        :operators:
+          :require: 1.1000000000000003
+          :desc: 1.1
+        :score: 2.2
+        :path: 
+:stats:
+  :codeLOC: 864
+  :testLOC: 0
+  :code_to_test_ratio: 0.0
+  :lines:
+  - :name: Controllers
+    :lines: 667
+    :loc: 520
+    :classes: 7
+    :methods: 64
+    :methods_per_class: 9
+    :loc_per_method: 6
+  - :name: Helpers
+    :lines: 82
+    :loc: 68
+    :classes: 0
+    :methods: 10
+    :methods_per_class: 0
+    :loc_per_method: 4
+  - :name: Models
+    :lines: 84
+    :loc: 63
+    :classes: 5
+    :methods: 4
+    :methods_per_class: 0
+    :loc_per_method: 13
+  - :name: Mailers
+    :lines: 0
+    :loc: 0
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Javascripts
+    :lines: 34
+    :loc: 0
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Libraries
+    :lines: 0
+    :loc: 0
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Controller tests
+    :lines: 252
+    :loc: 198
+    :classes: 6
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Helper tests
+    :lines: 0
+    :loc: 0
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Model tests
+    :lines: 35
+    :loc: 15
+    :classes: 5
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Mailer tests
+    :lines: 0
+    :loc: 0
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Integration tests
+    :lines: 0
+    :loc: 0
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Total
+    :lines: 1154
+    :loc: 864
+    :classes: 23
+    :methods: 78
+    :methods_per_class: 3
+    :loc_per_method: 9
+:rails_best_practices:
+  :total:
+  - Found 53 errors.
+  :problems:
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/proposals/show.html.erb"
+    :line: '13'
+    :problem: law of demeter
+    :url: http://rails-bestpractices.com/posts/2010/07/24/the-law-of-demeter/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/proposals/show.html.erb"
+    :line: '44'
+    :problem: law of demeter
+    :url: http://rails-bestpractices.com/posts/2010/07/24/the-law-of-demeter/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/proposals/index.html.erb"
+    :line: '19'
+    :problem: law of demeter
+    :url: http://rails-bestpractices.com/posts/2010/07/24/the-law-of-demeter/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/users/_form.html.erb"
+    :line: '46'
+    :problem: move code into helper (array_count >= 3)
+    :url: http://rails-bestpractices.com/posts/2010/07/24/move-code-into-helper/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/users/_form.html.erb"
+    :line: '69'
+    :problem: move code into helper (array_count >= 3)
+    :url: http://rails-bestpractices.com/posts/2010/07/24/move-code-into-helper/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/controllers/likes_controller.rb"
+    :line: '31'
+    :problem: move model logic into model (@like use_count > 4)
+    :url: http://rails-bestpractices.com/posts/2010/07/21/move-model-logic-into-the-model/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/controllers/likes_controller.rb"
+    :line: '49'
+    :problem: move model logic into model (@like use_count > 4)
+    :url: http://rails-bestpractices.com/posts/2010/07/21/move-model-logic-into-the-model/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/controllers/session_controller.rb"
+    :line: '19'
+    :problem: move model logic into model (user use_count > 4)
+    :url: http://rails-bestpractices.com/posts/2010/07/21/move-model-logic-into-the-model/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/controllers/proposals_controller.rb"
+    :line: '30'
+    :problem: move model logic into model (@proposal use_count > 4)
+    :url: http://rails-bestpractices.com/posts/2010/07/21/move-model-logic-into-the-model/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/controllers/comments_controller.rb"
+    :line: '31'
+    :problem: move model logic into model (@comment use_count > 4)
+    :url: http://rails-bestpractices.com/posts/2010/07/21/move-model-logic-into-the-model/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/controllers/comments_controller.rb"
+    :line: '49'
+    :problem: move model logic into model (@comment use_count > 4)
+    :url: http://rails-bestpractices.com/posts/2010/07/21/move-model-logic-into-the-model/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/controllers/users_controller.rb"
+    :line: '30'
+    :problem: move model logic into model (@user use_count > 4)
+    :url: http://rails-bestpractices.com/posts/2010/07/21/move-model-logic-into-the-model/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/controllers/proplikes_controller.rb"
+    :line: '31'
+    :problem: move model logic into model (@proplike use_count > 4)
+    :url: http://rails-bestpractices.com/posts/2010/07/21/move-model-logic-into-the-model/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/controllers/proplikes_controller.rb"
+    :line: '49'
+    :problem: move model logic into model (@proplike use_count > 4)
+    :url: http://rails-bestpractices.com/posts/2010/07/21/move-model-logic-into-the-model/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/config/routes.rb"
+    :line: '4'
+    :problem: needless deep nesting (nested_count > 2)
+    :url: http://rails-bestpractices.com/posts/2010/07/22/needless-deep-nesting/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/helpers/proplikes_helper.rb"
+    :line: '1'
+    :problem: remove empty helpers
+    :url: http://rails-bestpractices.com/posts/2011/04/09/remove-empty-helpers/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/helpers/users_helper.rb"
+    :line: '1'
+    :problem: remove empty helpers
+    :url: http://rails-bestpractices.com/posts/2011/04/09/remove-empty-helpers/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/helpers/likes_helper.rb"
+    :line: '1'
+    :problem: remove empty helpers
+    :url: http://rails-bestpractices.com/posts/2011/04/09/remove-empty-helpers/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/helpers/comments_helper.rb"
+    :line: '1'
+    :problem: remove empty helpers
+    :url: http://rails-bestpractices.com/posts/2011/04/09/remove-empty-helpers/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/helpers/proposals_helper.rb"
+    :line: '1'
+    :problem: remove empty helpers
+    :url: http://rails-bestpractices.com/posts/2011/04/09/remove-empty-helpers/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/controllers/session_controller.rb"
+    :line: '66'
+    :problem: remove unused methods (SessionController#session_params)
+    :url: 
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/helpers/scrapping_la_lupa.rb"
+    :line: '5'
+    :problem: remove unused methods (ScrappingLaLupa#get_proposals)
+    :url: 
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/helpers/session_helper.rb"
+    :line: '3'
+    :problem: remove unused methods (SessionHelper#log_in)
+    :url: 
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/helpers/session_helper.rb"
+    :line: '29'
+    :problem: remove unused methods (SessionHelper#log_out_api)
+    :url: 
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/helpers/session_helper.rb"
+    :line: '33'
+    :problem: remove unused methods (SessionHelper#log_out)
+    :url: 
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/models/user.rb"
+    :line: '24'
+    :problem: remove unused methods (User#digest)
+    :url: 
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/users/_form.html.erb"
+    :line: '1'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/users/_form.html.erb"
+    :line: '2'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/users/_form.html.erb"
+    :line: '4'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/users/_form.html.erb"
+    :line: '7'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/proposals/_form.html.erb"
+    :line: '1'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/proposals/_form.html.erb"
+    :line: '2'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/proposals/_form.html.erb"
+    :line: '4'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/proposals/_form.html.erb"
+    :line: '7'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/likes/_form.html.erb"
+    :line: '1'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/likes/_form.html.erb"
+    :line: '1'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/likes/_form.html.erb"
+    :line: '1'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/likes/_form.html.erb"
+    :line: '2'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/likes/_form.html.erb"
+    :line: '4'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/likes/_form.html.erb"
+    :line: '7'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/comments/_form.html.erb"
+    :line: '1'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/comments/_form.html.erb"
+    :line: '1'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/comments/_form.html.erb"
+    :line: '2'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/comments/_form.html.erb"
+    :line: '4'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/comments/_form.html.erb"
+    :line: '7'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/proplikes/_form.html.erb"
+    :line: '1'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/proplikes/_form.html.erb"
+    :line: '1'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/proplikes/_form.html.erb"
+    :line: '2'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/proplikes/_form.html.erb"
+    :line: '4'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/proplikes/_form.html.erb"
+    :line: '7'
+    :problem: replace instance variable with local variable
+    :url: http://rails-bestpractices.com/posts/2010/07/24/replace-instance-variable-with-local-variable/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/models/user.rb"
+    :line: '17'
+    :problem: remove trailing whitespace
+    :url: http://rails-bestpractices.com/posts/2010/12/02/remove-trailing-whitespace/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/layouts/application.html.erb"
+    :line: '4'
+    :problem: remove trailing whitespace
+    :url: http://rails-bestpractices.com/posts/2010/12/02/remove-trailing-whitespace/
+  - :file: "/home/user/Grupo2-DDS-Servidor/API/app/views/proplikes/_form.html.erb"
+    :line: '13'
+    :problem: remove trailing whitespace
+    :url: http://rails-bestpractices.com/posts/2010/12/02/remove-trailing-whitespace/
+:churn:
+  :changes:
+  - :file_path: API/app/controllers/users_controller.rb
+    :times_changed: 17
+  - :file_path: API/app/views/proposals/show.json.jbuilder
+    :times_changed: 16
+  - :file_path: API/app/controllers/proposals_controller.rb
+    :times_changed: 14
+  - :file_path: API/app/controllers/comments_controller.rb
+    :times_changed: 12
+  - :file_path: API/app/controllers/application_controller.rb
+    :times_changed: 12
+  - :file_path: API/app/controllers/session_controller.rb
+    :times_changed: 11
+  - :file_path: API/config/routes.rb
+    :times_changed: 11
+  - :file_path: API/Gemfile.lock
+    :times_changed: 10
+  - :file_path: API/app/models/user.rb
+    :times_changed: 10
+  :class_churn: []
+  :method_churn: []
+  :changed_files:
+  - API/app/controllers/session_controller.rb
+  - API/app/views/comments/index.json.jbuilder
+  - API/app/views/comments/show.json.jbuilder
+  - API/app/views/proposals/index.json.jbuilder
+  - API/app/views/proposals/show.json.jbuilder
+  :changed_classes: []
+  :changed_methods: []
+:hotspots:
+  files:
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/session_controller.rb:19
+      file_name: app/controllers/session_controller.rb
+      line_number: '19'
+      hash_key: '["app/controllers/session_controller.rb:19", nil, nil]'
+    details:
+      saikuro: complexity is 8.0
+      flog: complexity is 39.9
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proplikes_controller.rb:74
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '74'
+      hash_key: '["app/controllers/proplikes_controller.rb:74", nil, nil]'
+    details:
+      flog: complexity is 34.7
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/likes_controller.rb:74
+      file_name: app/controllers/likes_controller.rb
+      line_number: '74'
+      hash_key: '["app/controllers/likes_controller.rb:74", nil, nil]'
+    details:
+      flog: complexity is 34.7
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/comments_controller.rb:74
+      file_name: app/controllers/comments_controller.rb
+      line_number: '74'
+      hash_key: '["app/controllers/comments_controller.rb:74", nil, nil]'
+    details:
+      flog: complexity is 34.7
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/users_controller.rb:82
+      file_name: app/controllers/users_controller.rb
+      line_number: '82'
+      hash_key: '["app/controllers/users_controller.rb:82", nil, nil]'
+    details:
+      flog: complexity is 31.1
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/users_controller.rb:30
+      file_name: app/controllers/users_controller.rb
+      line_number: '30'
+      hash_key: '["app/controllers/users_controller.rb:30", nil, nil]'
+    details:
+      flog: complexity is 30.8
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proplikes_controller.rb:49
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '49'
+      hash_key: '["app/controllers/proplikes_controller.rb:49", nil, nil]'
+    details:
+      flog: complexity is 24.9
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/likes_controller.rb:49
+      file_name: app/controllers/likes_controller.rb
+      line_number: '49'
+      hash_key: '["app/controllers/likes_controller.rb:49", nil, nil]'
+    details:
+      flog: complexity is 24.9
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/comments_controller.rb:49
+      file_name: app/controllers/comments_controller.rb
+      line_number: '49'
+      hash_key: '["app/controllers/comments_controller.rb:49", nil, nil]'
+    details:
+      flog: complexity is 24.9
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proplikes_controller.rb:31
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '31'
+      hash_key: '["app/controllers/proplikes_controller.rb:31", nil, nil]'
+    details:
+      flog: complexity is 24.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/likes_controller.rb:31
+      file_name: app/controllers/likes_controller.rb
+      line_number: '31'
+      hash_key: '["app/controllers/likes_controller.rb:31", nil, nil]'
+    details:
+      flog: complexity is 24.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/comments_controller.rb:31
+      file_name: app/controllers/comments_controller.rb
+      line_number: '31'
+      hash_key: '["app/controllers/comments_controller.rb:31", nil, nil]'
+    details:
+      flog: complexity is 24.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/session_controller.rb:46
+      file_name: app/controllers/session_controller.rb
+      line_number: '46'
+      hash_key: '["app/controllers/session_controller.rb:46", nil, nil]'
+    details:
+      saikuro: complexity is 6.0
+      flog: complexity is 16.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proposals_controller.rb:30
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '30'
+      hash_key: '["app/controllers/proposals_controller.rb:30", nil, nil]'
+    details:
+      flog: complexity is 21.3
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/session_controller.rb:4
+      file_name: app/controllers/session_controller.rb
+      line_number: '4'
+      hash_key: '["app/controllers/session_controller.rb:4", nil, nil]'
+    details:
+      saikuro: complexity is 6.0
+      flog: complexity is 12.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/users_controller.rb:52
+      file_name: app/controllers/users_controller.rb
+      line_number: '52'
+      hash_key: '["app/controllers/users_controller.rb:52", nil, nil]'
+    details:
+      flog: complexity is 17.4
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proposals_controller.rb:47
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '47'
+      hash_key: '["app/controllers/proposals_controller.rb:47", nil, nil]'
+    details:
+      flog: complexity is 17.4
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proposals_controller.rb:72
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '72'
+      hash_key: '["app/controllers/proposals_controller.rb:72", nil, nil]'
+    details:
+      saikuro: complexity is 2.0
+      flog: complexity is 13.7
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/scrapping_la_lupa.rb:15
+      file_name: app/helpers/scrapping_la_lupa.rb
+      line_number: '15'
+      hash_key: '["app/helpers/scrapping_la_lupa.rb:15", nil, nil]'
+    details:
+      flog: complexity is 14.6
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proplikes_controller.rb:64
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '64'
+      hash_key: '["app/controllers/proplikes_controller.rb:64", nil, nil]'
+    details:
+      flog: complexity is 13.8
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/likes_controller.rb:64
+      file_name: app/controllers/likes_controller.rb
+      line_number: '64'
+      hash_key: '["app/controllers/likes_controller.rb:64", nil, nil]'
+    details:
+      flog: complexity is 13.8
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/comments_controller.rb:64
+      file_name: app/controllers/comments_controller.rb
+      line_number: '64'
+      hash_key: '["app/controllers/comments_controller.rb:64", nil, nil]'
+    details:
+      flog: complexity is 13.8
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/session_helper.rb:23
+      file_name: app/helpers/session_helper.rb
+      line_number: '23'
+      hash_key: '["app/helpers/session_helper.rb:23", nil, nil]'
+    details:
+      flog: complexity is 13.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/scrapping_la_lupa.rb:5
+      file_name: app/helpers/scrapping_la_lupa.rb
+      line_number: '5'
+      hash_key: '["app/helpers/scrapping_la_lupa.rb:5", nil, nil]'
+    details:
+      flog: complexity is 10.8
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proposals_controller.rb:81
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '81'
+      hash_key: '["app/controllers/proposals_controller.rb:81", nil, nil]'
+    details:
+      saikuro: complexity is 2.0
+      flog: complexity is 8.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proposals_controller.rb:94
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '94'
+      hash_key: '["app/controllers/proposals_controller.rb:94", nil, nil]'
+    details:
+      saikuro: complexity is 2.0
+      flog: complexity is 7.8
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/likes_controller.rb:95
+      file_name: app/controllers/likes_controller.rb
+      line_number: '95'
+      hash_key: '["app/controllers/likes_controller.rb:95", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 8.6
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/session_helper.rb:12
+      file_name: app/helpers/session_helper.rb
+      line_number: '12'
+      hash_key: '["app/helpers/session_helper.rb:12", nil, nil]'
+    details:
+      flog: complexity is 9.3
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/users_controller.rb:66
+      file_name: app/controllers/users_controller.rb
+      line_number: '66'
+      hash_key: '["app/controllers/users_controller.rb:66", nil, nil]'
+    details:
+      flog: complexity is 9.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proposals_controller.rb:61
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '61'
+      hash_key: '["app/controllers/proposals_controller.rb:61", nil, nil]'
+    details:
+      flog: complexity is 9.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/users_controller.rb:103
+      file_name: app/controllers/users_controller.rb
+      line_number: '103'
+      hash_key: '["app/controllers/users_controller.rb:103", nil, nil]'
+    details:
+      flog: complexity is 9.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/scrapping_la_lupa.rb:24
+      file_name: app/helpers/scrapping_la_lupa.rb
+      line_number: '24'
+      hash_key: '["app/helpers/scrapping_la_lupa.rb:24", nil, nil]'
+    details:
+      flog: complexity is 8.9
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/users_controller.rb:75
+      file_name: app/controllers/users_controller.rb
+      line_number: '75'
+      hash_key: '["app/controllers/users_controller.rb:75", nil, nil]'
+    details:
+      saikuro: complexity is 2.0
+      flog: complexity is 6.7
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/comments_controller.rb
+      file_name: app/controllers/comments_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/comments_controller.rb", nil, nil]'
+    details:
+      flay: found 3 code duplications
+      reek: found 18 code smells
+      roodi: found 1 design problems
+      saikuro: average complexity is 6.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/likes_controller.rb
+      file_name: app/controllers/likes_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/likes_controller.rb", nil, nil]'
+    details:
+      flay: found 2 code duplications
+      reek: found 18 code smells
+      roodi: found 1 design problems
+      saikuro: average complexity is 6.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proplikes_controller.rb
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/proplikes_controller.rb", nil, nil]'
+    details:
+      flay: found 3 code duplications
+      reek: found 18 code smells
+      roodi: found 1 design problems
+      saikuro: average complexity is 6.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/tasks/scrapper_task.rake:2
+      file_name: lib/tasks/scrapper_task.rake
+      line_number: '2'
+      hash_key: '["lib/tasks/scrapper_task.rake:2", nil, nil]'
+    details:
+      flog: complexity is 7.1
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/session_helper.rb:19
+      file_name: app/helpers/session_helper.rb
+      line_number: '19'
+      hash_key: '["app/helpers/session_helper.rb:19", nil, nil]'
+    details:
+      flog: complexity is 6.4
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proplikes_controller.rb:25
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '25'
+      hash_key: '["app/controllers/proplikes_controller.rb:25", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 4.9
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proplikes_controller.rb:15
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '15'
+      hash_key: '["app/controllers/proplikes_controller.rb:15", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 4.9
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/likes_controller.rb:25
+      file_name: app/controllers/likes_controller.rb
+      line_number: '25'
+      hash_key: '["app/controllers/likes_controller.rb:25", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 4.9
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/likes_controller.rb:15
+      file_name: app/controllers/likes_controller.rb
+      line_number: '15'
+      hash_key: '["app/controllers/likes_controller.rb:15", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 4.9
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/comments_controller.rb:25
+      file_name: app/controllers/comments_controller.rb
+      line_number: '25'
+      hash_key: '["app/controllers/comments_controller.rb:25", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 4.9
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/comments_controller.rb:15
+      file_name: app/controllers/comments_controller.rb
+      line_number: '15'
+      hash_key: '["app/controllers/comments_controller.rb:15", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 4.9
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/users_controller.rb
+      file_name: app/controllers/users_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/users_controller.rb", nil, nil]'
+    details:
+      flay: found 2 code duplications
+      reek: found 15 code smells
+      roodi: found 1 design problems
+      saikuro: average complexity is 4.1
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/application_controller.rb
+      file_name: app/controllers/application_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/application_controller.rb", nil, nil]'
+    details:
+      saikuro: average complexity is 5.3
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proposals_controller.rb
+      file_name: app/controllers/proposals_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/proposals_controller.rb", nil, nil]'
+    details:
+      flay: found 2 code duplications
+      reek: found 11 code smells
+      saikuro: average complexity is 4.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/comment.rb:9
+      file_name: app/models/comment.rb
+      line_number: '9'
+      hash_key: '["app/models/comment.rb:9", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 4.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/proposal.rb:9
+      file_name: app/models/proposal.rb
+      line_number: '9'
+      hash_key: '["app/models/proposal.rb:9", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 4.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/users_controller.rb:109
+      file_name: app/controllers/users_controller.rb
+      line_number: '109'
+      hash_key: '["app/controllers/users_controller.rb:109", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.7
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proplikes_controller.rb:100
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '100'
+      hash_key: '["app/controllers/proplikes_controller.rb:100", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.7
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proplikes_controller.rb:95
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '95'
+      hash_key: '["app/controllers/proplikes_controller.rb:95", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.7
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/likes_controller.rb:101
+      file_name: app/controllers/likes_controller.rb
+      line_number: '101'
+      hash_key: '["app/controllers/likes_controller.rb:101", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.7
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/comments_controller.rb:99
+      file_name: app/controllers/comments_controller.rb
+      line_number: '99'
+      hash_key: '["app/controllers/comments_controller.rb:99", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.7
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/comments_controller.rb:95
+      file_name: app/controllers/comments_controller.rb
+      line_number: '95'
+      hash_key: '["app/controllers/comments_controller.rb:95", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.7
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proposals_controller.rb:90
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '90'
+      hash_key: '["app/controllers/proposals_controller.rb:90", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.7
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/session_helper.rb:8
+      file_name: app/helpers/session_helper.rb
+      line_number: '8'
+      hash_key: '["app/helpers/session_helper.rb:8", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.7
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/users_controller.rb:114
+      file_name: app/controllers/users_controller.rb
+      line_number: '114'
+      hash_key: '["app/controllers/users_controller.rb:114", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.6
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proplikes_controller.rb:104
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '104'
+      hash_key: '["app/controllers/proplikes_controller.rb:104", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.6
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/likes_controller.rb:106
+      file_name: app/controllers/likes_controller.rb
+      line_number: '106'
+      hash_key: '["app/controllers/likes_controller.rb:106", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.6
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/comments_controller.rb:104
+      file_name: app/controllers/comments_controller.rb
+      line_number: '104'
+      hash_key: '["app/controllers/comments_controller.rb:104", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.6
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proposals_controller.rb:102
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '102'
+      hash_key: '["app/controllers/proposals_controller.rb:102", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.6
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/session_controller.rb:66
+      file_name: app/controllers/session_controller.rb
+      line_number: '66'
+      hash_key: '["app/controllers/session_controller.rb:66", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.6
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/comment.rb:13
+      file_name: app/models/comment.rb
+      line_number: '13'
+      hash_key: '["app/models/comment.rb:13", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.6
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/proposal.rb:13
+      file_name: app/models/proposal.rb
+      line_number: '13'
+      hash_key: '["app/models/proposal.rb:13", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.6
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proplikes_controller.rb:20
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '20'
+      hash_key: '["app/controllers/proplikes_controller.rb:20", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 2.4
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/likes_controller.rb:20
+      file_name: app/controllers/likes_controller.rb
+      line_number: '20'
+      hash_key: '["app/controllers/likes_controller.rb:20", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 2.4
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/comments_controller.rb:20
+      file_name: app/controllers/comments_controller.rb
+      line_number: '20'
+      hash_key: '["app/controllers/comments_controller.rb:20", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 2.4
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/user.rb:24
+      file_name: app/models/user.rb
+      line_number: '24'
+      hash_key: '["app/models/user.rb:24", nil, nil]'
+    details:
+      flog: complexity is 3.4
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/session_helper.rb:3
+      file_name: app/helpers/session_helper.rb
+      line_number: '3'
+      hash_key: '["app/helpers/session_helper.rb:3", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 2.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/session_helper.rb:29
+      file_name: app/helpers/session_helper.rb
+      line_number: '29'
+      hash_key: '["app/helpers/session_helper.rb:29", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 2.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/scrapping_la_lupa.rb
+      file_name: app/helpers/scrapping_la_lupa.rb
+      line_number: 
+      hash_key: '["app/helpers/scrapping_la_lupa.rb", nil, nil]'
+    details:
+      reek: found 7 code smells
+      saikuro: average complexity is 2.3
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/user.rb:30
+      file_name: app/models/user.rb
+      line_number: '30'
+      hash_key: '["app/models/user.rb:30", nil, nil]'
+    details:
+      flog: complexity is 2.7
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/users_controller.rb:20
+      file_name: app/controllers/users_controller.rb
+      line_number: '20'
+      hash_key: '["app/controllers/users_controller.rb:20", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 1.4
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/users_controller.rb:10
+      file_name: app/controllers/users_controller.rb
+      line_number: '10'
+      hash_key: '["app/controllers/users_controller.rb:10", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 1.4
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proplikes_controller.rb:9
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '9'
+      hash_key: '["app/controllers/proplikes_controller.rb:9", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 1.4
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/likes_controller.rb:9
+      file_name: app/controllers/likes_controller.rb
+      line_number: '9'
+      hash_key: '["app/controllers/likes_controller.rb:9", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 1.4
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/comments_controller.rb:9
+      file_name: app/controllers/comments_controller.rb
+      line_number: '9'
+      hash_key: '["app/controllers/comments_controller.rb:9", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 1.4
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proposals_controller.rb:20
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '20'
+      hash_key: '["app/controllers/proposals_controller.rb:20", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 1.4
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/proposals_controller.rb:10
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '10'
+      hash_key: '["app/controllers/proposals_controller.rb:10", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 1.4
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/user.rb
+      file_name: app/models/user.rb
+      line_number: 
+      hash_key: '["app/models/user.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/session_helper.rb:33
+      file_name: app/helpers/session_helper.rb
+      line_number: '33'
+      hash_key: '["app/helpers/session_helper.rb:33", nil, nil]'
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/session_helper.rb
+      file_name: app/helpers/session_helper.rb
+      line_number: 
+      hash_key: '["app/helpers/session_helper.rb", nil, nil]'
+    details:
+      reek: found 5 code smells
+      saikuro: average complexity is 1.3
+  - location:
+      class_name: 
+      method_name: 
+      file_path: API/app/controllers/users_controller.rb
+      file_name: API/app/controllers/users_controller.rb
+      line_number: 
+      hash_key: '["API/app/controllers/users_controller.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 17 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: API/app/views/proposals/show.json.jbuilder
+      file_name: API/app/views/proposals/show.json.jbuilder
+      line_number: 
+      hash_key: '["API/app/views/proposals/show.json.jbuilder", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 16 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: API/app/controllers/proposals_controller.rb
+      file_name: API/app/controllers/proposals_controller.rb
+      line_number: 
+      hash_key: '["API/app/controllers/proposals_controller.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 14 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: API/app/controllers/comments_controller.rb
+      file_name: API/app/controllers/comments_controller.rb
+      line_number: 
+      hash_key: '["API/app/controllers/comments_controller.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 12 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: API/app/controllers/application_controller.rb
+      file_name: API/app/controllers/application_controller.rb
+      line_number: 
+      hash_key: '["API/app/controllers/application_controller.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 12 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: API/app/controllers/session_controller.rb
+      file_name: API/app/controllers/session_controller.rb
+      line_number: 
+      hash_key: '["API/app/controllers/session_controller.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 11 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: API/config/routes.rb
+      file_name: API/config/routes.rb
+      line_number: 
+      hash_key: '["API/config/routes.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 11 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: API/Gemfile.lock
+      file_name: API/Gemfile.lock
+      line_number: 
+      hash_key: '["API/Gemfile.lock", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 10 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: API/app/models/user.rb
+      file_name: API/app/models/user.rb
+      line_number: 
+      hash_key: '["API/app/models/user.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 10 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/comment.rb
+      file_name: app/models/comment.rb
+      line_number: 
+      hash_key: '["app/models/comment.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/views/comments/index.html.erb
+      file_name: app/views/comments/index.html.erb
+      line_number: 
+      hash_key: '["app/views/comments/index.html.erb", nil, nil]'
+    details:
+      flay: found 1 code duplications
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/like.rb
+      file_name: app/models/like.rb
+      line_number: 
+      hash_key: '["app/models/like.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/proplike.rb
+      file_name: app/models/proplike.rb
+      line_number: 
+      hash_key: '["app/models/proplike.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/views/proplikes/index.html.erb
+      file_name: app/views/proplikes/index.html.erb
+      line_number: 
+      hash_key: '["app/views/proplikes/index.html.erb", nil, nil]'
+    details:
+      flay: found 1 code duplications
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/proposal.rb
+      file_name: app/models/proposal.rb
+      line_number: 
+      hash_key: '["app/models/proposal.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/views/proposals/show.html.erb
+      file_name: app/views/proposals/show.html.erb
+      line_number: 
+      hash_key: '["app/views/proposals/show.html.erb", nil, nil]'
+    details:
+      flay: found 1 code duplications
+  classes:
+  - location:
+      class_name: SessionController
+      method_name: 
+      file_path: app/controllers/session_controller.rb:19
+      file_name: app/controllers/session_controller.rb
+      line_number: '19'
+      hash_key: '["app/controllers/session_controller.rb:19", "SessionController",
+        nil]'
+    details:
+      saikuro: average complexity is 5.2
+      flog: average complexity is 14.7
+  - location:
+      class_name: LikesController
+      method_name: 
+      file_path: app/controllers/likes_controller.rb
+      file_name: app/controllers/likes_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/likes_controller.rb", "LikesController", nil]'
+    details:
+      reek: found 18 code smells
+      saikuro: average complexity is 2.8
+      flog: average complexity is 11.0
+  - location:
+      class_name: UsersController
+      method_name: 
+      file_path: app/controllers/users_controller.rb
+      file_name: app/controllers/users_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/users_controller.rb", "UsersController", nil]'
+    details:
+      reek: found 15 code smells
+      saikuro: average complexity is 2.9
+      flog: average complexity is 10.9
+  - location:
+      class_name: CommentsController
+      method_name: 
+      file_path: app/controllers/comments_controller.rb
+      file_name: app/controllers/comments_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/comments_controller.rb", "CommentsController",
+        nil]'
+    details:
+      reek: found 18 code smells
+      saikuro: average complexity is 2.8
+      flog: average complexity is 10.6
+  - location:
+      class_name: ScrappingLaLupa
+      method_name: 
+      file_path: app/helpers/scrapping_la_lupa.rb
+      file_name: app/helpers/scrapping_la_lupa.rb
+      line_number: 
+      hash_key: '["app/helpers/scrapping_la_lupa.rb", "ScrappingLaLupa", nil]'
+    details:
+      reek: found 7 code smells
+      saikuro: average complexity is 2.3
+      flog: average complexity is 11.4
+  - location:
+      class_name: ProplikesController
+      method_name: 
+      file_path: app/controllers/proplikes_controller.rb
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/proplikes_controller.rb", "ProplikesController",
+        nil]'
+    details:
+      reek: found 18 code smells
+      saikuro: average complexity is 2.8
+      flog: average complexity is 10.6
+  - location:
+      class_name: ProposalsController
+      method_name: 
+      file_path: app/controllers/proposals_controller.rb
+      file_name: app/controllers/proposals_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/proposals_controller.rb", "ProposalsController",
+        nil]'
+    details:
+      reek: found 11 code smells
+      saikuro: average complexity is 2.5
+      flog: average complexity is 8.5
+  - location:
+      class_name: User
+      method_name: 
+      file_path: app/models/user.rb
+      file_name: app/models/user.rb
+      line_number: 
+      hash_key: '["app/models/user.rb", "User", nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 2.0
+      flog: average complexity is 6.4
+  - location:
+      class_name: task
+      method_name: 
+      file_path: lib/tasks/scrapper_task.rake:2
+      file_name: lib/tasks/scrapper_task.rake
+      line_number: '2'
+      hash_key: '["lib/tasks/scrapper_task.rake:2", "task", nil]'
+    details:
+      flog: complexity is 7.1
+  - location:
+      class_name: SessionHelper
+      method_name: 
+      file_path: app/helpers/session_helper.rb
+      file_name: app/helpers/session_helper.rb
+      line_number: 
+      hash_key: '["app/helpers/session_helper.rb", "SessionHelper", nil]'
+    details:
+      reek: found 5 code smells
+      saikuro: average complexity is 1.1
+      flog: average complexity is 5.4
+  - location:
+      class_name: Like
+      method_name: 
+      file_path: app/models/like.rb
+      file_name: app/models/like.rb
+      line_number: 
+      hash_key: '["app/models/like.rb", "Like", nil]'
+    details:
+      reek: found 1 code smells
+      flog: complexity is 5.3
+  - location:
+      class_name: Proplike
+      method_name: 
+      file_path: app/models/proplike.rb
+      file_name: app/models/proplike.rb
+      line_number: 
+      hash_key: '["app/models/proplike.rb", "Proplike", nil]'
+    details:
+      reek: found 1 code smells
+      flog: complexity is 5.3
+  - location:
+      class_name: ApplicationController
+      method_name: 
+      file_path: app/controllers/application_controller.rb
+      file_name: app/controllers/application_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/application_controller.rb", "ApplicationController",
+        nil]'
+    details:
+      saikuro: average complexity is 5.3
+  - location:
+      class_name: Proposal
+      method_name: 
+      file_path: app/models/proposal.rb
+      file_name: app/models/proposal.rb
+      line_number: 
+      hash_key: '["app/models/proposal.rb", "Proposal", nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.0
+      flog: average complexity is 4.2
+  - location:
+      class_name: Comment
+      method_name: 
+      file_path: app/models/comment.rb
+      file_name: app/models/comment.rb
+      line_number: 
+      hash_key: '["app/models/comment.rb", "Comment", nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.0
+      flog: average complexity is 3.9
+  - location:
+      class_name: main
+      method_name: 
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "main", nil]'
+    details:
+      flog: complexity is 2.2
+  methods:
+  - location:
+      class_name: SessionController
+      method_name: SessionController#create
+      file_path: app/controllers/session_controller.rb:19
+      file_name: app/controllers/session_controller.rb
+      line_number: '19'
+      hash_key: '["app/controllers/session_controller.rb:19", "SessionController",
+        "SessionController#create"]'
+      simple_method_name: "#create"
+    details:
+      saikuro: complexity is 8.0
+      flog: complexity is 39.9
+  - location:
+      class_name: CommentsController
+      method_name: CommentsController#authorize
+      file_path: app/controllers/comments_controller.rb
+      file_name: app/controllers/comments_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/comments_controller.rb", "CommentsController",
+        "CommentsController#authorize"]'
+      simple_method_name: "#authorize"
+    details:
+      reek: found 4 code smells
+      saikuro: complexity is 6.0
+      flog: complexity is 34.7
+  - location:
+      class_name: LikesController
+      method_name: LikesController#authorize
+      file_path: app/controllers/likes_controller.rb
+      file_name: app/controllers/likes_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/likes_controller.rb", "LikesController", "LikesController#authorize"]'
+      simple_method_name: "#authorize"
+    details:
+      reek: found 4 code smells
+      saikuro: complexity is 6.0
+      flog: complexity is 34.7
+  - location:
+      class_name: ProplikesController
+      method_name: ProplikesController#authorize
+      file_path: app/controllers/proplikes_controller.rb
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/proplikes_controller.rb", "ProplikesController",
+        "ProplikesController#authorize"]'
+      simple_method_name: "#authorize"
+    details:
+      reek: found 4 code smells
+      saikuro: complexity is 6.0
+      flog: complexity is 34.7
+  - location:
+      class_name: UsersController
+      method_name: UsersController#create
+      file_path: app/controllers/users_controller.rb
+      file_name: app/controllers/users_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/users_controller.rb", "UsersController", "UsersController#create"]'
+      simple_method_name: "#create"
+    details:
+      reek: found 4 code smells
+      saikuro: complexity is 8.0
+      flog: complexity is 30.8
+  - location:
+      class_name: UsersController
+      method_name: UsersController#authorize
+      file_path: app/controllers/users_controller.rb
+      file_name: app/controllers/users_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/users_controller.rb", "UsersController", "UsersController#authorize"]'
+      simple_method_name: "#authorize"
+    details:
+      reek: found 3 code smells
+      saikuro: complexity is 6.0
+      flog: complexity is 31.1
+  - location:
+      class_name: CommentsController
+      method_name: CommentsController#update
+      file_path: app/controllers/comments_controller.rb
+      file_name: app/controllers/comments_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/comments_controller.rb", "CommentsController",
+        "CommentsController#update"]'
+      simple_method_name: "#update"
+    details:
+      reek: found 5 code smells
+      saikuro: complexity is 7.0
+      flog: complexity is 24.9
+  - location:
+      class_name: LikesController
+      method_name: LikesController#update
+      file_path: app/controllers/likes_controller.rb
+      file_name: app/controllers/likes_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/likes_controller.rb", "LikesController", "LikesController#update"]'
+      simple_method_name: "#update"
+    details:
+      reek: found 5 code smells
+      saikuro: complexity is 7.0
+      flog: complexity is 24.9
+  - location:
+      class_name: ProplikesController
+      method_name: ProplikesController#update
+      file_path: app/controllers/proplikes_controller.rb
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/proplikes_controller.rb", "ProplikesController",
+        "ProplikesController#update"]'
+      simple_method_name: "#update"
+    details:
+      reek: found 5 code smells
+      saikuro: complexity is 7.0
+      flog: complexity is 24.9
+  - location:
+      class_name: CommentsController
+      method_name: CommentsController#create
+      file_path: app/controllers/comments_controller.rb
+      file_name: app/controllers/comments_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/comments_controller.rb", "CommentsController",
+        "CommentsController#create"]'
+      simple_method_name: "#create"
+    details:
+      reek: found 6 code smells
+      saikuro: complexity is 7.0
+      flog: complexity is 24.2
+  - location:
+      class_name: LikesController
+      method_name: LikesController#create
+      file_path: app/controllers/likes_controller.rb
+      file_name: app/controllers/likes_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/likes_controller.rb", "LikesController", "LikesController#create"]'
+      simple_method_name: "#create"
+    details:
+      reek: found 6 code smells
+      saikuro: complexity is 7.0
+      flog: complexity is 24.2
+  - location:
+      class_name: ProplikesController
+      method_name: ProplikesController#create
+      file_path: app/controllers/proplikes_controller.rb
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/proplikes_controller.rb", "ProplikesController",
+        "ProplikesController#create"]'
+      simple_method_name: "#create"
+    details:
+      reek: found 6 code smells
+      saikuro: complexity is 7.0
+      flog: complexity is 24.2
+  - location:
+      class_name: ProposalsController
+      method_name: ProposalsController#create
+      file_path: app/controllers/proposals_controller.rb
+      file_name: app/controllers/proposals_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/proposals_controller.rb", "ProposalsController",
+        "ProposalsController#create"]'
+      simple_method_name: "#create"
+    details:
+      reek: found 4 code smells
+      saikuro: complexity is 7.0
+      flog: complexity is 21.3
+  - location:
+      class_name: ProposalsController
+      method_name: ProposalsController#update
+      file_path: app/controllers/proposals_controller.rb
+      file_name: app/controllers/proposals_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/proposals_controller.rb", "ProposalsController",
+        "ProposalsController#update"]'
+      simple_method_name: "#update"
+    details:
+      reek: found 4 code smells
+      saikuro: complexity is 7.0
+      flog: complexity is 17.4
+  - location:
+      class_name: UsersController
+      method_name: UsersController#update
+      file_path: app/controllers/users_controller.rb
+      file_name: app/controllers/users_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/users_controller.rb", "UsersController", "UsersController#update"]'
+      simple_method_name: "#update"
+    details:
+      reek: found 4 code smells
+      saikuro: complexity is 7.0
+      flog: complexity is 17.4
+  - location:
+      class_name: SessionController
+      method_name: SessionController#destroy
+      file_path: app/controllers/session_controller.rb:46
+      file_name: app/controllers/session_controller.rb
+      line_number: '46'
+      hash_key: '["app/controllers/session_controller.rb:46", "SessionController",
+        "SessionController#destroy"]'
+      simple_method_name: "#destroy"
+    details:
+      saikuro: complexity is 6.0
+      flog: complexity is 16.2
+  - location:
+      class_name: CommentsController
+      method_name: CommentsController#destroy
+      file_path: app/controllers/comments_controller.rb
+      file_name: app/controllers/comments_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/comments_controller.rb", "CommentsController",
+        "CommentsController#destroy"]'
+      simple_method_name: "#destroy"
+    details:
+      reek: found 2 code smells
+      saikuro: complexity is 4.0
+      flog: complexity is 13.8
+  - location:
+      class_name: LikesController
+      method_name: LikesController#destroy
+      file_path: app/controllers/likes_controller.rb
+      file_name: app/controllers/likes_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/likes_controller.rb", "LikesController", "LikesController#destroy"]'
+      simple_method_name: "#destroy"
+    details:
+      reek: found 2 code smells
+      saikuro: complexity is 4.0
+      flog: complexity is 13.8
+  - location:
+      class_name: ProplikesController
+      method_name: ProplikesController#destroy
+      file_path: app/controllers/proplikes_controller.rb
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/proplikes_controller.rb", "ProplikesController",
+        "ProplikesController#destroy"]'
+      simple_method_name: "#destroy"
+    details:
+      reek: found 2 code smells
+      saikuro: complexity is 4.0
+      flog: complexity is 13.8
+  - location:
+      class_name: SessionController
+      method_name: SessionController#new
+      file_path: app/controllers/session_controller.rb:4
+      file_name: app/controllers/session_controller.rb
+      line_number: '4'
+      hash_key: '["app/controllers/session_controller.rb:4", "SessionController",
+        "SessionController#new"]'
+      simple_method_name: "#new"
+    details:
+      saikuro: complexity is 6.0
+      flog: complexity is 12.0
+  - location:
+      class_name: ScrappingLaLupa
+      method_name: ScrappingLaLupa#get_porposal
+      file_path: app/helpers/scrapping_la_lupa.rb
+      file_name: app/helpers/scrapping_la_lupa.rb
+      line_number: 
+      hash_key: '["app/helpers/scrapping_la_lupa.rb", "ScrappingLaLupa", "ScrappingLaLupa#get_porposal"]'
+      simple_method_name: "#get_porposal"
+    details:
+      reek: found 2 code smells
+      saikuro: complexity is 1.0
+      flog: complexity is 14.6
+  - location:
+      class_name: ProposalsController
+      method_name: ProposalsController#authorize
+      file_path: app/controllers/proposals_controller.rb:72
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '72'
+      hash_key: '["app/controllers/proposals_controller.rb:72", "ProposalsController",
+        "ProposalsController#authorize"]'
+      simple_method_name: "#authorize"
+    details:
+      saikuro: complexity is 2.0
+      flog: complexity is 13.7
+  - location:
+      class_name: SessionHelper
+      method_name: SessionHelper#logged_in_api?
+      file_path: app/helpers/session_helper.rb
+      file_name: app/helpers/session_helper.rb
+      line_number: 
+      hash_key: '["app/helpers/session_helper.rb", "SessionHelper", "SessionHelper#logged_in_api?"]'
+      simple_method_name: "#logged_in_api?"
+    details:
+      reek: found 2 code smells
+      saikuro: complexity is 1.0
+      flog: complexity is 13.0
+  - location:
+      class_name: ScrappingLaLupa
+      method_name: ScrappingLaLupa#get_proposals
+      file_path: app/helpers/scrapping_la_lupa.rb
+      file_name: app/helpers/scrapping_la_lupa.rb
+      line_number: 
+      hash_key: '["app/helpers/scrapping_la_lupa.rb", "ScrappingLaLupa", "ScrappingLaLupa#get_proposals"]'
+      simple_method_name: "#get_proposals"
+    details:
+      reek: found 1 code smells
+      saikuro: complexity is 3.0
+      flog: complexity is 10.8
+  - location:
+      class_name: ProposalsController
+      method_name: ProposalsController#destroy
+      file_path: app/controllers/proposals_controller.rb
+      file_name: app/controllers/proposals_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/proposals_controller.rb", "ProposalsController",
+        "ProposalsController#destroy"]'
+      simple_method_name: "#destroy"
+    details:
+      reek: found 2 code smells
+      saikuro: complexity is 4.0
+      flog: complexity is 9.2
+  - location:
+      class_name: UsersController
+      method_name: UsersController#destroy
+      file_path: app/controllers/users_controller.rb
+      file_name: app/controllers/users_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/users_controller.rb", "UsersController", "UsersController#destroy"]'
+      simple_method_name: "#destroy"
+    details:
+      reek: found 2 code smells
+      saikuro: complexity is 4.0
+      flog: complexity is 9.2
+  - location:
+      class_name: User
+      method_name: User#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "User", "User#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 13.1
+  - location:
+      class_name: ScrappingLaLupa
+      method_name: ScrappingLaLupa#save_proposal
+      file_path: app/helpers/scrapping_la_lupa.rb
+      file_name: app/helpers/scrapping_la_lupa.rb
+      line_number: 
+      hash_key: '["app/helpers/scrapping_la_lupa.rb", "ScrappingLaLupa", "ScrappingLaLupa#save_proposal"]'
+      simple_method_name: "#save_proposal"
+    details:
+      reek: found 4 code smells
+      saikuro: complexity is 3.0
+      flog: complexity is 8.9
+  - location:
+      class_name: SessionHelper
+      method_name: SessionHelper#current_user_api
+      file_path: app/helpers/session_helper.rb
+      file_name: app/helpers/session_helper.rb
+      line_number: 
+      hash_key: '["app/helpers/session_helper.rb", "SessionHelper", "SessionHelper#current_user_api"]'
+      simple_method_name: "#current_user_api"
+    details:
+      reek: found 2 code smells
+      saikuro: complexity is 2.0
+      flog: complexity is 9.3
+  - location:
+      class_name: UsersController
+      method_name: UsersController#user_level_authorization
+      file_path: app/controllers/users_controller.rb
+      file_name: app/controllers/users_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/users_controller.rb", "UsersController", "UsersController#user_level_authorization"]'
+      simple_method_name: "#user_level_authorization"
+    details:
+      reek: found 1 code smells
+      saikuro: complexity is 2.0
+      flog: complexity is 9.0
+  - location:
+      class_name: ProposalsController
+      method_name: ProposalsController#authorize_create
+      file_path: app/controllers/proposals_controller.rb:81
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '81'
+      hash_key: '["app/controllers/proposals_controller.rb:81", "ProposalsController",
+        "ProposalsController#authorize_create"]'
+      simple_method_name: "#authorize_create"
+    details:
+      saikuro: complexity is 2.0
+      flog: complexity is 8.0
+  - location:
+      class_name: ProposalsController
+      method_name: ProposalsController#set_owner
+      file_path: app/controllers/proposals_controller.rb:94
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '94'
+      hash_key: '["app/controllers/proposals_controller.rb:94", "ProposalsController",
+        "ProposalsController#set_owner"]'
+      simple_method_name: "#set_owner"
+    details:
+      saikuro: complexity is 2.0
+      flog: complexity is 7.8
+  - location:
+      class_name: LikesController
+      method_name: LikesController#find_owner
+      file_path: app/controllers/likes_controller.rb:95
+      file_name: app/controllers/likes_controller.rb
+      line_number: '95'
+      hash_key: '["app/controllers/likes_controller.rb:95", "LikesController", "LikesController#find_owner"]'
+      simple_method_name: "#find_owner"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 8.6
+  - location:
+      class_name: UsersController
+      method_name: UsersController#restrict_register
+      file_path: app/controllers/users_controller.rb:75
+      file_name: app/controllers/users_controller.rb
+      line_number: '75'
+      hash_key: '["app/controllers/users_controller.rb:75", "UsersController", "UsersController#restrict_register"]'
+      simple_method_name: "#restrict_register"
+    details:
+      saikuro: complexity is 2.0
+      flog: complexity is 6.7
+  - location:
+      class_name: SessionHelper
+      method_name: SessionHelper#logged_in?
+      file_path: app/helpers/session_helper.rb
+      file_name: app/helpers/session_helper.rb
+      line_number: 
+      hash_key: '["app/helpers/session_helper.rb", "SessionHelper", "SessionHelper#logged_in?"]'
+      simple_method_name: "#logged_in?"
+    details:
+      reek: found 1 code smells
+      saikuro: complexity is 1.0
+      flog: complexity is 6.4
+  - location:
+      class_name: task
+      method_name: task#scrapping_la_lupa
+      file_path: lib/tasks/scrapper_task.rake:2
+      file_name: lib/tasks/scrapper_task.rake
+      line_number: '2'
+      hash_key: '["lib/tasks/scrapper_task.rake:2", "task", "task#scrapping_la_lupa"]'
+      simple_method_name: "#scrapping_la_lupa"
+    details:
+      flog: complexity is 7.1
+  - location:
+      class_name: ApplicationController
+      method_name: ApplicationController#restrict_access
+      file_path: app/controllers/application_controller.rb
+      file_name: app/controllers/application_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/application_controller.rb", "ApplicationController",
+        "ApplicationController#restrict_access"]'
+      simple_method_name: "#restrict_access"
+    details:
+      saikuro: complexity is 6.0
+  - location:
+      class_name: UsersController
+      method_name: UsersController#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "UsersController", "UsersController#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 6.0
+  - location:
+      class_name: ProposalsController
+      method_name: ProposalsController#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "ProposalsController", "ProposalsController#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 6.0
+  - location:
+      class_name: ProplikesController
+      method_name: ProplikesController#edit
+      file_path: app/controllers/proplikes_controller.rb:25
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '25'
+      hash_key: '["app/controllers/proplikes_controller.rb:25", "ProplikesController",
+        "ProplikesController#edit"]'
+      simple_method_name: "#edit"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 4.9
+  - location:
+      class_name: ProplikesController
+      method_name: ProplikesController#show
+      file_path: app/controllers/proplikes_controller.rb:15
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '15'
+      hash_key: '["app/controllers/proplikes_controller.rb:15", "ProplikesController",
+        "ProplikesController#show"]'
+      simple_method_name: "#show"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 4.9
+  - location:
+      class_name: LikesController
+      method_name: LikesController#edit
+      file_path: app/controllers/likes_controller.rb:25
+      file_name: app/controllers/likes_controller.rb
+      line_number: '25'
+      hash_key: '["app/controllers/likes_controller.rb:25", "LikesController", "LikesController#edit"]'
+      simple_method_name: "#edit"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 4.9
+  - location:
+      class_name: LikesController
+      method_name: LikesController#show
+      file_path: app/controllers/likes_controller.rb:15
+      file_name: app/controllers/likes_controller.rb
+      line_number: '15'
+      hash_key: '["app/controllers/likes_controller.rb:15", "LikesController", "LikesController#show"]'
+      simple_method_name: "#show"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 4.9
+  - location:
+      class_name: CommentsController
+      method_name: CommentsController#edit
+      file_path: app/controllers/comments_controller.rb:25
+      file_name: app/controllers/comments_controller.rb
+      line_number: '25'
+      hash_key: '["app/controllers/comments_controller.rb:25", "CommentsController",
+        "CommentsController#edit"]'
+      simple_method_name: "#edit"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 4.9
+  - location:
+      class_name: CommentsController
+      method_name: CommentsController#show
+      file_path: app/controllers/comments_controller.rb:15
+      file_name: app/controllers/comments_controller.rb
+      line_number: '15'
+      hash_key: '["app/controllers/comments_controller.rb:15", "CommentsController",
+        "CommentsController#show"]'
+      simple_method_name: "#show"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 4.9
+  - location:
+      class_name: Proplike
+      method_name: Proplike#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "Proplike", "Proplike#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 5.3
+  - location:
+      class_name: Like
+      method_name: Like#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "Like", "Like#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 5.3
+  - location:
+      class_name: ApplicationController
+      method_name: ApplicationController#is_editor?
+      file_path: app/controllers/application_controller.rb
+      file_name: app/controllers/application_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/application_controller.rb", "ApplicationController",
+        "ApplicationController#is_editor?"]'
+      simple_method_name: "#is_editor?"
+    details:
+      saikuro: complexity is 5.0
+  - location:
+      class_name: ApplicationController
+      method_name: ApplicationController#is_admin?
+      file_path: app/controllers/application_controller.rb
+      file_name: app/controllers/application_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/application_controller.rb", "ApplicationController",
+        "ApplicationController#is_admin?"]'
+      simple_method_name: "#is_admin?"
+    details:
+      saikuro: complexity is 5.0
+  - location:
+      class_name: ProplikesController
+      method_name: ProplikesController#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "ProplikesController", "ProplikesController#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 5.0
+  - location:
+      class_name: LikesController
+      method_name: LikesController#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "LikesController", "LikesController#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 5.0
+  - location:
+      class_name: CommentsController
+      method_name: CommentsController#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "CommentsController", "CommentsController#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 5.0
+  - location:
+      class_name: Proposal
+      method_name: Proposal#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "Proposal", "Proposal#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 5.0
+  - location:
+      class_name: Comment
+      method_name: Comment#upvotes
+      file_path: app/models/comment.rb:9
+      file_name: app/models/comment.rb
+      line_number: '9'
+      hash_key: '["app/models/comment.rb:9", "Comment", "Comment#upvotes"]'
+      simple_method_name: "#upvotes"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 4.0
+  - location:
+      class_name: Proposal
+      method_name: Proposal#upvotes
+      file_path: app/models/proposal.rb:9
+      file_name: app/models/proposal.rb
+      line_number: '9'
+      hash_key: '["app/models/proposal.rb:9", "Proposal", "Proposal#upvotes"]'
+      simple_method_name: "#upvotes"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 4.0
+  - location:
+      class_name: UsersController
+      method_name: UsersController#set_user
+      file_path: app/controllers/users_controller.rb:109
+      file_name: app/controllers/users_controller.rb
+      line_number: '109'
+      hash_key: '["app/controllers/users_controller.rb:109", "UsersController", "UsersController#set_user"]'
+      simple_method_name: "#set_user"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.7
+  - location:
+      class_name: ProplikesController
+      method_name: ProplikesController#set_proplike
+      file_path: app/controllers/proplikes_controller.rb:100
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '100'
+      hash_key: '["app/controllers/proplikes_controller.rb:100", "ProplikesController",
+        "ProplikesController#set_proplike"]'
+      simple_method_name: "#set_proplike"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.7
+  - location:
+      class_name: ProplikesController
+      method_name: ProplikesController#find_owner
+      file_path: app/controllers/proplikes_controller.rb:95
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '95'
+      hash_key: '["app/controllers/proplikes_controller.rb:95", "ProplikesController",
+        "ProplikesController#find_owner"]'
+      simple_method_name: "#find_owner"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.7
+  - location:
+      class_name: LikesController
+      method_name: LikesController#set_like
+      file_path: app/controllers/likes_controller.rb:101
+      file_name: app/controllers/likes_controller.rb
+      line_number: '101'
+      hash_key: '["app/controllers/likes_controller.rb:101", "LikesController", "LikesController#set_like"]'
+      simple_method_name: "#set_like"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.7
+  - location:
+      class_name: CommentsController
+      method_name: CommentsController#set_comment
+      file_path: app/controllers/comments_controller.rb:99
+      file_name: app/controllers/comments_controller.rb
+      line_number: '99'
+      hash_key: '["app/controllers/comments_controller.rb:99", "CommentsController",
+        "CommentsController#set_comment"]'
+      simple_method_name: "#set_comment"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.7
+  - location:
+      class_name: CommentsController
+      method_name: CommentsController#find_owner
+      file_path: app/controllers/comments_controller.rb:95
+      file_name: app/controllers/comments_controller.rb
+      line_number: '95'
+      hash_key: '["app/controllers/comments_controller.rb:95", "CommentsController",
+        "CommentsController#find_owner"]'
+      simple_method_name: "#find_owner"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.7
+  - location:
+      class_name: ProposalsController
+      method_name: ProposalsController#set_proposal
+      file_path: app/controllers/proposals_controller.rb:90
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '90'
+      hash_key: '["app/controllers/proposals_controller.rb:90", "ProposalsController",
+        "ProposalsController#set_proposal"]'
+      simple_method_name: "#set_proposal"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.7
+  - location:
+      class_name: SessionHelper
+      method_name: SessionHelper#current_user
+      file_path: app/helpers/session_helper.rb:8
+      file_name: app/helpers/session_helper.rb
+      line_number: '8'
+      hash_key: '["app/helpers/session_helper.rb:8", "SessionHelper", "SessionHelper#current_user"]'
+      simple_method_name: "#current_user"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.7
+  - location:
+      class_name: UsersController
+      method_name: UsersController#user_params
+      file_path: app/controllers/users_controller.rb:114
+      file_name: app/controllers/users_controller.rb
+      line_number: '114'
+      hash_key: '["app/controllers/users_controller.rb:114", "UsersController", "UsersController#user_params"]'
+      simple_method_name: "#user_params"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.6
+  - location:
+      class_name: ProplikesController
+      method_name: ProplikesController#proplike_params
+      file_path: app/controllers/proplikes_controller.rb:104
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '104'
+      hash_key: '["app/controllers/proplikes_controller.rb:104", "ProplikesController",
+        "ProplikesController#proplike_params"]'
+      simple_method_name: "#proplike_params"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.6
+  - location:
+      class_name: LikesController
+      method_name: LikesController#like_params
+      file_path: app/controllers/likes_controller.rb:106
+      file_name: app/controllers/likes_controller.rb
+      line_number: '106'
+      hash_key: '["app/controllers/likes_controller.rb:106", "LikesController", "LikesController#like_params"]'
+      simple_method_name: "#like_params"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.6
+  - location:
+      class_name: CommentsController
+      method_name: CommentsController#proposal_comment_params
+      file_path: app/controllers/comments_controller.rb:104
+      file_name: app/controllers/comments_controller.rb
+      line_number: '104'
+      hash_key: '["app/controllers/comments_controller.rb:104", "CommentsController",
+        "CommentsController#proposal_comment_params"]'
+      simple_method_name: "#proposal_comment_params"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.6
+  - location:
+      class_name: ProposalsController
+      method_name: ProposalsController#proposal_params
+      file_path: app/controllers/proposals_controller.rb:102
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '102'
+      hash_key: '["app/controllers/proposals_controller.rb:102", "ProposalsController",
+        "ProposalsController#proposal_params"]'
+      simple_method_name: "#proposal_params"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.6
+  - location:
+      class_name: SessionController
+      method_name: SessionController#session_params
+      file_path: app/controllers/session_controller.rb:66
+      file_name: app/controllers/session_controller.rb
+      line_number: '66'
+      hash_key: '["app/controllers/session_controller.rb:66", "SessionController",
+        "SessionController#session_params"]'
+      simple_method_name: "#session_params"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.6
+  - location:
+      class_name: Comment
+      method_name: Comment#downvotes
+      file_path: app/models/comment.rb:13
+      file_name: app/models/comment.rb
+      line_number: '13'
+      hash_key: '["app/models/comment.rb:13", "Comment", "Comment#downvotes"]'
+      simple_method_name: "#downvotes"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.6
+  - location:
+      class_name: Proposal
+      method_name: Proposal#downvotes
+      file_path: app/models/proposal.rb:13
+      file_name: app/models/proposal.rb
+      line_number: '13'
+      hash_key: '["app/models/proposal.rb:13", "Proposal", "Proposal#downvotes"]'
+      simple_method_name: "#downvotes"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 3.6
+  - location:
+      class_name: Comment
+      method_name: Comment#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "Comment", "Comment#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 4.0
+  - location:
+      class_name: ProplikesController
+      method_name: ProplikesController#new
+      file_path: app/controllers/proplikes_controller.rb:20
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '20'
+      hash_key: '["app/controllers/proplikes_controller.rb:20", "ProplikesController",
+        "ProplikesController#new"]'
+      simple_method_name: "#new"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 2.4
+  - location:
+      class_name: LikesController
+      method_name: LikesController#new
+      file_path: app/controllers/likes_controller.rb:20
+      file_name: app/controllers/likes_controller.rb
+      line_number: '20'
+      hash_key: '["app/controllers/likes_controller.rb:20", "LikesController", "LikesController#new"]'
+      simple_method_name: "#new"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 2.4
+  - location:
+      class_name: CommentsController
+      method_name: CommentsController#new
+      file_path: app/controllers/comments_controller.rb:20
+      file_name: app/controllers/comments_controller.rb
+      line_number: '20'
+      hash_key: '["app/controllers/comments_controller.rb:20", "CommentsController",
+        "CommentsController#new"]'
+      simple_method_name: "#new"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 2.4
+  - location:
+      class_name: User
+      method_name: User#digest
+      file_path: app/models/user.rb:24
+      file_name: app/models/user.rb
+      line_number: '24'
+      hash_key: '["app/models/user.rb:24", "User", "User#digest"]'
+      simple_method_name: "#digest"
+    details:
+      flog: complexity is 3.4
+  - location:
+      class_name: SessionHelper
+      method_name: SessionHelper#log_in
+      file_path: app/helpers/session_helper.rb:3
+      file_name: app/helpers/session_helper.rb
+      line_number: '3'
+      hash_key: '["app/helpers/session_helper.rb:3", "SessionHelper", "SessionHelper#log_in"]'
+      simple_method_name: "#log_in"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 2.2
+  - location:
+      class_name: SessionHelper
+      method_name: SessionHelper#log_out_api
+      file_path: app/helpers/session_helper.rb:29
+      file_name: app/helpers/session_helper.rb
+      line_number: '29'
+      hash_key: '["app/helpers/session_helper.rb:29", "SessionHelper", "SessionHelper#log_out_api"]'
+      simple_method_name: "#log_out_api"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 2.2
+  - location:
+      class_name: User
+      method_name: User#new_token
+      file_path: app/models/user.rb:30
+      file_name: app/models/user.rb
+      line_number: '30'
+      hash_key: '["app/models/user.rb:30", "User", "User#new_token"]'
+      simple_method_name: "#new_token"
+    details:
+      flog: complexity is 2.7
+  - location:
+      class_name: UsersController
+      method_name: UsersController#new
+      file_path: app/controllers/users_controller.rb:20
+      file_name: app/controllers/users_controller.rb
+      line_number: '20'
+      hash_key: '["app/controllers/users_controller.rb:20", "UsersController", "UsersController#new"]'
+      simple_method_name: "#new"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 1.4
+  - location:
+      class_name: UsersController
+      method_name: UsersController#index
+      file_path: app/controllers/users_controller.rb:10
+      file_name: app/controllers/users_controller.rb
+      line_number: '10'
+      hash_key: '["app/controllers/users_controller.rb:10", "UsersController", "UsersController#index"]'
+      simple_method_name: "#index"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 1.4
+  - location:
+      class_name: ProplikesController
+      method_name: ProplikesController#index
+      file_path: app/controllers/proplikes_controller.rb:9
+      file_name: app/controllers/proplikes_controller.rb
+      line_number: '9'
+      hash_key: '["app/controllers/proplikes_controller.rb:9", "ProplikesController",
+        "ProplikesController#index"]'
+      simple_method_name: "#index"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 1.4
+  - location:
+      class_name: LikesController
+      method_name: LikesController#index
+      file_path: app/controllers/likes_controller.rb:9
+      file_name: app/controllers/likes_controller.rb
+      line_number: '9'
+      hash_key: '["app/controllers/likes_controller.rb:9", "LikesController", "LikesController#index"]'
+      simple_method_name: "#index"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 1.4
+  - location:
+      class_name: CommentsController
+      method_name: CommentsController#index
+      file_path: app/controllers/comments_controller.rb:9
+      file_name: app/controllers/comments_controller.rb
+      line_number: '9'
+      hash_key: '["app/controllers/comments_controller.rb:9", "CommentsController",
+        "CommentsController#index"]'
+      simple_method_name: "#index"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 1.4
+  - location:
+      class_name: ProposalsController
+      method_name: ProposalsController#new
+      file_path: app/controllers/proposals_controller.rb:20
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '20'
+      hash_key: '["app/controllers/proposals_controller.rb:20", "ProposalsController",
+        "ProposalsController#new"]'
+      simple_method_name: "#new"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 1.4
+  - location:
+      class_name: ProposalsController
+      method_name: ProposalsController#index
+      file_path: app/controllers/proposals_controller.rb:10
+      file_name: app/controllers/proposals_controller.rb
+      line_number: '10'
+      hash_key: '["app/controllers/proposals_controller.rb:10", "ProposalsController",
+        "ProposalsController#index"]'
+      simple_method_name: "#index"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 1.4
+  - location:
+      class_name: main
+      method_name: main#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "main", "main#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 2.2
+  - location:
+      class_name: SessionHelper
+      method_name: SessionHelper#log_out
+      file_path: app/helpers/session_helper.rb:33
+      file_name: app/helpers/session_helper.rb
+      line_number: '33'
+      hash_key: '["app/helpers/session_helper.rb:33", "SessionHelper", "SessionHelper#log_out"]'
+      simple_method_name: "#log_out"
+    details:
+      saikuro: complexity is 1.0
+      flog: complexity is 1.0
+  - location:
+      class_name: User
+      method_name: User#User.new_token
+      file_path: app/models/user.rb
+      file_name: app/models/user.rb
+      line_number: 
+      hash_key: '["app/models/user.rb", "User", "User#User.new_token"]'
+      simple_method_name: "#User.new_token"
+    details:
+      saikuro: complexity is 2.0
+  - location:
+      class_name: User
+      method_name: User#User.digest
+      file_path: app/models/user.rb
+      file_name: app/models/user.rb
+      line_number: 
+      hash_key: '["app/models/user.rb", "User", "User#User.digest"]'
+      simple_method_name: "#User.digest"
+    details:
+      saikuro: complexity is 2.0
+  - location:
+      class_name: SessionController
+      method_name: SessionController#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "SessionController", "SessionController#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 2.0
+  - location:
+      class_name: UsersController
+      method_name: UsersController#edit
+      file_path: app/controllers/users_controller.rb
+      file_name: app/controllers/users_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/users_controller.rb", "UsersController", "UsersController#edit"]'
+      simple_method_name: "#edit"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: UsersController
+      method_name: UsersController#show
+      file_path: app/controllers/users_controller.rb
+      file_name: app/controllers/users_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/users_controller.rb", "UsersController", "UsersController#show"]'
+      simple_method_name: "#show"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: ProposalsController
+      method_name: ProposalsController#edit
+      file_path: app/controllers/proposals_controller.rb
+      file_name: app/controllers/proposals_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/proposals_controller.rb", "ProposalsController",
+        "ProposalsController#edit"]'
+      simple_method_name: "#edit"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: ProposalsController
+      method_name: ProposalsController#show
+      file_path: app/controllers/proposals_controller.rb
+      file_name: app/controllers/proposals_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/proposals_controller.rb", "ProposalsController",
+        "ProposalsController#show"]'
+      simple_method_name: "#show"
+    details:
+      saikuro: complexity is 1.0
