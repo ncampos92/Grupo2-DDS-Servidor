@@ -1,50 +1,58 @@
-<p>
-  <strong>Titulo:</strong>
-  <%= @proposal.titulo %>
-</p>
+<div class="container-fluid">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="well">
+      <p>
+        <strong>Titulo:</strong>
+        <%= @proposal.titulo %>
+      </p>
 
-<p>
-  <strong>Texto:</strong>
-  <%= @proposal.texto %>
-</p>
+      <p>
+        <strong>Texto:</strong>
+        <%= @proposal.texto %>
+      </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @proposal.user.email %>
-</p>
+      <p>
+        <strong>User:</strong>
+        <%= @proposal.user.email %>
+      </p>
 
-<p>
-  <strong>Likes:</strong>
-  <%= @proposal.upvotes %>
-</p>
+      <p>
+        <strong>Likes:</strong>
+        <%= @proposal.upvotes %>
+      </p>
 
-<p>
-  <strong>Dislikes:</strong>
-  <%= @proposal.downvotes %>
-</p>
+      <p>
+        <strong>Dislikes:</strong>
+        <%= @proposal.downvotes %>
+      </p>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
 
 <h3>Comentarios más votados</h3>
 <table class="table">
   <thead>
     <tr>
-      <th>Texto</th>
-      <th>User</th>
-      <th>Likes</th>
-      <th>Dislikes</th>
-      <th>Score</th>
-      <th></th>
+      <th class="col-md-4">Texto</th>
+      <th class="col-md-3">User</th>
+      <th class="col-md-1">Likes</th>
+      <th class="col-md-1">Dislikes</th>
+      <th class="col-md-1">Score</th>
+      <th class="col-md-2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @top_comments.each do |comment| %>
       <tr>
-        <td><%= comment.texto %></td>
-        <td><%= comment.user.email %></td>
-        <td><%= comment.upvotes %></td>
-        <td><%= comment.downvotes %></td>
-        <td><%= comment.score %></td>
-        <td><%= link_to 'Show', [comment.proposal, comment] %></td>
+        <td class="col-md-6"><%= comment.texto %></td>
+        <td class="col-md-3"><%= comment.user.email %></td>
+        <td class="col-md-1"><%= comment.upvotes %></td>
+        <td class="col-md-1"><%= comment.downvotes %></td>
+        <td class="col-md-1"><%= comment.score %></td>
+        <td class="col-md-2"><%= link_to 'Show', [comment.proposal, comment] %></td>
       </tr>
     <% end %>
   </tbody>
