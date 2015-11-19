@@ -60,6 +60,7 @@ class ProposalsController < ApplicationController
   # DELETE /proposals/1
   # DELETE /proposals/1.json
   def destroy
+    @proposal.comments.each { |comment| comment.likes.destroy }
     @proposal.destroy
     respond_to do |format|
       format.html { redirect_to proposals_url, notice: 'Proposal was successfully destroyed.' }
