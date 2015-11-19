@@ -60,7 +60,9 @@
   </table>
 </div>
 
-<%= link_to 'Likes', proposal_proplikes_path(@proposal) :class => 'btn btn-primary' %>
-<%= link_to 'Comments', proposal_comments_path(@proposal) :class => 'btn btn-primary' %>
-<%= link_to 'Edit', edit_proposal_path(@proposal) :class => 'btn btn-primary' %>
-<%= link_to 'Back', proposals_path :class => 'btn btn-default' %>
+<center>
+  <%= link_to 'Likes', proposal_proplikes_path(@proposal) :class => 'btn btn-primary' %>
+  <%= link_to 'Comments', proposal_comments_path(@proposal) :class => 'btn btn-primary' %>
+  <%= link_to 'Edit', edit_proposal_path(@proposal) :class => 'btn btn-primary' %>
+  <%= link_to 'Back', proposals_path :class => 'btn btn-default' %>
+</center>
