@@ -37,4 +37,8 @@ class Proposal < ActiveRecord::Base
   def get_comments_by_date
     self.comments.sort {|a,b| a.created_at <=> b.created_at}
   end
+
+  def interactions
+    self.upvotes + self.downvotes
+  end
 end
